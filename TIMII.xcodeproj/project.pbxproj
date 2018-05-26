@@ -17,6 +17,7 @@
 		0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C3F0F209F9A8300A417F1 /* DatabaseSystem.swift */; };
 		0F2C3F25209FC9B400A417F1 /* ViewableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C3F24209FC9B400A417F1 /* ViewableTests.swift */; };
 		0F2C3F29209FD08700A417F1 /* DatabaseSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C3F28209FD08700A417F1 /* DatabaseSystemTests.swift */; };
+		0F33AFB920B9C0F5000E651A /* LogoBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F33AFB820B9C0F5000E651A /* LogoBar.swift */; };
 		0F3D4F5E2097392C00B88EDE /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D4F5D2097392C00B88EDE /* Viewable.swift */; };
 		0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4AD8FA20A726AA00E1CD0E /* ViewableSystem.swift */; };
 		0F777B8820ABDFAA008F7944 /* DashboardSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F777B8720ABDFAA008F7944 /* DashboardSystemTests.swift */; };
@@ -30,7 +31,7 @@
 		0FDB817E20B0CDDF00E39E04 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB817D20B0CDDF00E39E04 /* UIStyle.swift */; };
 		0FDB818020B0CE2300E39E04 /* UIStyleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB817F20B0CE2300E39E04 /* UIStyleSystem.swift */; };
 		0FDB818220B0D4F000E39E04 /* UIStyleSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB818120B0D4F000E39E04 /* UIStyleSystemTests.swift */; };
-		0FDB818620B0D90200E39E04 /* UIStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB818520B0D90200E39E04 /* UIStyleViewController.swift */; };
+		0FDB818820B104F100E39E04 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB818720B104F100E39E04 /* DashboardViewController.swift */; };
 		0FE3DEFE208BB0A400D546BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */; };
 		68DF88FBB5A5249AE0ED4D27 /* Pods_TIMII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08313F8366613AE86B862013 /* Pods_TIMII.framework */; };
 		ADA225979611C9863A9F3B7A /* Pods_TIMIITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */; };
@@ -60,6 +61,7 @@
 		0F2C3F19209FB01500A417F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F2C3F24209FC9B400A417F1 /* ViewableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableTests.swift; sourceTree = "<group>"; };
 		0F2C3F28209FD08700A417F1 /* DatabaseSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSystemTests.swift; sourceTree = "<group>"; };
+		0F33AFB820B9C0F5000E651A /* LogoBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoBar.swift; sourceTree = "<group>"; };
 		0F3D4F5D2097392C00B88EDE /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		0F4AD8FA20A726AA00E1CD0E /* ViewableSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableSystem.swift; sourceTree = "<group>"; };
 		0F777B8720ABDFAA008F7944 /* DashboardSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSystemTests.swift; sourceTree = "<group>"; };
@@ -75,7 +77,7 @@
 		0FDB817D20B0CDDF00E39E04 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		0FDB817F20B0CE2300E39E04 /* UIStyleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleSystem.swift; sourceTree = "<group>"; };
 		0FDB818120B0D4F000E39E04 /* UIStyleSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleSystemTests.swift; sourceTree = "<group>"; };
-		0FDB818520B0D90200E39E04 /* UIStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleViewController.swift; sourceTree = "<group>"; };
+		0FDB818720B104F100E39E04 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3AF127DD080902506260D304 /* Pods-TIMIITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.debug.xcconfig"; sourceTree = "<group>"; };
 		895FAF54A017BE3E109C7142 /* Pods-TIMIITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				0FC08A4720840CFF0083E0B3 /* MainViewController.swift */,
-				0FDB818520B0D90200E39E04 /* UIStyleViewController.swift */,
+				0FDB818720B104F100E39E04 /* DashboardViewController.swift */,
+				0F33AFB820B9C0F5000E651A /* LogoBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,7 +373,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TIMII/Pods-TIMII-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -378,6 +382,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -393,7 +398,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -447,7 +452,6 @@
 				0F2C3F03209EA08E00A417F1 /* Component.swift in Sources */,
 				0FDB818020B0CE2300E39E04 /* UIStyleSystem.swift in Sources */,
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
-				0FDB818620B0D90200E39E04 /* UIStyleViewController.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
 				0F0DAA3220A5400900DD30DD /* EntitySystem.swift in Sources */,
@@ -455,10 +459,12 @@
 				0FBE767320A88D25003225F0 /* SetupSystem.swift in Sources */,
 				0F2C3F0E209F963900A417F1 /* CountableSystem.swift in Sources */,
 				0FC08A4820840CFF0083E0B3 /* MainViewController.swift in Sources */,
+				0F33AFB920B9C0F5000E651A /* LogoBar.swift in Sources */,
 				0F2A12442095108600D0E489 /* Dashboard.swift in Sources */,
 				0F2C3F08209F4F6400A417F1 /* ComponentSystem.swift in Sources */,
 				0F3D4F5E2097392C00B88EDE /* Viewable.swift in Sources */,
 				0FC08A4620840CFF0083E0B3 /* AppDelegate.swift in Sources */,
+				0FDB818820B104F100E39E04 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
