@@ -16,7 +16,7 @@ class MainViewController: UIViewController
         view.backgroundColor = UIColor.init(rgb: 0xFCFCFC)
         navigationController?.isNavigationBarHidden = true
 
-        // Logo Bar
+        // Logo Bar with SnapKit
         let logoBar = UIView()
         let logoHeaderHeight = 30
         view.addSubview(logoBar)
@@ -41,7 +41,7 @@ class MainViewController: UIViewController
                 make.centerY.equalTo(logoBar)
         }
 
-        // Family and Friends Bar
+        // Family and Friends Bar with SnapKit
         let FFBar = UIView()
         let FFBarHeight = 80
         view.addSubview(FFBar)
@@ -55,7 +55,7 @@ class MainViewController: UIViewController
             make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
         }
         
-        // idCircleContainer
+        // idCircleContainer with SnapKit
         let idCircleContainer = UIView()
         let idCircleContainerHeight = FFBarHeight - 1
         FFBar.addSubview(idCircleContainer)
