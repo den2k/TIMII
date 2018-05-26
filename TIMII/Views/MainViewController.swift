@@ -22,7 +22,7 @@ class MainViewController: UIViewController
         view.addSubview(logoBar)
         logoBar.backgroundColor = UIColor.init(rgb: 0xFCFCFC)
         logoBar.snp.makeConstraints
-            { (make) -> Void in
+        { (make) -> Void in
                 // top, right, bottom, left
                 make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
                 make.right.equalTo(view.safeAreaLayoutGuide.snp.right)
@@ -35,10 +35,9 @@ class MainViewController: UIViewController
         appName.textColor = UIColor.init(rgb: 0x404040)
         appName.text = "TIMII"
         appName.snp.makeConstraints
-            { (make) -> Void in
+        { (make) -> Void in
                 // top, right, bottom, left
-                make.centerX.equalTo(logoBar)
-                make.centerY.equalTo(logoBar)
+                make.center.equalTo(logoBar)
         }
 
         // Family and Friends Bar with SnapKit
@@ -63,10 +62,9 @@ class MainViewController: UIViewController
         idCircleContainer.snp.makeConstraints
         { (make) -> Void in
             // top, right, bottom, left
-            make.centerY.equalTo(FFBar.snp.centerY)
-            make.right.equalTo(FFBar.snp.right)
+            make.center.equalTo(FFBar)
             make.height.equalTo(idCircleContainerHeight)
-            make.left.equalTo(FFBar.snp.left)
+            make.width.equalTo(FFBar)
         }
         
         
