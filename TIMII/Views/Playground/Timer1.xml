@@ -1,0 +1,29 @@
+<!-- Timer.xml -->
+
+<UIView
+    height="100%"
+    layer.cornerRadius="0"
+    left="0"
+    width="100%">
+    
+    <UIView template="TimerBoxView.xml"/>
+    
+    <UIView
+        left="previous.right + 15"
+        top="previous.top"
+        template="TimerBoxView.xml"/>
+    
+    <param name="text" type="String"/>
+    
+    
+    <UILabel
+        font="30 helvetica neue thin"
+        top="50% - height / 2 - parent.safeAreaInsets.bottom"
+        width="100%"
+        text="{text}"
+        textAlignment="center"
+        textColor="#54A662"
+    />
+    <children/>
+    
+</UIView>

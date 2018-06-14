@@ -1,0 +1,46 @@
+<Timer view.backgroundColor="#FFFFFF">
+    
+    <UIScrollView
+        top="parent.safeAreaInsets.top + 100 + 15"
+        height="73%"
+        contentInsetAdjustmentBehavior="never"
+        contentSize.height="100%"
+        contentSize.width="300%"
+        isPagingEnabled="true"
+        outlet="scrollView"
+        showsHorizontalScrollIndicator="false">
+        
+        <!-- Timer 1 -->
+        <UIView
+            template="TimerPage.xml"
+            backgroundColor="#C1E890"
+            text="00:01"
+        />
+            
+        <!-- Timer 2 -->
+        <UIView
+            template="TimerPage.xml"
+            backgroundColor="#EBE26C"
+            left="previous.right + 40"
+            text="00:02"
+        />
+        
+        <!-- Timer 3 -->
+        <UIView
+            template="TimerPage.xml"
+            backgroundColor="#C1E890"
+            left="previous.right + 40"
+            text="00:03"
+        />
+        
+    </UIScrollView>
+    
+    <UIPageControl
+        bottom="parent.safeAreaInsets.bottom + 35"
+        center.x="50%"
+        isUserInteractionEnabled="false"
+        numberOfPages="3"
+        outlet="pageControl"
+    />
+    
+</Timer>

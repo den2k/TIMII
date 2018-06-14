@@ -1,0 +1,10 @@
+<!-- Family and Friends Band -->
+<UIView>
+    <UILabel
+        top="50% - height / 2"
+        width="100%"
+        textAlignment="center"
+        textColor="#404040"
+        text="FF Bar"
+    />
+</UIView>

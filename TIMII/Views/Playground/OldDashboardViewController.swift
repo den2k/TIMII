@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  OldDashboardViewController.swift
 //  TIMII
 //
 //  Created by Daddy on 5/19/18.
@@ -8,7 +8,7 @@
 
 import SnapKit
 
-class DashboardViewController : UIViewController
+class OldDashboardViewController : UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()

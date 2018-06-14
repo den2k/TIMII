@@ -1,0 +1,27 @@
+<UITabBarController view.backgroundColor="white">
+
+
+    <!-- Header -->
+    <UIView xml="Header.xml"
+        top="parent.safeAreaInsets.top"
+        height="200"
+    />
+
+
+    <UITabBar tintColor="#54A662"/>
+    
+    <!-- Home -->
+    <UIViewController
+        tabBarItem.image="home.png"
+        title="Home"
+        xml="Home.xml"
+    />
+    
+    <!-- Timer -->
+    <UIViewController
+        tabBarItem.image="timer.png"
+        title="Timer"
+        xml="Timer.xml"
+    />
+        
+</UITabBarController>

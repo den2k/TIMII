@@ -1,0 +1,35 @@
+<DashboardScreenViewController view.backgroundColor="#FFFFFF">
+    
+    <!-- Logo Bar -->
+    <UIView xml="LogoBand.xml"
+        height="30"
+        top="parent.safeAreaInsets.top"
+    />
+
+    <!-- Family and Friends Bar -->
+    <UIView xml="FamilyFriendsBand.xml"
+        height="70"
+        top="previous.bottom"
+        backgroundColor="#F7F7F7"
+    />
+    
+    <!-- Active Timer Bar -->
+    <UIScrollView
+        top="previous.bottom"
+        height="200"
+        contentInsetAdjustmentBehavior="never">
+        
+        <UIView xml="TimerBox.xml" left="15" top="15"/>
+        <UIView xml="TimerBox.xml" left="previous.right+15" top="previous.top" />
+        <UIView xml="TimerBox.xml" left="previous.right+15" top="previous.top" />
+    </UIScrollView>
+
+    
+    <!-- Timer List Bar -->
+    
+    
+    
+    <!-- Navigation Tab Bar -->
+
+        
+</DashboardScreenViewController>

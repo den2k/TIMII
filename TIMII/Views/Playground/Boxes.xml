@@ -1,0 +1,113 @@
+<BoxesViewController
+    outlet="layoutNode"
+    view.backgroundColor="white">
+    
+    <UIView
+        template="FullScreenView.xml"
+    />
+    
+    <UIScrollView
+        contentInset.bottom="safeAreaInsets.bottom + 50"
+        contentInset.left="safeAreaInsets.left + 15"
+        contentInset.right="safeAreaInsets.right + 15"
+        contentInset.top="max(safeAreaInsets.top + 5, 15)"
+        contentInsetAdjustmentBehavior="never"
+        scrollIndicatorInsets.bottom="safeAreaInsets.bottom + 50"
+        scrollIndicatorInsets.top="safeAreaInsets.top">
+        
+        <!-- First column -->
+        <UIView
+            backgroundColor="#F66"
+            height="width"
+            id="first"
+            transform.rotation="isToggled ? pi / 2 : 0"
+            width="isToggled ? (100% - 15) / 2 : (100% - 15 * 2) / 3"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+        />
+        <UIView
+            backgroundColor="#FA7"
+            height="width"
+            top="15 + previous.bottom"
+            width="previous.width"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+        />
+        <UILabel
+            numberOfLines="0"
+            text="{strings.Lorem.Ipsum}"
+            top="15 + previous.bottom"
+            width="isToggled ? previous.width : 100%"
+        />
+        
+        <!-- Second column -->
+        <UIView
+            backgroundColor="#09F"
+            height="width / 2"
+            left="width + 15"
+            width="#first.width"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+        />
+        <UIView
+            backgroundColor="#0F9"
+            height="width"
+            left="previous.left"
+            top="15 + previous.bottom"
+            width="previous.width"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+        />
+        <UIView
+            backgroundColor="#FCC"
+            height="width"
+            left="isToggled ? previous.left : previous.right + 15"
+            top="isToggled ? 15 + previous.bottom : 0"
+            width="previous.width"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+        />
+    </UIScrollView>
+    
+    <!-- Floating button -->
+    <UIView
+        backgroundColor="#fff9"
+        bottom="previous.bottom + parent.safeAreaInsets.bottom"
+        height="50"
+        left="0"
+        width="100%">
+        
+        <UIButton
+            backgroundColor="isToggled ? #09F : #F66"
+            bottom="10"
+            layer.cornerRadius="5"
+            left="safeAreaInsets.left + 15"
+            right="safeAreaInsets.right + 15"
+            title="Toggle"
+            top="10"
+            layer.shadowRadius="2.0"
+            layer.shadowOpacity="1"
+            layer.shadowColor="#AAA"
+            layer.shadowOffset.width="5.0"
+            layer.shadowOffset.height="5.0"
+            touchUpInside="{isToggled ? 'setUntoggled' : 'setToggled'}"
+        />
+        
+    </UIView>
+    
+</BoxesViewController>

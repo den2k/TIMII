@@ -1,0 +1,6 @@
+<!-- Full Screen Default View Settings -->
+<UIView
+    top="max(safeAreaInsets.top + 5, 50)"
+    left="safeAreaInsets.left + 50"
+    bottom="100% - safeAreaInsets.bottom - 50"
+    right="100% - safeAreaInsets.right + 50"/>

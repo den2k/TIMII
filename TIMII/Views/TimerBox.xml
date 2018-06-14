@@ -1,0 +1,45 @@
+<!-- Timer Box -->
+<UIView
+    backgroundColor="#C1E890"
+    height="150"
+    width="150"
+    left="15"
+    layer.shadowRadius="2.0"
+    layer.shadowOpacity="1"
+    layer.shadowColor="#AAA"
+    layer.shadowOffset.width="5.0"
+    layer.shadowOffset.height="5.0">
+    
+
+    <!-- Task Name Label -->
+    <UILabel
+        width="100%"
+        top="height / 2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next 14"
+        text="Eating"
+    />
+
+    <!-- Time Label -->
+    <UILabel
+        width="100%"
+        top="50% - height / 2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next ultraLight 35"
+        text="00:01"
+    />
+    
+    <!-- Daily Total Label -->
+    <UILabel
+        width="100%"
+        bottom="height / 2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next 10"
+        text="Daily: 01:01"
+    />
+
+
+</UIView>

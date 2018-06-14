@@ -1,0 +1,14 @@
+<UIView>
+    <!-- Logo Bar -->
+    <UIView xml="LogoBand.xml"
+        height="30"
+        backgroundColor="#FFF"
+    />
+
+    <!-- Family and Friends Bar -->
+    <UIView xml="FamilyFriendsBand.xml"
+        height="70"
+        top="previous.bottom"
+        backgroundColor="#FCFCFC"
+    />
+</UIView>
