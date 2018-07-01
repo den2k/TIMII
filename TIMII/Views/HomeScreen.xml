@@ -18,7 +18,7 @@
     <UIScrollView
         top="previous.bottom + 5"
         height="100% - previous.height"
-        backgroundColor="blue"
+        backgroundColor="#E5E5E5"
         contentInsetAdjustmentBehavior="never">
         
         <UIView xml="TimerRow.xml" left="0" top="0"/>
