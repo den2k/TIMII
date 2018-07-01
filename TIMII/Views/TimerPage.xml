@@ -1,14 +1,11 @@
-<UIView
-    height="100% - 20"
-    layer.cornerRadius="10"
-    left="20"
-    width="100% - 40">
+<!-- Timer page - this is a whole screen view for the timer -->
+<UIView>
     
     <param name="text" type="String"/>
 
     <UILabel
         width="100%"
-        top="50% - height / 2"
+        top="50% - height/2"
         textAlignment="center"
         textColor="white"
         font="Avenir Next ultraLight 74"

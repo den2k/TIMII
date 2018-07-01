@@ -1,4 +1,4 @@
-<!-- Timer Box -->
+<!-- Timer Box - this is a small box view for the timer -->
 <UIView
     backgroundColor="#C1E890"
     height="150"
@@ -37,8 +37,8 @@
         bottom="height / 2"
         textAlignment="center"
         textColor="white"
-        font="Avenir Next 10"
-        text="Daily: 01:01"
+        font="Avenir Next 14"
+        text="Today: 01:01"
     />
 
 

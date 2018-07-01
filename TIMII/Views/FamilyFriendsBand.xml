@@ -1,10 +1,68 @@
 <!-- Family and Friends Band -->
 <UIView>
-    <UILabel
-        top="50% - height / 2"
-        width="100%"
-        textAlignment="center"
-        textColor="#404040"
-        text="FF Bar"
-    />
+    
+    <!-- 1 Avatar Circle -->
+    <UIView>
+        <UIView
+            width="40"
+            height="width"
+            top="10"
+            left="0*60 + 10"
+            layer.cornerRadius="width/2"
+            backgroundColor="blue"
+        />
+        <UILabel
+            width="40"
+            top="previous.bottom + 5"
+            left="0*60 + 10"
+            textAlignment="center"
+            textColor="#404040"
+            font="Avenir Next 10"
+            text="Eldon The Great"
+        />
+    </UIView>
+
+    <!-- 2 Avatar Circle -->
+    <UIView>
+        <UIView
+            width="40"
+            height="width"
+            top="10"
+            left="1*60 + 10"
+            layer.cornerRadius="width/2"
+            backgroundColor="blue"
+        />
+        <UILabel
+            width="40"
+            top="previous.bottom + 5"
+            left="1*60 + 10"
+            textAlignment="center"
+            textColor="#404040"
+            font="Avenir Next 10"
+            text="Annalle the Wise"
+            />
+    </UIView>
+
+    <!-- 3 Avatar Circle -->
+    <UIView>
+        <UIView
+            width="40"
+            height="width"
+            top="10"
+            left="2*60 + 10"
+            layer.cornerRadius="width/2"
+            backgroundColor="blue"
+            />
+        <UILabel
+            width="40"
+            top="previous.bottom + 5"
+            left="2*60 + 10"
+            textAlignment="center"
+            textColor="#404040"
+            font="Avenir Next 10"
+            text="Daddy the Awesome"
+        />
+    </UIView>
+    
+
 </UIView>

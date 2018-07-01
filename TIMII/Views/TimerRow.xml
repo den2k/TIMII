@@ -1,0 +1,29 @@
+<!-- Timer Row - this is a row view for the timer -->
+<UIView
+    backgroundColor="#C1E890"
+    height="40"
+    width="100%">
+    
+    <!-- Task Name Label -->
+    <UILabel
+        width="50%"
+        left="15"
+        top="50% - height/2"
+        textAlignment="left"
+        textColor="white"
+        font="Avenir Next 18"
+        text="Eating"
+    />
+    
+    <!-- Daily Total Label -->
+    <UILabel
+        width="50%"
+        top="50% - height/2"
+        right="15"
+        textAlignment="right"
+        textColor="white"
+        font="Avenir Next 14"
+        text="Today: 01:01"
+    />
+    
+</UIView>

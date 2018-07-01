@@ -11,7 +11,7 @@ import Layout
 
 class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
 {
-    private var selectedTab = 0
+    private var selectedTab = 0     // Set to HomeScreen
     
     override func viewDidLoad()
     {

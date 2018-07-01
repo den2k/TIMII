@@ -1,3 +1,4 @@
+<!-- Header Container - holds App logo and user avatar views -->
 <UIView>
     <!-- Logo Bar -->
     <UIView xml="LogoBand.xml"
@@ -9,6 +10,6 @@
     <UIView xml="FamilyFriendsBand.xml"
         height="70"
         top="previous.bottom"
-        backgroundColor="#FCFCFC"
+        backgroundColor="#EEE"
     />
 </UIView>

@@ -1,27 +1,27 @@
+<!-- Main - the main container for the app -->
 <UITabBarController view.backgroundColor="white">
 
-
     <!-- Header -->
-    <UIView xml="Header.xml"
+    <UIView
+        xml="HeaderContainer.xml"
         top="parent.safeAreaInsets.top"
         height="200"
     />
 
-
     <UITabBar tintColor="#54A662"/>
     
-    <!-- Home -->
+    <!-- Home Screen -->
     <UIViewController
+        xml="HomeScreen.xml"
         tabBarItem.image="home.png"
         title="Home"
-        xml="Home.xml"
     />
     
-    <!-- Timer -->
+    <!-- Timer Screen -->
     <UIViewController
+        xml="TimerScreen.xml"
         tabBarItem.image="timer.png"
         title="Timer"
-        xml="Timer.xml"
     />
         
 </UITabBarController>

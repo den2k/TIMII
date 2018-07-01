@@ -19,24 +19,25 @@
 		0F2C3F29209FD08700A417F1 /* DatabaseSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2C3F28209FD08700A417F1 /* DatabaseSystemTests.swift */; };
 		0F3D4F5E2097392C00B88EDE /* Viewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F3D4F5D2097392C00B88EDE /* Viewable.swift */; };
 		0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4AD8FA20A726AA00E1CD0E /* ViewableSystem.swift */; };
-		0F4C9F8620C3A4EC000B760F /* Home.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C9F8520C3A4EC000B760F /* Home.xml */; };
+		0F4C9F8620C3A4EC000B760F /* HomeScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */; };
 		0F777B8820ABDFAA008F7944 /* DashboardSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F777B8720ABDFAA008F7944 /* DashboardSystemTests.swift */; };
 		0F9D930A20BA10060027DE1D /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D930920BA10060027DE1D /* TopViewController.swift */; };
 		0F9D930C20BA15160027DE1D /* OldDashboardScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D930B20BA15160027DE1D /* OldDashboardScreen.xml */; };
 		0F9D930E20BA167E0027DE1D /* LogoBand.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D930D20BA167E0027DE1D /* LogoBand.xml */; };
 		0F9D931020BA19E90027DE1D /* FamilyFriendsBand.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */; };
 		0F9D931520BA25DC0027DE1D /* Timer1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D931420BA25DC0027DE1D /* Timer1.xml */; };
-		0F9D931720BA265F0027DE1D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D931620BA265F0027DE1D /* Timer.swift */; };
+		0F9D931720BA265F0027DE1D /* TimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D931620BA265F0027DE1D /* TimerScreen.swift */; };
 		0F9D931920BAFF850027DE1D /* Boxes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D931820BAFF850027DE1D /* Boxes.xml */; };
 		0F9D931B20BAFFBD0027DE1D /* BoxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9D931A20BAFFBD0027DE1D /* BoxesViewController.swift */; };
 		0F9D931D20BB00FE0027DE1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D931C20BB00FE0027DE1D /* Localizable.strings */; };
 		0F9D931F20BB131D0027DE1D /* FullScreenView.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9D931E20BB131D0027DE1D /* FullScreenView.xml */; };
 		0F9EAE8B20C2429900E2C5F3 /* TimerBox.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */; };
-		0F9EAE8E20C3342E00E2C5F3 /* Timer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EAE8D20C3342E00E2C5F3 /* Timer.xml */; };
-		0F9EAE9B20C35C3E00E2C5F3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9EAE9A20C35C3E00E2C5F3 /* Home.swift */; };
+		0F9EAE8E20C3342E00E2C5F3 /* TimerScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */; };
+		0F9EAE9B20C35C3E00E2C5F3 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9EAE9A20C35C3E00E2C5F3 /* HomeScreen.swift */; };
 		0FAC81EF20C4AB2800D69AB7 /* Main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC81EE20C4AB2800D69AB7 /* Main.xml */; };
-		0FAC81F120C4BEC600D69AB7 /* Header.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC81F020C4BEC600D69AB7 /* Header.xml */; };
+		0FAC81F120C4BEC600D69AB7 /* HeaderContainer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */; };
 		0FAC81F320C4C00700D69AB7 /* TimerPage.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0FAC81F220C4C00700D69AB7 /* TimerPage.xml */; };
+		0FBD036C20E8158B00FAEC7B /* TimerRow.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0FBD036B20E8158B00FAEC7B /* TimerRow.xml */; };
 		0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE767020A7D10D003225F0 /* DashboardSystem.swift */; };
 		0FBE767320A88D25003225F0 /* SetupSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE767220A88D25003225F0 /* SetupSystem.swift */; };
 		0FC08A4620840CFF0083E0B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC08A4520840CFE0083E0B3 /* AppDelegate.swift */; };
@@ -79,24 +80,25 @@
 		0F2C3F28209FD08700A417F1 /* DatabaseSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSystemTests.swift; sourceTree = "<group>"; };
 		0F3D4F5D2097392C00B88EDE /* Viewable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewable.swift; sourceTree = "<group>"; };
 		0F4AD8FA20A726AA00E1CD0E /* ViewableSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewableSystem.swift; sourceTree = "<group>"; };
-		0F4C9F8520C3A4EC000B760F /* Home.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Home.xml; sourceTree = "<group>"; };
+		0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HomeScreen.xml; sourceTree = "<group>"; };
 		0F777B8720ABDFAA008F7944 /* DashboardSystemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSystemTests.swift; sourceTree = "<group>"; };
 		0F9D930920BA10060027DE1D /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		0F9D930B20BA15160027DE1D /* OldDashboardScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = OldDashboardScreen.xml; sourceTree = "<group>"; };
 		0F9D930D20BA167E0027DE1D /* LogoBand.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LogoBand.xml; sourceTree = "<group>"; };
 		0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FamilyFriendsBand.xml; sourceTree = "<group>"; };
 		0F9D931420BA25DC0027DE1D /* Timer1.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Timer1.xml; sourceTree = "<group>"; };
-		0F9D931620BA265F0027DE1D /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		0F9D931620BA265F0027DE1D /* TimerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreen.swift; sourceTree = "<group>"; };
 		0F9D931820BAFF850027DE1D /* Boxes.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Boxes.xml; sourceTree = "<group>"; };
 		0F9D931A20BAFFBD0027DE1D /* BoxesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesViewController.swift; sourceTree = "<group>"; };
 		0F9D931C20BB00FE0027DE1D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0F9D931E20BB131D0027DE1D /* FullScreenView.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FullScreenView.xml; sourceTree = "<group>"; };
 		0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBox.xml; sourceTree = "<group>"; };
-		0F9EAE8D20C3342E00E2C5F3 /* Timer.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Timer.xml; sourceTree = "<group>"; };
-		0F9EAE9A20C35C3E00E2C5F3 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerScreen.xml; sourceTree = "<group>"; };
+		0F9EAE9A20C35C3E00E2C5F3 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		0FAC81EE20C4AB2800D69AB7 /* Main.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Main.xml; sourceTree = "<group>"; };
-		0FAC81F020C4BEC600D69AB7 /* Header.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Header.xml; sourceTree = "<group>"; };
+		0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HeaderContainer.xml; sourceTree = "<group>"; };
 		0FAC81F220C4C00700D69AB7 /* TimerPage.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerPage.xml; sourceTree = "<group>"; };
+		0FBD036B20E8158B00FAEC7B /* TimerRow.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerRow.xml; sourceTree = "<group>"; };
 		0FBE767020A7D10D003225F0 /* DashboardSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardSystem.swift; sourceTree = "<group>"; };
 		0FBE767220A88D25003225F0 /* SetupSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupSystem.swift; sourceTree = "<group>"; };
 		0FC08A4220840CFE0083E0B3 /* TIMII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIMII.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,16 +208,17 @@
 			isa = PBXGroup;
 			children = (
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
-				0F9EAE9A20C35C3E00E2C5F3 /* Home.swift */,
-				0F9D931620BA265F0027DE1D /* Timer.swift */,
+				0F9EAE9A20C35C3E00E2C5F3 /* HomeScreen.swift */,
+				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
 				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
-				0F4C9F8520C3A4EC000B760F /* Home.xml */,
-				0F9EAE8D20C3342E00E2C5F3 /* Timer.xml */,
-				0FAC81F020C4BEC600D69AB7 /* Header.xml */,
-				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
+				0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */,
+				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
+				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
 				0F9D930D20BA167E0027DE1D /* LogoBand.xml */,
+				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
 				0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */,
 				0FAC81F220C4C00700D69AB7 /* TimerPage.xml */,
+				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
 				0F9EAE8C20C332D400E2C5F3 /* Playground */,
 			);
 			path = Views;
@@ -393,9 +396,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F9EAE8E20C3342E00E2C5F3 /* Timer.xml in Resources */,
+				0F9EAE8E20C3342E00E2C5F3 /* TimerScreen.xml in Resources */,
 				0F9D931920BAFF850027DE1D /* Boxes.xml in Resources */,
-				0FAC81F120C4BEC600D69AB7 /* Header.xml in Resources */,
+				0FAC81F120C4BEC600D69AB7 /* HeaderContainer.xml in Resources */,
 				0FAC81F320C4C00700D69AB7 /* TimerPage.xml in Resources */,
 				0FC08A5020840D020083E0B3 /* LaunchScreen.storyboard in Resources */,
 				0F9D931020BA19E90027DE1D /* FamilyFriendsBand.xml in Resources */,
@@ -405,10 +408,11 @@
 				0F9D931520BA25DC0027DE1D /* Timer1.xml in Resources */,
 				0FC08A4D20840D020083E0B3 /* Assets.xcassets in Resources */,
 				0FAC81EF20C4AB2800D69AB7 /* Main.xml in Resources */,
+				0FBD036C20E8158B00FAEC7B /* TimerRow.xml in Resources */,
 				0F9D931F20BB131D0027DE1D /* FullScreenView.xml in Resources */,
 				0F9D930E20BA167E0027DE1D /* LogoBand.xml in Resources */,
 				0FE3DEFE208BB0A400D546BC /* GoogleService-Info.plist in Resources */,
-				0F4C9F8620C3A4EC000B760F /* Home.xml in Resources */,
+				0F4C9F8620C3A4EC000B760F /* HomeScreen.xml in Resources */,
 				0FC08A4B20840CFF0083E0B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -523,7 +527,7 @@
 				0F2A12462095309000D0E489 /* Countable.swift in Sources */,
 				0F2C3F03209EA08E00A417F1 /* Component.swift in Sources */,
 				0FDB818020B0CE2300E39E04 /* UIStyleSystem.swift in Sources */,
-				0F9D931720BA265F0027DE1D /* Timer.swift in Sources */,
+				0F9D931720BA265F0027DE1D /* TimerScreen.swift in Sources */,
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
@@ -536,7 +540,7 @@
 				0F9D930A20BA10060027DE1D /* TopViewController.swift in Sources */,
 				0F2C3F08209F4F6400A417F1 /* ComponentSystem.swift in Sources */,
 				0F3D4F5E2097392C00B88EDE /* Viewable.swift in Sources */,
-				0F9EAE9B20C35C3E00E2C5F3 /* Home.swift in Sources */,
+				0F9EAE9B20C35C3E00E2C5F3 /* HomeScreen.swift in Sources */,
 				0FC08A4620840CFF0083E0B3 /* AppDelegate.swift in Sources */,
 				0FDB818820B104F100E39E04 /* OldDashboardViewController.swift in Sources */,
 			);
