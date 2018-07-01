@@ -1,8 +1,8 @@
 <!-- Timer Box - this is a small box view for the timer -->
 <UIView
     backgroundColor="#C1E890"
-    height="150"
-    width="150"
+    height="200"
+    width="200"
     left="15"
     layer.shadowRadius="2.0"
     layer.shadowOpacity="1"

@@ -1,6 +1,6 @@
 <!-- Timer Row - this is a row view for the timer -->
 <UIView
-    backgroundColor="#7F7F7F"
+    backgroundColor="#BEBEBE"
     height="40"
     width="100%">
     

@@ -4,7 +4,7 @@
     <!-- Active Timer Bar -->
     <UIScrollView
         top="parent.safeAreaInsets.top + 100"
-        height="170"
+        height="220"
         backgroundColor="white"
         contentInsetAdjustmentBehavior="never">
         
@@ -18,7 +18,7 @@
     <UIScrollView
         top="previous.bottom + 5"
         height="100% - previous.height"
-        backgroundColor="#E5E5E5"
+        backgroundColor="#FFFFFF"
         contentInsetAdjustmentBehavior="never">
         
         <UIView xml="TimerRow.xml" left="0" top="0"/>

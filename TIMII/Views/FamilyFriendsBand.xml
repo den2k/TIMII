@@ -4,17 +4,26 @@
     <!-- 1 Avatar Circle -->
     <UIView>
         <UIView
-            width="40"
+            id="first"
+            width="80"
             height="width"
-            top="10"
-            left="0*60 + 10"
+            bottom="15"
+            left="10"
             layer.cornerRadius="width/2"
-            backgroundColor="blue"
+            backgroundColor="#EEE"
+        />
+        <UIView
+            width="70"
+            height="width"
+            bottom="20"
+            left="15"
+            layer.cornerRadius="width/2"
+            backgroundColor="#FFF"
         />
         <UILabel
-            width="40"
+            width="60"
             top="previous.bottom + 5"
-            left="0*60 + 10"
+            left="10/2 + 80/2 + text.length/2 - width/2"
             textAlignment="center"
             textColor="#404040"
             font="Avenir Next 10"
@@ -28,14 +37,14 @@
             width="40"
             height="width"
             top="10"
-            left="1*60 + 10"
+            left="#first.width + 20"
             layer.cornerRadius="width/2"
-            backgroundColor="blue"
+            backgroundColor="#FFF"
         />
         <UILabel
             width="40"
             top="previous.bottom + 5"
-            left="1*60 + 10"
+            left="#first.width + 20"
             textAlignment="center"
             textColor="#404040"
             font="Avenir Next 10"
@@ -49,14 +58,14 @@
             width="40"
             height="width"
             top="10"
-            left="2*60 + 10"
+            left="#first.width + 60 + 10"
             layer.cornerRadius="width/2"
-            backgroundColor="blue"
+            backgroundColor="#FFF"
             />
         <UILabel
             width="40"
             top="previous.bottom + 5"
-            left="2*60 + 10"
+            left="#first.width + 60 + 10"
             textAlignment="center"
             textColor="#404040"
             font="Avenir Next 10"
