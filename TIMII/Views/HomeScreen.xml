@@ -17,9 +17,9 @@
     <!-- List of Timers -->
     <UIScrollView
         top="previous.bottom + 5"
-        backgroundColor="white"
-        contentInsetAdjustmentBehavior="never"
-        contentSize.height="auto + 20">
+        height="100% - previous.height"
+        backgroundColor="blue"
+        contentInsetAdjustmentBehavior="never">
         
         <UIView xml="TimerRow.xml" left="0" top="0"/>
         <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
