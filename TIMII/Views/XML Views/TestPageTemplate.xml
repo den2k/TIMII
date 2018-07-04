@@ -1,0 +1,24 @@
+<!-- PageTemplate.xml - Page Background template -->
+ 
+ 
+ <UIView
+    
+    height="100%"
+    layer.cornerRadius="0"
+    left="0"
+    width="100%">
+    
+    <param name="text" type="String"/>
+    
+    <UILabel
+    font="30"
+    top="50% - height / 2 - parent.safeAreaInsets.bottom"
+    width="100%"
+    text="{text}"
+    textAlignment="center"
+    textColor="white"
+    />
+    
+    <children/>
+    
+</UIView>

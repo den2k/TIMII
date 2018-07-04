@@ -1,0 +1,6 @@
+<UIView
+    top="max(safeAreaInsets.top + 5, 15"
+    left="safeAreaInsets.left + 15"
+    bottom="100% - safeAreaInsets.bottom"
+    right="100% - safeAreaInsets.right + 15">
+</UIView>

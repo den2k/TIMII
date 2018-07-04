@@ -1,0 +1,6 @@
+framework module Pods_TIMII {
+  umbrella header "Pods-TIMII-umbrella.h"
+
+  export *
+  module * { export * }
+}
