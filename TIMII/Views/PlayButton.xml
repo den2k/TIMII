@@ -1,0 +1,24 @@
+<PlayButton
+    outlet="playButton">
+    
+    <!-- Floating button -->
+    <UIView
+        bottom="previous.bottom"
+        height="50"
+        left="0"
+        width="100%">
+        
+        <UIButton
+            backgroundColor="isToggled ? UIColor.green : UIColor.red"
+            top="10"
+            bottom="10"
+            layer.cornerRadius="5"
+            left="safeAreaInsets.left + 15"
+            right="safeAreaInsets.right + 15"
+            title="{isToggled ? 'Start' : 'Pause'}"
+            touchUpInside="{isToggled ? 'setUntoggled' : 'setToggled'}"
+        />
+    </UIView>
+    
+</PlayButton>
+

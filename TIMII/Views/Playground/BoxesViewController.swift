@@ -1,5 +1,6 @@
 //  Copyright © 2017 Schibsted. All rights reserved.
-import UIKit
+/*
+ import UIKit
 import Layout
 
 class BoxesViewController: UIViewController {
@@ -27,3 +28,4 @@ class BoxesViewController: UIViewController {
         }
     }
 }
+*/

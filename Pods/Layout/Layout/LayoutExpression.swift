@@ -396,9 +396,7 @@ struct LayoutExpression {
                 return nil
             }
             guard let value: Any = {
-                switch type.type {
-                case let .enum(_, values):
-                    return values[tail]
+                switch type.kind {
                 case let .options(_, values):
                     return values[tail]
                 case let .any(type as NSObject.Type):
@@ -477,7 +475,8 @@ struct LayoutExpression {
                                 return nil
                             }
                             return macroFn
-                        } else if let value = try constants(key) ?? node.constantValue(forSymbol: key) ?? staticConstant(for: key) {
+                        } else if let value = try constants(key) ?? type.values[key] ??
+                            node.constantValue(forSymbol: key) ?? staticConstant(for: key) {
                             allConstants[name] = value
                             return nil
                         } else if circular {
@@ -654,7 +653,7 @@ struct LayoutExpression {
             return nil
         }
         var symbols = expression.symbols
-        for symbol in ["font", "textColor", "textAlignment", "lineBreakMode"]
+        for symbol in ["font", "textColor", "textAlignment", "lineBreakMode", "titleColor", "titleLabel.font"]
             where node.viewExpressionTypes[symbol] != nil {
             symbols.insert(symbol)
         }
@@ -711,7 +710,7 @@ struct LayoutExpression {
                         }
                     } else {
                         previousAttributedString = NSAttributedString(string: htmlString, attributes: [
-                            NSAttributedStringKey.font: UIFont.systemFont(ofSize: UIFont.defaultSize),
+                            NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIFont.defaultSize),
                         ])
                     }
                 }
@@ -720,23 +719,31 @@ struct LayoutExpression {
                 let correctFont: UIFont
                 if symbols.contains("font"), let font = try node.value(forSymbol: "font") as? UIFont {
                     correctFont = font
+                } else if symbols.contains("titleLabel.font"),
+                    let font = try node.value(forSymbol: "titleLabel.font") as? UIFont {
+                    // TODO: find a less hacky solution for this
+                    correctFont = font
                 } else {
                     correctFont = .systemFont(ofSize: UIFont.defaultSize)
                 }
                 let range = NSMakeRange(0, result.string.utf16.count)
                 result.enumerateAttributes(in: range, options: []) { attribs, range, _ in
                     var attribs = attribs
-                    if let font = attribs[NSAttributedStringKey.font] as? UIFont {
+                    if let font = attribs[NSAttributedString.Key.font] as? UIFont {
                         let traits = font.fontDescriptor.symbolicTraits
                         var descriptor = correctFont.fontDescriptor
                         descriptor = descriptor.withSymbolicTraits(traits) ?? descriptor
-                        attribs[NSAttributedStringKey.font] = UIFont(descriptor: descriptor, size: correctFont.pointSize)
+                        attribs[NSAttributedString.Key.font] = UIFont(descriptor: descriptor, size: correctFont.pointSize)
                         result.setAttributes(attribs, range: range)
                     }
                 }
                 if symbols.contains("textColor"),
                     let color = try node.value(forSymbol: "textColor") as? UIColor {
-                    result.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: range)
+                    result.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
+                } else if symbols.contains("titleColor"),
+                    // TODO: support UIButton states (like selectedTitleColor, etc.) correctly
+                    let color = try node.value(forSymbol: "titleColor") as? UIColor {
+                    result.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
                 }
 
                 // Paragraph style
@@ -752,7 +759,7 @@ struct LayoutExpression {
                 let style = NSMutableParagraphStyle()
                 style.alignment = alignment
                 style.lineBreakMode = linebreakMode
-                result.addAttribute(NSAttributedStringKey.paragraphStyle, value: style, range: range)
+                result.addAttribute(NSAttributedString.Key.paragraphStyle, value: style, range: range)
 
                 // Substitutions
                 for (i, part) in parts.enumerated().reversed() {
@@ -801,13 +808,13 @@ struct LayoutExpression {
         func fontPart(for string: String) -> Any? {
             switch string.lowercased() {
             case "italic":
-                return UIFontDescriptorSymbolicTraits.traitItalic
+                return UIFontDescriptor.SymbolicTraits.traitItalic
             case "condensed":
-                return UIFontDescriptorSymbolicTraits.traitCondensed
+                return UIFontDescriptor.SymbolicTraits.traitCondensed
             case "expanded":
-                return UIFontDescriptorSymbolicTraits.traitExpanded
+                return UIFontDescriptor.SymbolicTraits.traitExpanded
             case "monospace", "monospaced":
-                return UIFontDescriptorSymbolicTraits.traitMonoSpace
+                return UIFontDescriptor.SymbolicTraits.traitMonoSpace
             case "system":
                 return UIFont.systemFont(ofSize: UIFont.defaultSize)
             case "systembold", "system-bold":
@@ -1135,26 +1142,6 @@ struct LayoutExpression {
         )
     }
 
-    init?(enumExpression: String, type: RuntimeType, for node: LayoutNode) {
-        guard case let .enum(_, values) = type.type else { preconditionFailure() }
-        self.init(
-            anyExpression: enumExpression,
-            type: type,
-            constants: { name in values[name] },
-            for: node
-        )
-    }
-
-    init?(optionsExpression: String, type: RuntimeType, for node: LayoutNode) {
-        guard case let .options(_, values) = type.type else { preconditionFailure() }
-        self.init(
-            anyExpression: optionsExpression,
-            type: type,
-            constants: { name in values[name] },
-            for: node
-        )
-    }
-
     init?(selectorExpression: String, for node: LayoutNode) {
         guard let expression = LayoutExpression(stringExpression: selectorExpression, for: node) else {
             return nil
@@ -1182,7 +1169,7 @@ struct LayoutExpression {
                         var invalidType: RuntimeType?
                         while let _parent = parent {
                             if let type = _parent._parameters[name] {
-                                switch type.type {
+                                switch type.kind {
                                 case let .any(subtype):
                                     switch subtype {
                                     case is String.Type,
@@ -1239,7 +1226,7 @@ struct LayoutExpression {
     }
 
     init?(expression: String, type: RuntimeType, for node: LayoutNode) {
-        switch type.type {
+        switch type.kind {
         case let .any(subtype):
             switch subtype {
             case is String.Type, is NSString.Type:
@@ -1263,12 +1250,8 @@ struct LayoutExpression {
             }
         case let .class(subtype):
             self.init(classExpression: expression, class: subtype, for: node)
-        case .struct:
+        case .struct, .options:
             self.init(anyExpression: expression, type: type, nullable: false, for: node)
-        case .enum:
-            self.init(enumExpression: expression, type: type, for: node)
-        case .options:
-            self.init(optionsExpression: expression, type: type, for: node)
         case .pointer("CGColor"):
             self.init(colorExpression: expression, type: type, for: node)
         case .pointer("CGImage"):

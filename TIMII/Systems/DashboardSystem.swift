@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct DashboardSystem : Component, Dashboard, Viewable, UIStyle
+struct DashboardSystem : Component, Dashboard, Viewable   //7.7.18 - comment out, UIStyle
 {
     // MARK: -- Properties --
     var ComponentDbName: String     = "Dashboards"
@@ -17,7 +17,7 @@ struct DashboardSystem : Component, Dashboard, Viewable, UIStyle
     
     // Dashboards are viewable and Full screen by default
     var isViewable: Bool            = true
-    var UIType: String              = UIStyleSystem.FullScreen.getUITypeTextLabel()
+    // 7.7.18 - commented out - var UIType: String              = UIStyleSystem.FullScreen.getUITypeTextLabel()
     
     
     // MARK: -- Methods --

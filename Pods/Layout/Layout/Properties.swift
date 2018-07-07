@@ -17,71 +17,60 @@ extension NSObject {
         var allProperties = [String: RuntimeType]()
         func addProperty(_ name: String, _ type: RuntimeType) {
             allProperties[name] = type
-            switch type.type {
+            switch type.kind {
             case let .struct(type):
                 switch type {
                 case "CGPoint":
-                    allProperties[name] = RuntimeType(CGPoint.self)
                     for key in ["x", "y"] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "CGSize":
-                    allProperties[name] = RuntimeType(CGSize.self)
                     for key in ["width", "height"] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "CGVector":
-                    allProperties[name] = RuntimeType(CGVector.self)
                     for key in ["dx", "dy"] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "CGRect":
-                    allProperties[name] = RuntimeType(CGRect.self)
-                    allProperties["\(name).origin"] = RuntimeType(CGPoint.self)
-                    allProperties["\(name).size"] = RuntimeType(CGSize.self)
+                    allProperties["\(name).origin"] = .cgPoint
+                    allProperties["\(name).size"] = .cgSize
                     for key in [
                         "x", "y",
                         "width", "height",
                         "origin.x", "origin.y",
                         "size.width", "size.height",
                     ] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "CGAffineTransform":
-                    allProperties[name] = RuntimeType(CGAffineTransform.self)
                     for key in [
                         "rotation",
                         "scale", "scale.x", "scale.y",
                         "translation.x", "translation.y",
                     ] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "CATransform3D":
-                    allProperties[name] = RuntimeType(CATransform3D.self)
                     for key in [
                         "rotation", "rotation.x", "rotation.y", "rotation.z",
                         "scale", "scale.x", "scale.y", "scale.z",
                         "translation.x", "translation.y", "translation.z",
                         "m34", // Used for perspective
                     ] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "UIEdgeInsets":
-                    allProperties[name] = RuntimeType(UIEdgeInsets.self)
                     for key in ["top", "left", "bottom", "right"] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "UIOffset":
-                    allProperties[name] = RuntimeType(UIOffset.self)
                     for key in ["horizontal", "vertical"] {
-                        allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 case "NSDirectionalEdgeInsets":
-                    if #available(iOS 11.0, *) {
-                        allProperties[name] = RuntimeType(NSDirectionalEdgeInsets.self)
-                        for key in ["top", "leading", "bottom", "trailing"] {
-                            allProperties["\(name).\(key)"] = RuntimeType(CGFloat.self)
-                        }
+                    for key in ["top", "leading", "bottom", "trailing"] {
+                        allProperties["\(name).\(key)"] = .cgFloat
                     }
                 default:
                     break
@@ -112,7 +101,7 @@ extension NSObject {
                     guard let type = RuntimeType(objCType: objCType) else {
                         continue
                     }
-                    if case let .any(type) = type.type, type is Bool.Type,
+                    if case let .any(type) = type.kind, type is Bool.Type,
                         let attrib = attribs.first(where: { $0.hasPrefix("Gis") }) {
                         name = String(attrib.unicodeScalars.dropFirst())
                     }
@@ -155,17 +144,13 @@ extension NSObject {
                 guard let type = RuntimeType(objCType: objCType) else {
                     continue
                 }
-                if case let .any(type) = type.type, type is Bool.Type,
+                if case let .any(type) = type.kind, type is Bool.Type,
                     instancesRespond(to: Selector(isName)) {
                     name = isName
                 }
                 addProperty(name, type)
             }
-            #if swift(>=4.1)
-                ctype.deallocate()
-            #else
-                ctype.deallocate(capacity: maxChars)
-            #endif
+            ctype.deallocate()
         }
         // Accessibility properties (TODO: find a way to automate this)
         if conforms(to: UIAccessibilityIdentification.self) ||
@@ -174,11 +159,11 @@ extension NSObject {
         }
         addProperty("isAccessibilityElement", .bool)
         addProperty("accessibilityLabel", .string)
-        // TODO: iOS 11 addProperty("accessibilityAttributedLabel", .nsAttributedString)
+        addProperty("accessibilityAttributedLabel", .nsAttributedString)
         addProperty("accessibilityHint", .string)
-        // TODO: iOS 11 addProperty("accessibilityAttributedHint", .nsAttributedString)
+        addProperty("accessibilityAttributedHint", .nsAttributedString)
         addProperty("accessibilityValue", .string)
-        // TODO: iOS 11 addProperty("accessibilityAttributedValue", .nsAttributedString)
+        addProperty("accessibilityAttributedValue", .nsAttributedString)
         addProperty("accessibilityTraits", .uiAccessibilityTraits)
         addProperty("accessibilityFrame", .cgRect)
         addProperty("accessibilityPath", .uiBezierPath)
@@ -239,7 +224,7 @@ extension NSObject {
             guard responds(to: selector) else {
                 return false
             }
-            switch type.type {
+            switch type.kind {
             case let .any(type):
                 let method = class_getMethodImplementation(Swift.type(of: self), selector)
                 switch type {
@@ -288,6 +273,21 @@ extension NSObject {
             return false
         }
         guard responds(to: Selector(setter)) else {
+            if #available(iOS 11.0, *) {} else {
+                switch key {
+                case "accessibilityAttributedLabel":
+                    accessibilityLabel = (value as? NSAttributedString)?.string
+                    return true
+                case "accessibilityAttributedHint":
+                    accessibilityHint = (value as? NSAttributedString)?.string
+                    return true
+                case "accessibilityAttributedValue":
+                    accessibilityValue = (value as? NSAttributedString)?.string
+                    return true
+                default:
+                    break
+                }
+            }
             if self is NSValue {
                 throw SymbolError("Cannot set property \(key) of immutable \(Swift.type(of: self))", for: key)
             }
@@ -591,6 +591,18 @@ extension NSObject {
                 throw SymbolError("Unknown property \(key) of UIOffset", for: key)
             }
         default:
+            if #available(iOS 11.0, *) {} else {
+                switch key {
+                case "accessibilityAttributedLabel":
+                    return accessibilityLabel.map(NSAttributedString.init(string:))
+                case "accessibilityAttributedHint":
+                    return accessibilityHint.map(NSAttributedString.init(string:))
+                case "accessibilityAttributedValue":
+                    return accessibilityValue.map(NSAttributedString.init(string:))
+                default:
+                    break
+                }
+            }
             let mirror = Mirror(reflecting: self)
             if mirror.children.contains(where: { $0.label == key }) {
                 throw LayoutError("\(classForCoder) \(key) property must be prefixed with @objc to be accessed at runtime")

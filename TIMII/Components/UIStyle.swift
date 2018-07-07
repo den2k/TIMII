@@ -5,7 +5,7 @@
 //  Created by Daddy on 5/19/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
-
+/*
 import UIKit
 
 protocol UIStyle
@@ -31,3 +31,4 @@ extension UIColor {
         )
     }
 }
+*/

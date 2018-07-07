@@ -5,7 +5,7 @@
 //  Created by Daddy on 5/19/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
-
+/*
 import Foundation
 
 enum UIStyleSystem : UIStyle
@@ -31,7 +31,7 @@ enum UIStyleSystem : UIStyle
         }
     }
 }
-
+*/
 // https://stackoverflow.com/questions/24011170/how-to-make-an-enum-conform-to-a-protocol-in-swift//protocol
 // ExampleProtocol {
 //    var simpleDescription: String { get }

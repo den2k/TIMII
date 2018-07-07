@@ -1,7 +1,7 @@
 <!-- Timer Row - this is a row view for the timer -->
 <UIView
     backgroundColor="#BEBEBE"
-    height="40"
+    height="50"
     width="100%">
     
     <!-- Task Name Label -->
@@ -19,11 +19,18 @@
     <UILabel
         width="50%"
         top="50% - height/2"
-        right="15"
-        textAlignment="right"
+        left="50% - width/2"
+        textAlignment="center"
         textColor="white"
-        font="Avenir Next 14"
-        text="Today: 01:01"
+        font="Avenir Next 10"
+        text="Today:1h1m"
     />
     
+    <!-- Play Button -->
+    <UIViewController
+        xml="PlayButton.xml"
+        width="25%"
+        right="0"
+    />
+
 </UIView>

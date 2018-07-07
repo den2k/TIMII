@@ -5,7 +5,7 @@
 //  Created by Daddy on 5/19/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
-
+/*
 import SnapKit
 
 class OldDashboardViewController : UIViewController
@@ -48,3 +48,4 @@ class OldDashboardViewController : UIViewController
         dismiss(animated: true, completion: nil)
     }
 }
+*/
