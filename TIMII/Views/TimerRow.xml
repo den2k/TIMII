@@ -26,9 +26,9 @@
         text="Today:1h1m"
     />
     
-    <!-- Play Button -->
+    <!-- Start Button -->
     <UIViewController
-        xml="PlayButton.xml"
+        xml="StartButton.xml"
         width="25%"
         right="0"
     />

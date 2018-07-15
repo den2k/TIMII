@@ -1,5 +1,5 @@
-<PlayButton
-    outlet="playButton">
+<StartButton
+    outlet="startButton">
     
     <!-- Floating button -->
     <UIView
@@ -9,16 +9,16 @@
         width="100%">
         
         <UIButton
-            backgroundColor="isToggled ? UIColor.green : UIColor.red"
             top="10"
             bottom="10"
-            layer.cornerRadius="5"
             left="safeAreaInsets.left + 15"
             right="safeAreaInsets.right + 15"
-            title="{isToggled ? 'Start' : 'Pause'}"
-            touchUpInside="{isToggled ? 'setUntoggled' : 'setToggled'}"
+            backgroundColor="isToggled ? UIColor.red : UIColor.green"
+            layer.cornerRadius="5"
+            title="{isToggled ? 'Pause' : 'Start'}"
+            touchUpInside="{isToggled ? 'pauseTimer' : 'startTimer'}"
         />
     </UIView>
     
-</PlayButton>
+</StartButton>
 

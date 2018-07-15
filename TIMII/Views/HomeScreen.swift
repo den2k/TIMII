@@ -3,7 +3,7 @@
  
 import UIKit
 
-class HomeScreen: UIViewController, UIScrollViewDelegate {
+class HomeScreen: UIViewController, UIScrollViewDelegate
+{
     @IBOutlet var scrollView: UIScrollView?
-    
 }

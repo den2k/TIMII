@@ -4,7 +4,7 @@
 import Layout
 
 class BoxesViewController: UIViewController {
-    var toggled = false {
+    var isTimerRunning = false {
         didSet {
             layoutNode?.setState(["isToggled": toggled])
         }

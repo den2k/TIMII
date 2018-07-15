@@ -31,20 +31,44 @@
         text="Today:1h1m"
     />
     
-
-    <!-- Time Label -->
+    <!-- Time Counter Labels -->
     <UILabel
-        width="100%"
-        top="50% - height / 2"
+        top="50% - height/2"
+        left="33% - width/2"
         textAlignment="center"
         textColor="white"
         font="Avenir Next ultraLight 35"
-        text="00:01"
+        text="12"
+    />
+    <UILabel
+        top="previous.top"
+        left="50% - width/2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next ultraLight 35"
+        text=":"
     />
     
-    <!-- Play Button -->
+    <TimerSecondCounter
+        top="previous.top"
+        right="33% - width/2"
+    />
+    
+    <!--
+    <UILabel
+        top="previous.top"
+        right="33% - width/2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next ultraLight 35"
+        text="23"
+    />
+    -->
+
+    <!-- Start Button -->
     <UIViewController
-        xml="PlayButton.xml"
+        xml="StartButton.xml"
     />
     
 </UIView>
+

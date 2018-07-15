@@ -1,5 +1,5 @@
 <!-- Timer Screen -->
-<Timer view.backgroundColor="#FFFFFF">
+<TimerScreen view.backgroundColor="#FFFFFF">
     
     <UIScrollView
         outlet="scrollView"
@@ -43,4 +43,4 @@
         numberOfPages="3"
     />
     
-</Timer>
+</TimerScreen>

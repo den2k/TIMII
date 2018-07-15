@@ -1,4 +1,4 @@
-<!-- Timer page - this is a whole screen view for the timer -->
+<!-- TimerScreen page - this is a whole screen view for the timer -->
 <UIView>
     
     <param name="text" type="String"/>
