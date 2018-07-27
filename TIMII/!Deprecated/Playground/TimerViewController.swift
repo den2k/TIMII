@@ -52,9 +52,9 @@ class TimerViewController: UIViewController {
         
         timer.invalidate()
         counter = 0
-        taskTimerHourLabel.text = TimeCounterSystem.timeHourString(time: counter)
-        taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(time: counter)
-        taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(time: counter)
+        taskTimerHourLabel.text = TimeCounterSystem.timeHourString(counter)
+        taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(counter)
+        taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(counter)
         
     }
     
@@ -83,9 +83,9 @@ class TimerViewController: UIViewController {
     @objc func updateTimer() {
         
         counter += 1
-        taskTimerHourLabel.text = TimeCounterSystem.timeHourString(time: counter)
-        taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(time: counter)
-        taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(time: counter)
+        taskTimerHourLabel.text = TimeCounterSystem.timeHourString(counter)
+        taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(counter)
+        taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(counter)
         
     }
     
@@ -144,7 +144,7 @@ class TimerViewController: UIViewController {
         let taskName = self.taskNameTextField.text ?? ""
         let taskStartDate = Date()
         let timeAccrued = counter
-        self.task = Task(taskName: taskName, taskStartDate: taskStartDate, timeAccrued: timeAccrued)
+        self.task = Task(taskName, taskStartDate, timeAccrued)
         
     }
     
@@ -183,12 +183,12 @@ class TimerViewController: UIViewController {
         // Set up views if editing an existing Task.
         if let task =  self.task {
             
-            navigationItem.title = task.taskName
-            taskNameTextField.text = task.taskName
+    //        navigationItem.title = task.taskName
+  //          taskNameTextField.text = task.taskName
             counter = task.timeAccrued
-            taskTimerHourLabel.text = TimeCounterSystem.timeHourString(time: counter)
-            taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(time: counter)
-            taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(time: counter)
+            taskTimerHourLabel.text = TimeCounterSystem.timeHourString(counter)
+            taskTimerMinuteLabel.text = TimeCounterSystem.timeMinuteString(counter)
+            taskTimerSecondLabel.text = TimeCounterSystem.timeSecondString(counter)
             
         }
         

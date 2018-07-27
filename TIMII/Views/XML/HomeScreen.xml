@@ -8,9 +8,17 @@
         backgroundColor="white"
         contentInsetAdjustmentBehavior="never">
         
+        <!-- New call to TimerBoxViewController and not TimerBox.xml -->
+        <TimerBoxViewController left="10" top="10"/>
+        <TimerBoxViewController left="previous.right+10" top="previous.top" />
+        <TimerBoxViewController left="previous.right+10" top="previous.top" />
+        
+        <!-- Original call to TimerBox
         <UIView xml="TimerBox.xml" left="10" top="10"/>
         <UIView xml="TimerBox.xml" left="previous.right+10" top="previous.top" />
         <UIView xml="TimerBox.xml" left="previous.right+10" top="previous.top" />
+        -->
+         
     </UIScrollView>
 
 

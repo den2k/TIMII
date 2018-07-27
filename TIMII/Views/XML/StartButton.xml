@@ -1,7 +1,6 @@
 <StartButton
     outlet="startButton">
     
-    <!-- Floating button -->
     <UIView
         bottom="previous.bottom"
         height="50"
@@ -13,9 +12,9 @@
             bottom="10"
             left="safeAreaInsets.left + 15"
             right="safeAreaInsets.right + 15"
-            backgroundColor="isToggled ? UIColor.red : UIColor.green"
             layer.cornerRadius="5"
             title="{isToggled ? 'Pause' : 'Start'}"
+            backgroundColor="isToggled ? UIColor.red : UIColor.green"
             touchUpInside="{isToggled ? 'pauseTimer' : 'startTimer'}"
         />
     </UIView>

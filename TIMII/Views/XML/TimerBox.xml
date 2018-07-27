@@ -1,0 +1,75 @@
+<!-- Timer Box - this is a small box view for the timer -->
+
+<UIView
+    backgroundColor="#C1E890"
+    height="180"
+    width="180"
+    left="15"
+    layer.shadowRadius="2.0"
+    layer.shadowOpacity="1"
+    layer.shadowColor="#AAA"
+    layer.shadowOffset.width="5.0"
+    layer.shadowOffset.height="5.0">
+
+    <!--
+    <TimerBoxViewController
+    top="previous.top"
+    right="33% - width/2"
+    />
+    -->
+    
+    
+    <!-- Task Name Label -->
+    <UILabel
+        width="100%"
+        top="height / 2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next 16"
+        text="Eat"
+    />
+
+    <!-- Daily Total Label -->
+    <UILabel
+        width="100%"
+        top="previous.bottom"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next 10"
+        text="Today:1h1m"
+    />
+    
+    <!-- Time Counter Labels -->
+    <UILabel
+        top="50% - height/2"
+        left="33% - width/2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next ultraLight 35"
+        text="01"
+    />
+    <UILabel
+        top="previous.top"
+        left="50% - width/2"
+        textAlignment="center"
+        textColor="white"
+        font="Avenir Next ultraLight 35"
+        text=":"
+    />
+    <UILabel
+     top="previous.top"
+     right="33% - width/2"
+     textAlignment="center"
+     textColor="white"
+     font="Avenir Next ultraLight 35"
+     text="02"
+     />
+
+    <!-- Start Button -->
+    <!--
+    <UIViewController
+        xml="StartButton.xml"
+    />
+    -->
+
+</UIView>

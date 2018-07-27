@@ -56,6 +56,9 @@
 		0FFE08FE20F1883D000D1797 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE08FD20F1883D000D1797 /* TimerViewController.swift */; };
 		0FFE090020F18872000D1797 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE08FF20F18872000D1797 /* Task.swift */; };
 		68DF88FBB5A5249AE0ED4D27 /* Pods_TIMII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08313F8366613AE86B862013 /* Pods_TIMII.framework */; };
+		950ECEDB210B759F00DE2D49 /* TimerBoxViewController.xml in Resources */ = {isa = PBXBuildFile; fileRef = 950ECEDA210B759F00DE2D49 /* TimerBoxViewController.xml */; };
+		958CC74C21077F5600AF1D25 /* TimerBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74B21077F5600AF1D25 /* TimerBoxViewController.swift */; };
+		958CC74E21077FF800AF1D25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74D21077FF800AF1D25 /* Colors.swift */; };
 		ADA225979611C9863A9F3B7A /* Pods_TIMIITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +128,9 @@
 		0FFE08FF20F18872000D1797 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3AF127DD080902506260D304 /* Pods-TIMIITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.debug.xcconfig"; sourceTree = "<group>"; };
 		895FAF54A017BE3E109C7142 /* Pods-TIMIITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.release.xcconfig"; sourceTree = "<group>"; };
+		950ECEDA210B759F00DE2D49 /* TimerBoxViewController.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBoxViewController.xml; sourceTree = "<group>"; };
+		958CC74B21077F5600AF1D25 /* TimerBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBoxViewController.swift; sourceTree = "<group>"; };
+		958CC74D21077FF800AF1D25 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C050721365E00ED5D13829A6 /* Pods-TIMII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMII.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIMII/Pods-TIMII.release.xcconfig"; sourceTree = "<group>"; };
 		EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TIMIITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD72B46EC2DC3BE7B62DB7AF /* Pods-TIMII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMII.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIMII/Pods-TIMII.debug.xcconfig"; sourceTree = "<group>"; };
@@ -206,6 +212,7 @@
 		0F74F9902084591C00CF1CD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				958CC74D21077FF800AF1D25 /* Colors.swift */,
 				0F2C3F02209EA08E00A417F1 /* Component.swift */,
 				0F2A12452095309000D0E489 /* Countable.swift */,
 				0F2A12432095108600D0E489 /* Dashboard.swift */,
@@ -219,22 +226,11 @@
 		0F777B8920ABE182008F7944 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				950ECEDC210B86A300DE2D49 /* XML */,
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
-				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
 				0F9EAE9A20C35C3E00E2C5F3 /* HomeScreen.swift */,
-				0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */,
 				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
-				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
-				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
-				0F9D930D20BA167E0027DE1D /* LogoBand.xml */,
-				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
-				0F48FB4E20F1410E006C3E16 /* StartButton.swift */,
-				0F48FB5220F1427C006C3E16 /* StartButton.xml */,
-				0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */,
-				0FAC81F220C4C00700D69AB7 /* TimerPage.xml */,
-				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
-				0F75C85220F2A0F90015E7EB /* TimerSecondCounter.swift */,
-				0F9EAE8C20C332D400E2C5F3 /* Playground */,
+				958CC74B21077F5600AF1D25 /* TimerBoxViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +238,8 @@
 		0F9EAE8C20C332D400E2C5F3 /* Playground */ = {
 			isa = PBXGroup;
 			children = (
+				0F75C85220F2A0F90015E7EB /* TimerSecondCounter.swift */,
+				0F48FB4E20F1410E006C3E16 /* StartButton.swift */,
 				0FFE08FD20F1883D000D1797 /* TimerViewController.swift */,
 				0F9D930B20BA15160027DE1D /* OldDashboardScreen.xml */,
 				0F9D931820BAFF850027DE1D /* Boxes.xml */,
@@ -257,6 +255,7 @@
 		0FBE766F20A7CC6F003225F0 /* !Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				0F9EAE8C20C332D400E2C5F3 /* Playground */,
 				0F0DAA3120A5400900DD30DD /* EntitySystem.swift */,
 			);
 			path = "!Deprecated";
@@ -305,6 +304,24 @@
 				EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		950ECEDC210B86A300DE2D49 /* XML */ = {
+			isa = PBXGroup;
+			children = (
+				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
+				0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */,
+				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
+				950ECEDA210B759F00DE2D49 /* TimerBoxViewController.xml */,
+				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
+				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
+				0F9D930D20BA167E0027DE1D /* LogoBand.xml */,
+				0F48FB5220F1427C006C3E16 /* StartButton.xml */,
+				0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */,
+				0FAC81F220C4C00700D69AB7 /* TimerPage.xml */,
+				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
+			);
+			path = XML;
 			sourceTree = "<group>";
 		};
 		DE13BA447CE6BFE4D937335C /* Pods */ = {
@@ -412,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F9EAE8E20C3342E00E2C5F3 /* TimerScreen.xml in Resources */,
+				950ECEDB210B759F00DE2D49 /* TimerBoxViewController.xml in Resources */,
 				0F9D931920BAFF850027DE1D /* Boxes.xml in Resources */,
 				0FAC81F120C4BEC600D69AB7 /* HeaderContainer.xml in Resources */,
 				0FAC81F320C4C00700D69AB7 /* TimerPage.xml in Resources */,
@@ -548,6 +566,7 @@
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
 				0F0DAA3220A5400900DD30DD /* EntitySystem.swift in Sources */,
+				958CC74E21077FF800AF1D25 /* Colors.swift in Sources */,
 				0FDB817E20B0CDDF00E39E04 /* UIStyle.swift in Sources */,
 				0FBE767320A88D25003225F0 /* SetupSystem.swift in Sources */,
 				0F2C3F0E209F963900A417F1 /* CountableSystem.swift in Sources */,
@@ -556,6 +575,7 @@
 				0F2A12442095108600D0E489 /* Dashboard.swift in Sources */,
 				0FFE090020F18872000D1797 /* Task.swift in Sources */,
 				0F48FB4F20F1410E006C3E16 /* StartButton.swift in Sources */,
+				958CC74C21077F5600AF1D25 /* TimerBoxViewController.swift in Sources */,
 				0F9D930A20BA10060027DE1D /* TopViewController.swift in Sources */,
 				0F2C3F08209F4F6400A417F1 /* ComponentSystem.swift in Sources */,
 				0F3D4F5E2097392C00B88EDE /* Viewable.swift in Sources */,

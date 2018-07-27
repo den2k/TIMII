@@ -6,31 +6,34 @@
     
     <!-- Task Name Label -->
     <UILabel
-        width="50%"
+        width="60%"
         left="15"
         top="50% - height/2"
         textAlignment="left"
         textColor="white"
         font="Avenir Next 18"
-        text="Eating"
+        text="Eating this way yeah boy"
     />
+    
+    <!-- Start Button -->
+    <!--
+    <UIViewController
+        xml="StartButton.xml"
+        width="25%"
+        left="60% - width/2"
+    />
+     -->
     
     <!-- Daily Total Label -->
     <UILabel
         width="50%"
         top="50% - height/2"
-        left="50% - width/2"
-        textAlignment="center"
+        right="10"
+        textAlignment="right"
         textColor="white"
         font="Avenir Next 10"
         text="Today:1h1m"
     />
     
-    <!-- Start Button -->
-    <UIViewController
-        xml="StartButton.xml"
-        width="25%"
-        right="0"
-    />
 
 </UIView>
