@@ -1,0 +1,56 @@
+<!-- Login Screen -->
+<UIView
+    backgroundColor="UIColor.cinnabar">
+    
+    <UIImageView
+        image="timer.png"
+        top="25% - height/2"
+        left="50% - width/2"
+        width="80"
+        height="80"
+    />
+
+    <UILabel
+        text="TIMII"
+        top="previous.bottom + 10"
+        textAlignment="center"
+        width="100%"
+        textColor="UIColor.white"
+        font="Avenir Next ultraLight 28"
+    />
+
+    <UITextField
+        placeholder="user Name / email"
+        top="previous.bottom + 50"
+        left="50% - width/2"
+        width="100% - 40"
+        height="50"
+        layer.cornerRadius="5"
+        backgroundColor="UIColor.cararra"
+        textAlignment="center"
+    />
+    
+    <UITextField
+        placeholder="password"
+        top="previous.bottom + 20"
+        left="50% - width/2"
+        width="100% - 40"
+        height="50"
+        layer.cornerRadius="5"
+        backgroundColor="UIColor.cararra"
+        textAlignment="center"
+    />
+    
+    <UIButton
+        top="previous.bottom + 50"
+        left="50% - width/2"
+        width="100% - 40"
+        height="50"
+        layer.cornerRadius="5"
+        title="Login"
+        backgroundColor="UIColor.summerGreen"
+        touchUpInside=""
+    />
+
+</UIView>
+

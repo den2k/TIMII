@@ -1,4 +1,4 @@
-<!-- TimerBoxViewController - this is a square box view for the timer -->
+<!-- TimerBox - A square box view for the timer -->
 <UIView
     backgroundColor="isTimerRunning ? #D64541 : #26A65B"
     height="180"

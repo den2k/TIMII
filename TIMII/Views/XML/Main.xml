@@ -18,10 +18,12 @@
     />
     
     <!-- Timer Screen -->
-<!--    <UIViewController-->
-<!--        xml="TimerScreen.xml"-->
-<!--        tabBarItem.image="timer.png"-->
-<!--        title="Timer"-->
-<!--    />-->
-        
+    <!--
+    <UIViewController
+    xml="TimerScreen.xml"
+    tabBarItem.image="timer.png"
+    title="Timer"
+    />
+    -->
+
 </UITabBarController>

@@ -10,9 +10,9 @@
         
         <!-- 7.27.18 - New call to TimerBoxViewController and not TimerBox.xml -->
         <!-- 7.27.18 - Why doesn't it show up multiple times? -->
-        <TimerBoxViewController left="10" top="10"></TimerBoxViewController>
-        <TimerBoxViewController left="previous.right+10" top="previous.top"></TimerBoxViewController>
-        <TimerBoxViewController left="previous.right+10" top="previous.top"></TimerBoxViewController>
+        <TimerBox left="10" top="10"></TimerBox>
+        <TimerBox left="previous.right+10" top="previous.top"></TimerBox>
+        <TimerBox left="previous.right+10" top="previous.top"></TimerBox>
         
         <!-- Original call to TimerBox
         <UIView xml="TimerBox.xml" left="10" top="10"/>

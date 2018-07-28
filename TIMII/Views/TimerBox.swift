@@ -1,5 +1,5 @@
 //
-//  TimerBoxViewController.swift
+//  TimerBox.swift
 //  TIMII
 //
 //  Created by Dennis Huang on 7/24/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Layout
 
-class TimerBoxViewController: UIViewController, LayoutLoading
+class TimerBox: UIViewController, LayoutLoading
 {
     // MARK: ---------- Properties and Outlets ----------
     // Outlet Expressions cannot be changed and are static. To have a dynamic changing
@@ -33,7 +33,7 @@ class TimerBoxViewController: UIViewController, LayoutLoading
     {
         super.viewDidLoad()
         self.loadLayout(
-            named: "TimerBoxViewController.xml",
+            named: "TimerBox.xml",
             state:[
                 "name": taskTimerNameLabel,
                 "minute": taskTimerMinuteLabel,
@@ -111,7 +111,7 @@ class TimerBoxViewController: UIViewController, LayoutLoading
 }
 
 
-extension TimerBoxViewController: UITextFieldDelegate
+extension TimerBox: UITextFieldDelegate
 {
     // This section is related to the task label - text field manipulation, etc.
     
