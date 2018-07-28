@@ -1,6 +1,6 @@
 <!-- TimerBox - A square box view for the timer -->
 <UIView
-    backgroundColor="isTimerRunning ? #D64541 : #26A65B"
+    backgroundColor="isTimerRunning ? UIColor.valencia : UIColor.eucalyptus"
     height="180"
     width="180"
     layer.shadowRadius="2.0"

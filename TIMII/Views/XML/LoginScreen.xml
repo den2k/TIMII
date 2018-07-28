@@ -1,15 +1,17 @@
 <!-- Login Screen -->
 <UIView
-    backgroundColor="UIColor.cinnabar">
+    backgroundColor="UIColor.salem">
     
+    <!-- TIMII Logo -->
     <UIImageView
         image="timer.png"
-        top="25% - height/2"
+        top="isKeyboardVisible ? 12% - height/2 : 30% - height/2"
         left="50% - width/2"
-        width="80"
-        height="80"
+        width="60"
+        height="60"
     />
 
+    <!-- TIMII -->
     <UILabel
         text="TIMII"
         top="previous.bottom + 10"
@@ -19,33 +21,36 @@
         font="Avenir Next ultraLight 28"
     />
 
+    <!-- user name / email -->
     <UITextField
-        placeholder="user Name / email"
-        top="previous.bottom + 50"
+        placeholder="user name / email"
+        top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
-        height="50"
+        height="45"
         layer.cornerRadius="5"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
     
+    <!-- password -->
     <UITextField
         placeholder="password"
-        top="previous.bottom + 20"
+        top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
-        height="50"
+        height="45"
         layer.cornerRadius="5"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
     
+    <!-- Login Button -->
     <UIButton
-        top="previous.bottom + 50"
+        top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
-        height="50"
+        height="65"
         layer.cornerRadius="5"
         title="Login"
         backgroundColor="UIColor.summerGreen"

@@ -10,13 +10,52 @@ import UIKit
 import Firebase
 import Layout
 
-class LoginScreen: UIViewController, LayoutLoading
+class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
 {
-    override func viewDidLoad() {
+    var isKeyboardVisible = false
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
         self.loadLayout(
-            named: "LoginScreen.xml"
+            named: "LoginScreen.xml",
+            state:[
+                "isKeyboardVisible": isKeyboardVisible
+            ]
         )
+    }
+    
+    // Dismiss the keyboard after RETURN press
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return false
+    }
+    
+    @objc func keyboardWillShow(notification: Notification)
+    {
+        isKeyboardVisible = true
+        updateView()
+    }
+    
+    @objc func keyboardWillHide(notification: Notification)
+    {
+        isKeyboardVisible = false
+        updateView()
+    }
+
+    private func updateView()
+    {
+        // Calling setState() on a LayoutNode after it has been created will
+        // trigger an update. The update causes all expressions in that node
+        // and its children to be re-evaluated.
+        self.layoutNode?.setState([
+            "isKeyboardVisible": isKeyboardVisible
+        ])
     }
 }
 
