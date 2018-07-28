@@ -29,6 +29,13 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         )
     }
     
+    @objc func createScreen()
+    {
+        let screen = CreateScreen()
+        present(screen, animated: true, completion: nil)
+    }
+    
+    
     // Dismiss the keyboard after RETURN press
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {

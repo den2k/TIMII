@@ -1,29 +1,29 @@
-<!-- Login Screen -->
+<!-- Create Screen -->
 <UIView
-    backgroundColor="UIColor.salem">
+    backgroundColor="UIColor.silver">
     
     <!-- TIMII Logo -->
     <UIImageView
         image="timer.png"
-        top="isKeyboardVisible ? 12% - height/2 : 30% - height/2"
+        top="isKeyboardVisible ? 8% - height/2 : 26% - height/2"
         left="50% - width/2"
         width="60"
         height="60"
     />
-
+    
     <!-- TIMII -->
     <UILabel
         text="TIMII"
         top="previous.bottom + 10"
         textAlignment="center"
         width="100%"
-        textColor="UIColor.white"
+        textColor="UIColor.black"
         font="Avenir Next ultraLight 28"
     />
-
-    <!-- user name / email -->
+    
+    <!-- email -->
     <UITextField
-        placeholder="user name / email"
+        placeholder="email"
         top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
@@ -44,28 +44,41 @@
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
+
+    <!-- password verify -->
+    <UITextField
+        placeholder="verify password"
+        top="previous.bottom + 15"
+        left="50% - width/2"
+        width="100% - 40"
+        height="45"
+        layer.cornerRadius="5"
+        backgroundColor="UIColor.cararra"
+        textAlignment="center"
+    />
     
-    <!-- Login Button -->
+    <!-- Create Button -->
     <UIButton
-        title="Sign in"
-        backgroundColor="UIColor.summerGreen"
-        touchUpInside=""
         top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
         height="65"
         layer.cornerRadius="5"
+        title="Create Account"
+        backgroundColor="UIColor.oldBrick"
+        touchUpInside=""
     />
     
-    <!-- Sign Up -->
+    <!-- Sign in -->
     <UIButton
-        title="Or create an account"
-        touchUpInside="createScreen"
+        title="Or sign in"
+        touchUpInside="loginScreen"
         top="previous.bottom + 10"
         left="50% - width/2"
         width="100% - 40"
         height="auto"
     />
-
+    
 </UIView>
+
 
