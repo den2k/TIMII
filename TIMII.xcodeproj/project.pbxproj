@@ -255,6 +255,7 @@
 		0FBE766F20A7CC6F003225F0 /* !Deprecated */ = {
 			isa = PBXGroup;
 			children = (
+				0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */,
 				0F9EAE8C20C332D400E2C5F3 /* Playground */,
 				0F0DAA3120A5400900DD30DD /* EntitySystem.swift */,
 			);
@@ -312,12 +313,11 @@
 				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
 				0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */,
 				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
-				950ECEDA210B759F00DE2D49 /* TimerBoxViewController.xml */,
 				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
 				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
 				0F9D930D20BA167E0027DE1D /* LogoBand.xml */,
 				0F48FB5220F1427C006C3E16 /* StartButton.xml */,
-				0F9EAE8A20C2429900E2C5F3 /* TimerBox.xml */,
+				950ECEDA210B759F00DE2D49 /* TimerBoxViewController.xml */,
 				0FAC81F220C4C00700D69AB7 /* TimerPage.xml */,
 				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
 			);

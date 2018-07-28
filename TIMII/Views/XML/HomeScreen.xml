@@ -8,10 +8,11 @@
         backgroundColor="white"
         contentInsetAdjustmentBehavior="never">
         
-        <!-- New call to TimerBoxViewController and not TimerBox.xml -->
-        <TimerBoxViewController left="10" top="10"/>
-        <TimerBoxViewController left="previous.right+10" top="previous.top" />
-        <TimerBoxViewController left="previous.right+10" top="previous.top" />
+        <!-- 7.27.18 - New call to TimerBoxViewController and not TimerBox.xml -->
+        <!-- 7.27.18 - Why doesn't it show up multiple times? -->
+        <TimerBoxViewController left="10" top="10"></TimerBoxViewController>
+        <TimerBoxViewController left="previous.right+10" top="previous.top"></TimerBoxViewController>
+        <TimerBoxViewController left="previous.right+10" top="previous.top"></TimerBoxViewController>
         
         <!-- Original call to TimerBox
         <UIView xml="TimerBox.xml" left="10" top="10"/>
@@ -30,21 +31,15 @@
         contentInsetAdjustmentBehavior="never">
         
         <UIView xml="TimerRow.xml" left="0" top="0"/>
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
-        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 2" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
+        <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
     </UIScrollView>
 
 

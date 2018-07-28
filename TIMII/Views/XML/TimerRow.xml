@@ -1,6 +1,6 @@
 <!-- Timer Row - this is a row view for the timer -->
 <UIView
-    backgroundColor="#BEBEBE"
+    backgroundColor="#FCFCFC"
     height="50"
     width="100%">
     
@@ -10,9 +10,9 @@
         left="15"
         top="50% - height/2"
         textAlignment="left"
-        textColor="white"
+        textColor="#404040"
         font="Avenir Next 18"
-        text="Eating this way yeah boy"
+        text="Eating"
     />
     
     <!-- Start Button -->
@@ -30,7 +30,7 @@
         top="50% - height/2"
         right="10"
         textAlignment="right"
-        textColor="white"
+        textColor="#404040"
         font="Avenir Next 10"
         text="Today:1h1m"
     />

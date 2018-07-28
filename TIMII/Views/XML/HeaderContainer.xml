@@ -10,6 +10,6 @@
     <UIView xml="FamilyFriendsBand.xml"
         height="70"
         top="previous.bottom"
-        backgroundColor="#EEE"
+        backgroundColor="#FCFCFC"
     />
 </UIView>
