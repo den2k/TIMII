@@ -60,7 +60,7 @@
     <!-- Sign Up -->
     <UIButton
         title="Or create an account"
-        touchUpInside="createScreen"
+        touchUpInside="createAccountScreen"
         top="previous.bottom + 10"
         left="50% - width/2"
         width="100% - 40"

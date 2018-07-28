@@ -4,7 +4,7 @@
 import UIKit
 import Layout
 
-class CreateScreen: UIViewController, LayoutLoading
+class CreateAccountScreen: UIViewController, LayoutLoading
 {    
     var isKeyboardVisible = false
     
@@ -16,7 +16,7 @@ class CreateScreen: UIViewController, LayoutLoading
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
         self.loadLayout(
-            named: "CreateScreen.xml",
+            named: "CreateAccountScreen.xml",
             state:[
                 "isKeyboardVisible": isKeyboardVisible
             ]
@@ -55,6 +55,6 @@ class CreateScreen: UIViewController, LayoutLoading
         // and its children to be re-evaluated.
         self.layoutNode?.setState([
             "isKeyboardVisible": isKeyboardVisible
-            ])
+        ])
     }
 }

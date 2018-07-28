@@ -29,9 +29,9 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         )
     }
     
-    @objc func createScreen()
+    @objc func createAccountScreen()
     {
-        let screen = CreateScreen()
+        let screen = CreateAccountScreen()
         present(screen, animated: true, completion: nil)
     }
     

@@ -180,7 +180,6 @@ public class LayoutNode: NSObject {
     private var _observingFrame = false
     private func _stopObservingFrame() {
         if _observingFrame {
-            removeObserver(self, forKeyPath: "_view.translatesAutoresizingMaskIntoConstraints")
             removeObserver(self, forKeyPath: "_view.frame")
             removeObserver(self, forKeyPath: "_view.bounds")
             _observingFrame = false
@@ -217,7 +216,6 @@ public class LayoutNode: NSObject {
             _observingContentSizeCategory = true
         }
         if !_observingFrame {
-            addObserver(self, forKeyPath: "_view.translatesAutoresizingMaskIntoConstraints", options: [.new, .old], context: nil)
             addObserver(self, forKeyPath: "_view.frame", options: .new, context: nil)
             addObserver(self, forKeyPath: "_view.bounds", options: .new, context: nil)
             _observingFrame = true
@@ -274,25 +272,12 @@ public class LayoutNode: NSObject {
         change: [NSKeyValueChangeKey: Any]?,
         context _: UnsafeMutableRawPointer?
     ) {
-        guard _setupComplete, _updateLock == 0, _evaluating.isEmpty,
-            let view = _view, let new = change?[.newKey] else {
+        guard root._setupComplete, root._updateLock == 0, root._evaluating.isEmpty,
+            let view = _view, !view.bounds.size.isNearlyEqual(to: _previousBounds.size) else {
             return
         }
-        switch new {
-        case is CGRect:
-            if !view.bounds.size.isNearlyEqual(to: _previousBounds.size) {
-                if root._setupComplete, root._updateLock == 0, root._evaluating.isEmpty {
-                    root.update()
-                    _previousBounds = view.bounds
-                }
-            }
-        case let useAutoresizing as Bool:
-            if useAutoresizing != change?[.oldKey] as? Bool {
-                update()
-            }
-        default:
-            preconditionFailure()
-        }
+        root.update()
+        _previousBounds = view.bounds
     }
 
     @objc private func contentSizeCategoryChanged() {
@@ -1117,6 +1102,10 @@ public class LayoutNode: NSObject {
             // TODO: disallow setting view properties directly if type is a UIViewController
             symbols.formUnion(validKeys(in: UIView.expressionTypes))
         }
+        if type.swiftType == UIVisualEffect.self {
+            // TODO: any way to generalize this?
+            symbols.formUnion(RuntimeType.uiBlurEffect_Style.values.keys)
+        }
         symbols.formUnion(type.values.keys)
         // TODO: basing the search on type is not especially effective because
         // you can use symbols of other types inside an expression, but if we
@@ -1857,7 +1846,7 @@ public class LayoutNode: NSObject {
                 if viewControllerClass != nil, viewControllerExpressionTypes[symbol] != nil {
                     fallback = { [unowned self] in
                         guard let viewController = self._viewController else {
-                            throw SymbolError("Undefined symbol \(symbol)", for: symbol)
+                            throw SymbolError("Unknown property \(symbol)", for: symbol)
                         }
                         return try viewController.value(forSymbol: symbol)
                     }
@@ -1869,14 +1858,14 @@ public class LayoutNode: NSObject {
                             return value
                         }
                         guard let view = self._view else {
-                            throw SymbolError("Undefined symbol \(symbol)", for: symbol)
+                            throw SymbolError("Unknown property \(symbol)", for: symbol)
                         }
                         return try view.value(forSymbol: symbol)
                     }
                 } else {
                     fallback = { [unowned self] in
                         guard let view = self._view else {
-                            throw SymbolError("Undefined symbol \(symbol)", for: symbol)
+                            throw SymbolError("Unknown property \(symbol)", for: symbol)
                         }
                         return try view.value(forSymbol: symbol)
                     }
@@ -1929,7 +1918,7 @@ public class LayoutNode: NSObject {
                     default:
                         getter = {
                             // TODO: should we allow view properties to be referenced?
-                            throw SymbolError("Undefined symbol \(tail)", for: symbol)
+                            throw SymbolError("Unknown property \(tail)", for: symbol)
                         }
                     }
                 case "previous" where layoutSymbols.contains(tail):
