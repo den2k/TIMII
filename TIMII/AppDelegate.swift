@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Programmic method to display View Controllers
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = LoginScreen()
+        window?.rootViewController = UINavigationController(rootViewController: Main())
 
         return true
     }

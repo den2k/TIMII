@@ -8,6 +8,7 @@
 
 import UIKit
 import Layout
+import Firebase
 
 class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
 {
@@ -16,28 +17,41 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        navigationController?.isNavigationBarHidden = true
+//        navigationController?.isNavigationBarHidden = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
 
         self.loadLayout(
             named: "Main.xml"
         )
-        
     }
     
-    func layoutDidLoad(_ layoutNode: LayoutNode) {
-        guard let tabBarController = layoutNode.viewController as? UITabBarController else {
-            return
-        }
-        
+    func layoutDidLoad(_ layoutNode: LayoutNode)
+    {
+        guard let tabBarController = layoutNode.viewController as? UITabBarController else { return }
         tabBarController.selectedIndex = selectedTab
         tabBarController.delegate = self
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        guard let index = tabBarController.viewControllers?.index(of: viewController) else {
-            return
-        }
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController)
+    {
+        guard let index = tabBarController.viewControllers?.index(of: viewController) else { return }
         selectedTab = index
+    }
+    
+    // 7.30.18 - Always call from 'main' VC and not from the login VC because
+    // 'dismiss' and not 'present' is best practice.
+    // https://www.reddit.com/r/swift/comments/817mgv/dismiss_vs_present_view_controller/
+    @objc func handleLogout()
+    {
+//        do {
+//            try Auth.auth().signOut()
+//        } catch let logoutError {
+//            print(logoutError)
+//        }
+        
+        let screen = LoginScreen()
+//        screen.main = self              // allows dismiss to work from login?? -- used to show the name at top
+        present(screen, animated: true, completion: nil)
     }
 }
 

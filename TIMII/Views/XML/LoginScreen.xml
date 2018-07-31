@@ -5,7 +5,7 @@
     <!-- TIMII Logo -->
     <UIImageView
         image="timer.png"
-        top="isKeyboardVisible ? 12% - height/2 : 30% - height/2"
+        top="isKeyboardVisible ? 12% - height/2 : 28% - height/2"
         left="50% - width/2"
         width="60"
         height="60"
@@ -21,9 +21,11 @@
         font="Avenir Next ultraLight 28"
     />
 
-    <!-- user name / email -->
+    <!-- email -->
     <UITextField
-        placeholder="user name / email"
+        outlet="emailTextField"
+        placeholder="enter your email"
+        text="{email}"
         top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
@@ -35,7 +37,9 @@
     
     <!-- password -->
     <UITextField
-        placeholder="password"
+        outlet="passwordTextField"
+        placeholder="enter your password"
+        text="{password}"
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
@@ -49,7 +53,7 @@
     <UIButton
         title="Sign in"
         backgroundColor="UIColor.summerGreen"
-        touchUpInside=""
+        touchUpInside="handleLogin"
         top="previous.bottom + 30"
         left="50% - width/2"
         width="100% - 40"
