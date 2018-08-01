@@ -24,9 +24,8 @@ class CreateAccountScreen: UIViewController, LayoutLoading
     }
     
     @objc func loginScreen()
-    {
-        let screen = LoginScreen()
-        present(screen, animated: true, completion: nil)
+    {   // dismiss to LoginScreen
+        dismiss(animated: true, completion: nil)
     }
     
     // Dismiss the keyboard after RETURN press
