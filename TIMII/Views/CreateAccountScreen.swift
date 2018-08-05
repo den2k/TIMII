@@ -3,10 +3,15 @@
 
 import UIKit
 import Layout
+import Firebase
 
 class CreateAccountScreen: UIViewController, LayoutLoading
 {    
     var isKeyboardVisible = false
+    
+    // Create Account Properties
+    @IBOutlet var emailTextField : UITextField?
+    @IBOutlet var passwordTextField : UITextField?
     
     override func viewDidLoad()
     {
@@ -55,5 +60,24 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         self.layoutNode?.setState([
             "isKeyboardVisible": isKeyboardVisible
         ])
+    }
+    
+    @objc func handleCreateAccount()
+    {
+        guard let email = emailTextField?.text, let password = passwordTextField?.text else
+        {
+            print("Form is not valid. Unable to create account.")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion:
+        {(user, error) in
+            if error != nil
+            {
+                print(error ?? "Error creating user.")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+        })
     }
 }

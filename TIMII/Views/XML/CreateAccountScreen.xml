@@ -1,11 +1,11 @@
 <!-- Create Account Screen -->
 <UIView
-    backgroundColor="UIColor.silver">
+    backgroundColor="UIColor.lightTan">
     
     <!-- TIMII Logo -->
     <UIImageView
         image="timer.png"
-        top="isKeyboardVisible ? 8% - height/2 : 26% - height/2"
+        top="isKeyboardVisible ? 8% - height/2 : 24% - height/2"
         left="50% - width/2"
         width="60"
         height="60"
@@ -23,24 +23,26 @@
     
     <!-- email -->
     <UITextField
+        outlet = "emailTextField"
         placeholder="email"
-        top="previous.bottom + 30"
+        top="previous.bottom + 20"
         left="50% - width/2"
         width="100% - 40"
-        height="45"
-        layer.cornerRadius="5"
+        height="44"
+        layer.cornerRadius="22"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
     
     <!-- password -->
     <UITextField
+        outlet = "passwordTextField"
         placeholder="password"
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
-        height="45"
-        layer.cornerRadius="5"
+        height="44"
+        layer.cornerRadius="22"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
@@ -51,32 +53,33 @@
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
-        height="45"
-        layer.cornerRadius="5"
+        height="44"
+        layer.cornerRadius="22"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
     
     <!-- Create Button -->
     <UIButton
+        touchUpInside="handleCreateAccount"
+        title="Create Account"
         top="previous.bottom + 30"
         left="50% - width/2"
-        width="100% - 40"
-        height="65"
-        layer.cornerRadius="5"
-        title="Create Account"
-        backgroundColor="UIColor.oldBrick"
-        touchUpInside=""
+        width="100% - 120"
+        height="66"
+        layer.cornerRadius="33"
+        backgroundColor="UIColor.camo"
     />
     
     <!-- Sign in -->
     <UIButton
-        title="Or sign in"
         touchUpInside="loginScreen"
-        top="previous.bottom + 10"
+        title="Or sign in"
+        top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
         height="auto"
+        titleColor="UIColor.white"
     />
     
 </UIView>

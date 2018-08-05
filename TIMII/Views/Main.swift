@@ -17,11 +17,12 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        checkIfUserIsLoggedIn()
+        
 //        navigationController?.isNavigationBarHidden = true
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
 
-        checkIfUserIsLoggedIn()
-        
         self.loadLayout(
             named: "Main.xml"
         )
@@ -45,15 +46,15 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     // https://www.reddit.com/r/swift/comments/817mgv/dismiss_vs_present_view_controller/
     @objc func handleLogout()
     {
-        do
-        {
+        do {
             try Auth.auth().signOut()
         } catch let logoutError {
             print(logoutError)
         }
         
         let login = LoginScreen()
-        present(login, animated: true, completion: nil)
+        print("Present Login Screen.")
+        present(login, animated: false, completion: nil)
     }
     
     func checkIfUserIsLoggedIn()
@@ -63,7 +64,7 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
         }
         else
         {
-            print("User is signed in")
+            print("User is signed in.")
             return
         }
     }

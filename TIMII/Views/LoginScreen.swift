@@ -18,6 +18,7 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
     // Login Properties
     @IBOutlet var emailTextField : UITextField?
     @IBOutlet var passwordTextField : UITextField?
+    @IBOutlet var errorLabel : UILabel?
     
     override func viewDidLoad()
     {
@@ -37,7 +38,8 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
             state:[
                 "isKeyboardVisible": isKeyboardVisible,
                 "email": emailTextField?.text as Any,
-                "password": passwordTextField?.text as Any
+                "password": passwordTextField?.text as Any,
+                "error": errorLabel?.text as Any
             ]
         )
     }
@@ -74,7 +76,8 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         // trigger an update. The update causes all expressions in that node
         // and its children to be re-evaluated.
         self.layoutNode?.setState([
-            "isKeyboardVisible": isKeyboardVisible
+            "isKeyboardVisible": isKeyboardVisible,
+            "error": errorLabel?.text as Any
         ])
     }
     
@@ -82,7 +85,7 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
     @objc func handleLogin() {
         guard let email = emailTextField?.text, let password = passwordTextField?.text else
         {
-            print("Form is not valid.")
+            print("Form is not valid. Unable to login.")
             return
         }
         
@@ -90,11 +93,14 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         {(user, error) in
             if error != nil
             {
-                print(error ?? "Error")
+                print(error ?? "Error signing in user.")
+                self.errorLabel?.text = error?.localizedDescription
+                self.updateView()
                 return
             }
+            // Dismiss to Main screen
+            print("Sign in successful.")
             self.dismiss(animated: true, completion: nil)
         })
-
     }
 }

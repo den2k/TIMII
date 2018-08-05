@@ -6,10 +6,10 @@ target 'TIMII' do
   use_frameworks!
 
   # Pods for Firebase
-  pod 'FirebaseUI/Database', '~> 5.0'
-  pod 'FirebaseUI/Storage', '~> 5.0'
-  pod 'FirebaseUI/Auth', '~> 5.0'
-  pod 'FirebaseUI/Facebook', '~> 5.0'
+  pod 'FirebaseUI'
+  #pod 'FirebaseUI/Storage'
+  #pod 'FirebaseUI/Auth'
+  #pod 'FirebaseUI/Google'
   
   # Pods for TIMII
   pod 'Firebase/Core'

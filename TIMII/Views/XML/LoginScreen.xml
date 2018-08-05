@@ -1,36 +1,49 @@
 <!-- Login Screen -->
 <UIView
-    backgroundColor="UIColor.salem">
+    backgroundColor="UIColor.softWhite">
     
     <!-- TIMII Logo -->
     <UIImageView
         image="timer.png"
-        top="isKeyboardVisible ? 12% - height/2 : 28% - height/2"
+        top="isKeyboardVisible ? 11% - height/2 : 26% - height/2"
         left="50% - width/2"
         width="60"
         height="60"
     />
 
-    <!-- TIMII -->
+    <!-- TIMII Name -->
     <UILabel
         text="TIMII"
         top="previous.bottom + 10"
         textAlignment="center"
         width="100%"
-        textColor="UIColor.white"
+        textColor="UIColor.black"
         font="Avenir Next ultraLight 28"
     />
 
+    <!-- error -->
+    <UILabel
+        outlet="errorLabel"
+        text="{error}"
+        top="previous.bottom + 10"
+        left="50% - width/2"
+        textAlignment="center"
+        width="60%"
+        textColor="UIColor.red"
+        numberOfLines="4"
+        font="Avenir Next 16"
+    />
+    
     <!-- email -->
     <UITextField
         outlet="emailTextField"
         placeholder="enter your email"
         text="{email}"
-        top="previous.bottom + 30"
+        top="previous.bottom + 20"
         left="50% - width/2"
         width="100% - 40"
-        height="45"
-        layer.cornerRadius="5"
+        height="46"
+        layer.cornerRadius="23"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
@@ -43,32 +56,33 @@
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
-        height="45"
-        layer.cornerRadius="5"
+        height="46"
+        layer.cornerRadius="23"
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
     
-    <!-- Login Button -->
+    <!-- Sign in Button -->
     <UIButton
-        title="Sign in"
-        backgroundColor="UIColor.summerGreen"
         touchUpInside="handleLogin"
+        title="Sign in"
+        backgroundColor="UIColor.mintGreen"
         top="previous.bottom + 30"
         left="50% - width/2"
-        width="100% - 40"
-        height="65"
-        layer.cornerRadius="5"
+        width="100% - 120"
+        height="66"
+        layer.cornerRadius="33"
     />
     
     <!-- Sign Up -->
     <UIButton
-        title="Or create an account"
         touchUpInside="createAccountScreen"
-        top="previous.bottom + 10"
+        title="Or create an account"
+        top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
         height="auto"
+        titleColor="#9AACB1"
     />
 
 </UIView>
