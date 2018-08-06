@@ -10,8 +10,6 @@
         width="60"
         height="60"
     />
-    
-    <!-- TIMII -->
     <UILabel
         text="TIMII"
         top="previous.bottom + 10"
@@ -19,6 +17,19 @@
         width="100%"
         textColor="UIColor.black"
         font="Avenir Next ultraLight 45"
+    />
+    
+    <!-- error -->
+    <UILabel
+        outlet="errorLabel"
+        text="{error}"
+        top="previous.bottom + 10"
+        left="50% - width/2"
+        textAlignment="center"
+        width="65%"
+        textColor="UIColor.red"
+        numberOfLines="4"
+        font="Avenir Next 16"
     />
     
     <!-- email -->

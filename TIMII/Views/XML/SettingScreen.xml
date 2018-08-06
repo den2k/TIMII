@@ -1,0 +1,23 @@
+<!-- Setting Screen -->
+<SettingScreen view.backgroundColor="white">
+    
+    <UIView
+        width="100%"
+        height="100%">
+        
+        <!-- Logout Button -->
+        <UIButton
+            touchUpInside="handleLogout"
+            title="Logout"
+            backgroundColor="UIColor.mintGreen"
+            top="50% - height/2"
+            left="50% - width/2"
+            width="100% - 120"
+            height="66"
+            layer.cornerRadius="33"
+        />
+        
+    </UIView>
+    
+</SettingScreen>
+

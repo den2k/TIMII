@@ -12,6 +12,7 @@ class CreateAccountScreen: UIViewController, LayoutLoading
     // Create Account Properties
     @IBOutlet var emailTextField : UITextField?
     @IBOutlet var passwordTextField : UITextField?
+    @IBOutlet var errorLabel : UILabel?
     
     override func viewDidLoad()
     {
@@ -23,7 +24,8 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         self.loadLayout(
             named: "CreateAccountScreen.xml",
             state:[
-                "isKeyboardVisible": isKeyboardVisible
+                "isKeyboardVisible": isKeyboardVisible,
+                "error": errorLabel?.text as Any
             ]
         )
     }
@@ -58,7 +60,8 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         // trigger an update. The update causes all expressions in that node
         // and its children to be re-evaluated.
         self.layoutNode?.setState([
-            "isKeyboardVisible": isKeyboardVisible
+            "isKeyboardVisible": isKeyboardVisible,
+            "error": errorLabel?.text as Any
         ])
     }
     
@@ -75,6 +78,8 @@ class CreateAccountScreen: UIViewController, LayoutLoading
             if error != nil
             {
                 print(error ?? "Error creating user.")
+                self.errorLabel?.text = error?.localizedDescription
+                self.updateView()
                 return
             }
             // TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen

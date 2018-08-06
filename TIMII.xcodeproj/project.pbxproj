@@ -64,6 +64,8 @@
 		958CC74E21077FF800AF1D25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74D21077FF800AF1D25 /* Colors.swift */; };
 		95F54AC1210CF45D007D7764 /* CreateAccountScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */; };
 		95F54AC3210D07F5007D7764 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */; };
+		95FCE6AD2117FF4A000C9029 /* SettingScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95FCE6AC2117FF4A000C9029 /* SettingScreen.xml */; };
+		95FCE6AF21180070000C9029 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FCE6AE21180070000C9029 /* SettingScreen.swift */; };
 		ADA225979611C9863A9F3B7A /* Pods_TIMIITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,8 @@
 		958CC74D21077FF800AF1D25 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CreateAccountScreen.xml; sourceTree = "<group>"; };
 		95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
+		95FCE6AC2117FF4A000C9029 /* SettingScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SettingScreen.xml; sourceTree = "<group>"; };
+		95FCE6AE21180070000C9029 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		C050721365E00ED5D13829A6 /* Pods-TIMII.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMII.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIMII/Pods-TIMII.release.xcconfig"; sourceTree = "<group>"; };
 		EBF0F31A9D413FFA47865DDC /* Pods_TIMIITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TIMIITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD72B46EC2DC3BE7B62DB7AF /* Pods-TIMII.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMII.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIMII/Pods-TIMII.debug.xcconfig"; sourceTree = "<group>"; };
@@ -240,8 +244,9 @@
 			children = (
 				950ECEDC210B86A300DE2D49 /* XML */,
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
-				95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */,
 				0F9EAE9A20C35C3E00E2C5F3 /* HomeScreen.swift */,
+				95FCE6AE21180070000C9029 /* SettingScreen.swift */,
+				95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */,
 				950ECEDD210BF42A00DE2D49 /* LoginScreen.swift */,
 				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
 				958CC74B21077F5600AF1D25 /* TimerBox.swift */,
@@ -326,8 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
-				95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */,
 				0F4C9F8520C3A4EC000B760F /* HomeScreen.xml */,
+				95FCE6AC2117FF4A000C9029 /* SettingScreen.xml */,
+				95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */,
 				950ECEDF210BFCCD00DE2D49 /* LoginScreen.xml */,
 				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
 				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
@@ -456,6 +462,7 @@
 			files = (
 				0F9EAE8E20C3342E00E2C5F3 /* TimerScreen.xml in Resources */,
 				950ECEDB210B759F00DE2D49 /* TimerBox.xml in Resources */,
+				95FCE6AD2117FF4A000C9029 /* SettingScreen.xml in Resources */,
 				0F9D931920BAFF850027DE1D /* Boxes.xml in Resources */,
 				0FAC81F120C4BEC600D69AB7 /* HeaderContainer.xml in Resources */,
 				0FAC81F320C4C00700D69AB7 /* TimerPage.xml in Resources */,
@@ -650,6 +657,7 @@
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
+				95FCE6AF21180070000C9029 /* SettingScreen.swift in Sources */,
 				0F0DAA3220A5400900DD30DD /* EntitySystem.swift in Sources */,
 				958CC74E21077FF800AF1D25 /* Colors.swift in Sources */,
 				0FDB817E20B0CDDF00E39E04 /* UIStyle.swift in Sources */,

@@ -10,8 +10,6 @@
         width="60"
         height="60"
     />
-
-    <!-- TIMII Name -->
     <UILabel
         text="TIMII"
         top="previous.bottom + 10"
@@ -28,7 +26,7 @@
         top="previous.bottom + 10"
         left="50% - width/2"
         textAlignment="center"
-        width="60%"
+        width="65%"
         textColor="UIColor.red"
         numberOfLines="4"
         font="Avenir Next 16"

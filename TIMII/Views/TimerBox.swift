@@ -106,7 +106,6 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         textField.resignFirstResponder()
         return true
     }
-
     
     @objc private func startApp()
     {

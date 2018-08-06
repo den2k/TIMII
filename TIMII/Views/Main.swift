@@ -17,11 +17,10 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         checkIfUserIsLoggedIn()
         
 //        navigationController?.isNavigationBarHidden = true
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
 
         self.loadLayout(
             named: "Main.xml"

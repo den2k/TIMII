@@ -3,6 +3,7 @@
     backgroundColor="isTimerRunning ? UIColor.porcelain : UIColor.camo"
     height="180"
     width="100% - 20"
+    layer.cornerRadius="90"
     layer.shadowRadius="2.0"
     layer.shadowOpacity="1"
     layer.shadowColor="#AAA"

@@ -18,13 +18,11 @@
     />
     
     <!-- Setting Screen -->
-    <!--
     <UIViewController
         xml="SettingScreen.xml"
-        tabBarItem.image="home.png"
-        title="Home"
+        tabBarItem.image="setting.png"
+        title="Setting"
     />
-     -->
 
     <!-- Timer Screen -->
     <!--
