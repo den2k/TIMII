@@ -77,7 +77,11 @@ class CreateAccountScreen: UIViewController, LayoutLoading
                 print(error ?? "Error creating user.")
                 return
             }
-            self.dismiss(animated: true, completion: nil)
+            // TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen
+            // DONE: https://stackoverflow.com/questions/3224328/how-to-dismiss-2-modal-view-controllers-in-succession/44583711#44583711
+//            self.dismiss(animated: true, completion: nil)
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+            
         })
     }
 }

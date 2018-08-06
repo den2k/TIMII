@@ -7,9 +7,12 @@
     />
 
     <!-- Family and Friends Bar -->
+    <!-- 8.5.18 - Looks like cluster. Taking out the FF Band
     <UIView xml="FamilyFriendsBand.xml"
         height="70"
         top="previous.bottom"
         backgroundColor="#FCFCFC"
     />
+    -->
+    
 </UIView>
