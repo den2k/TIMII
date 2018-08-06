@@ -9,7 +9,6 @@
         contentInsetAdjustmentBehavior="never">
         
         <!-- 7.27.18 - New call to TimerBoxViewController and not TimerBox.xml -->
-        <!-- 7.27.18 - Why doesn't it show up multiple times? -->
         <TimerBox left="10" top="10"></TimerBox>
         <TimerBox left="10" top="210"></TimerBox>
         
@@ -23,6 +22,9 @@
 
 
     <!-- List of Timers -->
+    <!-- 8.5.18 - removed row of timers. Moving List of timers to
+     either another page or only via search.
+     
     <UIScrollView
         top="previous.bottom + 5"
         height="100% - previous.height"
@@ -40,6 +42,7 @@
         <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
         <UIView xml="TimerRow.xml" left="0" top="previous.bottom + 10" />
     </UIScrollView>
+    -->
 
 
 </HomeScreen>

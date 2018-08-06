@@ -17,6 +17,15 @@
         title="Home"
     />
     
+    <!-- Setting Screen -->
+    <!--
+    <UIViewController
+        xml="SettingScreen.xml"
+        tabBarItem.image="home.png"
+        title="Home"
+    />
+     -->
+
     <!-- Timer Screen -->
     <!--
     <UIViewController
