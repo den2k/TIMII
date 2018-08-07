@@ -13,13 +13,12 @@
 
 import UIKit
 import Layout
+import Firebase
 
 class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
 {
     
 // MARK: ---------- CLASS PROPERTIES & INITIATIONS ----------
-// Outlet Expressions cannot be changed and are static. To have a dynamic changing
-// expression / variable - we cannot use Outlets.
 // Note: Outlet expressions must be set using a constant or literal value, and cannot
 // be changed once set. Attempting to set the outlet using a state variable or other
 // dynamic value will result in an error.
@@ -31,7 +30,7 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     var counter: Double = 0
     var timerAccuracy = 0.1         // tenth of a second accuracy
     var timer = Timer()             // what is this?
-    var pauseTimerDate = Date()     // what is this?
+    var pauseTimerDate = Date()     // holds the timer value in case of suspend to background
     var isTimerRunning = false      // Timer is NOT running
 
     override func viewDidLoad()
@@ -135,5 +134,13 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         timer.invalidate()
         isTimerRunning = false
         print("App moved to background! \(Date()) \(pauseTimerDate) counter: \(counter)")
+        
+        // Save to Firebase the timer values
+        // /<Timers>/<userid>/+<taskid>
+        let componentName = "Timers"
+        guard let uId = Auth.auth().currentUser?.uid else { return }
+        let value = timerSecondLabel
+        let db = DatabaseSystem()
+        db.addUserComponentId(componentName, uId, value)
     }
 }

@@ -27,12 +27,6 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
-        // 7.30.18 - Temporary code for testing XML views. Works.
-//        let email = UITextField()     // replaces emailTextField?.text
-//        let password = UITextField()  // replaces passwordTextField?.text
-//        email.text = "ellie@eaton.com"
-//        password.text = "12345"
-        
         self.loadLayout(
             named: "LoginScreen.xml",
             state:[

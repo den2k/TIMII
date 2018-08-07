@@ -1,4 +1,6 @@
 <!-- Create Account Screen -->
+<!-- TODO: 8.7.18 - Add hide screen for password to be unreadable - DONE: 8.7.18 -->
+
 <UIView
     backgroundColor="UIColor.lightTan">
     
@@ -49,6 +51,7 @@
     <UITextField
         outlet = "passwordTextField"
         placeholder="password"
+        isSecureTextEntry="true"
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
@@ -57,10 +60,9 @@
         backgroundColor="UIColor.cararra"
         textAlignment="center"
     />
-
-    <!-- password verify -->
     <UITextField
         placeholder="verify password"
+        isSecureTextEntry="true"
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"

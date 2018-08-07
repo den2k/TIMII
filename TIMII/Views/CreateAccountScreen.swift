@@ -1,5 +1,12 @@
 //  Created by Daddy on 7/28/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
+//
+// TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen - DONE: https://stackoverflow.com/questions/3224328/how-to-dismiss-2-modal-view-controllers-in-succession/44583711#44583711
+// TODO: 8.6.18 - Added user info to Firebase - uid, email, name, password - DONE: 8.7.18
+// TODO: 8.7.18 - Refactor keyboard specific items to separate file
+// TODO: 8.7.18 - Refactor UUID in createUser as its not best practice and long
+// TODO: 8.7.18 - Add 1 to Firebase Member Countable once member is added successfully - DONE: 8.7.18
+// TODO: 8.7.18 - Add Verify Password matches error handler
 
 import UIKit
 import Layout
@@ -30,10 +37,8 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         )
     }
     
-    @objc func loginScreen()
-    {   // dismiss to LoginScreen
-        dismiss(animated: true, completion: nil)
-    }
+    // dismiss to LoginScreen
+    @objc func loginScreen() { dismiss(animated: true, completion: nil) }
     
     // Dismiss the keyboard after RETURN press
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
@@ -82,11 +87,18 @@ class CreateAccountScreen: UIViewController, LayoutLoading
                 self.updateView()
                 return
             }
-            // TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen
-            // DONE: https://stackoverflow.com/questions/3224328/how-to-dismiss-2-modal-view-controllers-in-succession/44583711#44583711
-//            self.dismiss(animated: true, completion: nil)
-            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
             
+            // 8.7.18 - Saving new member information to Firebase and increment Countable
+            // /Members/<membercount>/[values]
+            // /Countables/Members/<membercount>
+            let componentName = "Members"
+            let uid = UUID().uuidString
+            let values = ["email": email, "password": password]
+            let db = DatabaseSystem()
+            db.addUserComponentUpdateCountable(componentName, uid, values)
+            
+            // Dismiss both present CreateAccount VC and Login VC to arrive at Main
+            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
         })
     }
 }

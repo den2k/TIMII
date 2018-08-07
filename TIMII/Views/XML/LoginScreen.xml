@@ -1,4 +1,6 @@
 <!-- Login Screen -->
+<!-- TODO: 8.7.18 - Add hide screen for password to be unreadable - DONE: 8.7.18 -->
+
 <UIView
     backgroundColor="UIColor.softWhite">
     
@@ -51,6 +53,7 @@
         outlet="passwordTextField"
         placeholder="enter your password"
         text="{password}"
+        isSecureTextEntry="true"
         top="previous.bottom + 15"
         left="50% - width/2"
         width="100% - 40"
