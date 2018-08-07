@@ -113,8 +113,8 @@ struct DatabaseSystem
                 data["\(componentDbName)"] = count
                 currentData.value = data        // Update Countable
 
-                // Add Component Value
-                //  /<componentDbName>/<userid>/<componentid>:value
+                // Update count value
+                //  /<componentDbName>/<userid>/count:value
 
                 let childUpdates = ["/\(componentDbName)/\(user)/\(count)": value]
                 self.REF.updateChildValues(childUpdates)        // Add User Component Value

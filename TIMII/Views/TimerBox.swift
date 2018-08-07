@@ -5,36 +5,43 @@
 //  Created by Dennis Huang on 7/24/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
+// TODO: 8.5.18 - Enable multi timer support for Text Field editting. Only one can be updated...
+// TODO: 8.6.18 - Add suspend APP to & from background. DONE: 8.6
+// TODO: 8.6.18 - Add save timer stats to cloud
+// TODO: 8.6.18 - Timer is slightly off as it resumes from background counting
+
 
 import UIKit
 import Layout
 
 class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
 {
-    // MARK: ---------- Properties and Outlets ----------
-    // Outlet Expressions cannot be changed and are static. To have a dynamic changing
-    // expression / variable - we cannot use Outlets.
-    // Note: Outlet expressions must be set using a constant or literal value, and cannot
-    // be changed once set. Attempting to set the outlet using a state variable or other
-    // dynamic value will result in an error.
     
-    // TODO: 8.5.18 - Enable multi timer support for Text Field editting. Only one can be updated...
-    
-    // MARK: ---------- Class Properties ----------
+// MARK: ---------- CLASS PROPERTIES & INITIATIONS ----------
+// Outlet Expressions cannot be changed and are static. To have a dynamic changing
+// expression / variable - we cannot use Outlets.
+// Note: Outlet expressions must be set using a constant or literal value, and cannot
+// be changed once set. Attempting to set the outlet using a state variable or other
+// dynamic value will result in an error.
     
     @IBOutlet var timerNameTextField : UITextField?
     var timerHourLabel: String = "00"
     var timerMinuteLabel: String = "00"
     var timerSecondLabel: String = "00"
     var counter: Double = 0
-    var timerAccuracy = 0.1   // tenth of a second accuracy
-    var timer = Timer()
-    var pauseTimerDate = Date()
+    var timerAccuracy = 0.1         // tenth of a second accuracy
+    var timer = Timer()             // what is this?
+    var pauseTimerDate = Date()     // what is this?
     var isTimerRunning = false      // Timer is NOT running
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        // Notification for when the Application moves to the Background or Foreground
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseApp), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(startApp), name: .UIApplicationWillEnterForeground, object: nil)
+
         self.loadLayout(
             named: "TimerBox.xml",
             state:[
@@ -46,15 +53,16 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         )
     }
  
-    // MARK: ---------- Timer Related Functions ----------
-    // This section controls the timer like start / pause / reset
+    
+// MARK: ---------- TIMER FUNCTIONS ----------
+// This section controls the timer like start / pause / reset
     
     @objc func startTimer()
     {
         if isTimerRunning == false
         {
             // Start timer now
-            timer = Timer.scheduledTimer(timeInterval: timerAccuracy, target: self, selector: (#selector(TimerViewController.updateTimer)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: timerAccuracy, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
             isTimerRunning = true
         }
         else
@@ -66,6 +74,7 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         }
     }
     
+    // TODO: 8.6.18 - Move this func to TimeCounterSystem.swift
     @objc private func updateTimer()
     {
         counter += 1
@@ -88,13 +97,14 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         ])
     }
     
-    @objc func resetTimerTapped()
+    @objc func resetTimer()
     {
         timer.invalidate()
         counter = 0
         timerHourLabel = TimeCounterSystem.timeHourString(counter)
         timerMinuteLabel = TimeCounterSystem.timeMinuteString(counter)
         timerSecondLabel = TimeCounterSystem.timeSecondString(counter)
+        updateView()
     }
     
     // Dismiss the keyboard after RETURN press
@@ -107,6 +117,10 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         return true
     }
     
+    
+// MARK: ---------- START / PAUSE APP TO BACKGROUND ----------
+// This section controls suspend functions when the APP goes to the background
+    
     @objc private func startApp()
     {
         let dateDifference = self.pauseTimerDate.timeIntervalSince(Date())
@@ -117,26 +131,9 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     
     @objc private func pauseApp()
     {
-        timer.invalidate()
         self.pauseTimerDate = Date()
+        timer.invalidate()
+        isTimerRunning = false
         print("App moved to background! \(Date()) \(pauseTimerDate) counter: \(counter)")
     }
 }
-
-
-//extension TimerBox: UITextFieldDelegate
-//{
-//    // This section is related to the task label - text field manipulation, etc.
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-//    {
-//        // The text field must resign its first-responder status when
-//        // the user taps a button like RETURN to end editing in the text field.
-//        if isTimerRunning == false { startTimer() }
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//
-//    func textFieldDidBeginEditing(_ textField: UITextField) { }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField) { }
-//}
