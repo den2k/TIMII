@@ -5,6 +5,8 @@
 //  Created by Daddy on 4/15/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
+// TODO: 8.7.18 - Add if/then check for Countables related to SetupSystem
+// TODO: 8.7.18 - Show Home Screen always even in logout/login
 
 import UIKit
 import Layout
@@ -17,6 +19,11 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        // 8.7.18 - Add this to MainVC and just do this once after reseting the database to Zero Node
+        // then comment out. These setup the Countable Global variables.
+        // SetupSystem().GlobalServiceSetup()
+
         checkIfUserIsLoggedIn()
         
 //        navigationController?.isNavigationBarHidden = true
@@ -68,7 +75,3 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
         }
     }
 }
-
-// Add this to MainVC and just do this once after reseting the database to Zero Node
-// then comment out. These setup the Countable Global variables.
-// SetupSystem().GlobalServiceSetup()

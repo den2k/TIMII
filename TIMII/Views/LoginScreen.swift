@@ -5,6 +5,7 @@
 //  Created by Dennis Huang on 7/27/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
+// TODO: 7.30.18 - refactor keyboard related code to a separate component/system
 
 import UIKit
 import Firebase
@@ -12,7 +13,6 @@ import Layout
 
 class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
 {
-    // TODO: 7.30.18 - refactor keyboard related code to a separate component/system
     var isKeyboardVisible = false
     
     // Login Properties
@@ -38,31 +38,43 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         )
     }
     
+// MARK: ---------- LOGIN HANDLER / MEMBER AUTHENTICATION ----------
+// This section handles the login request and authentication with Firebase
+    
+    @objc func handleLogin() {
+        guard let email = emailTextField?.text, let password = passwordTextField?.text else
+        {
+            print("Form is not valid. Unable to login.")
+            return
+        }
+        
+        Auth.auth().signIn(withEmail: email, password: password, completion:
+            {(user, error) in
+                if error != nil
+                {
+                    print(error ?? "Error signing in user.")
+                    self.errorLabel?.text = error?.localizedDescription
+                    self.updateView()
+                    return
+                }
+                // Dismiss to Main screen
+                print("Sign in successful.")
+                self.dismiss(animated: true, completion: nil)
+        })
+    }
+    
     @objc func createAccountScreen()
     {
         let createAccount = CreateAccountScreen()
         present(createAccount, animated: true, completion: nil)
     }
     
-    // Dismiss the keyboard after RETURN press
     func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
         textField.resignFirstResponder()
         return false
     }
     
-    @objc func keyboardWillShow(notification: Notification)
-    {
-        isKeyboardVisible = true
-        updateView()
-    }
-    
-    @objc func keyboardWillHide(notification: Notification)
-    {
-        isKeyboardVisible = false
-        updateView()
-    }
-
     // Update screen when varibles change
     private func updateView()
     {
@@ -75,26 +87,19 @@ class LoginScreen: UIViewController, LayoutLoading, UITextFieldDelegate
         ])
     }
     
-    // Handle login request and authentication with Firebase
-    @objc func handleLogin() {
-        guard let email = emailTextField?.text, let password = passwordTextField?.text else
-        {
-            print("Form is not valid. Unable to login.")
-            return
-        }
-        
-        Auth.auth().signIn(withEmail: email, password: password, completion:
-        {(user, error) in
-            if error != nil
-            {
-                print(error ?? "Error signing in user.")
-                self.errorLabel?.text = error?.localizedDescription
-                self.updateView()
-                return
-            }
-            // Dismiss to Main screen
-            print("Sign in successful.")
-            self.dismiss(animated: true, completion: nil)
-        })
+// MARK: ---------- KEYBOARD FUNCTIONS ----------
+// This section controls keyboard Show or Hide functions
+    
+    @objc func keyboardWillShow(notification: Notification)
+    {
+        isKeyboardVisible = true
+        updateView()
     }
+    
+    @objc func keyboardWillHide(notification: Notification)
+    {
+        isKeyboardVisible = false
+        updateView()
+    }
+    
 }

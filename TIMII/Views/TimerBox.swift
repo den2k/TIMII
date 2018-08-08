@@ -7,13 +7,14 @@
 //
 // TODO: 8.5.18 - Enable multi timer support for Text Field editting. Only one can be updated...
 // TODO: 8.6.18 - Add suspend APP to & from background. DONE: 8.6
-// TODO: 8.6.18 - Add save timer stats to cloud
+// TODO: 8.6.18 - Add save timer stats to cloud. DONE: 8.7
 // TODO: 8.6.18 - Timer is slightly off as it resumes from background counting
+// TODO: 8.7.18 - Add Timer stats that overwrites or creates a new timer using Fanout
 
 
 import UIKit
 import Layout
-import Firebase
+import Firebase     // Be nice to get rid of this import. Used for Auth..currentUser call
 
 class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
 {
@@ -70,6 +71,7 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
             timer.invalidate()
             isTimerRunning = false
             updateView()
+            saveTimers()
         }
     }
     
@@ -135,12 +137,39 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         isTimerRunning = false
         print("App moved to background! \(Date()) \(pauseTimerDate) counter: \(counter)")
         
-        // Save to Firebase the timer values
-        // /<Timers>/<userid>/+<taskid>
-        let componentName = "Timers"
-        guard let uId = Auth.auth().currentUser?.uid else { return }
-        let value = timerSecondLabel
-        let db = DatabaseSystem()
-        db.addUserComponentId(componentName, uId, value)
+        // Save Timer values to Firebase
+        saveTimers()
+    }
+    
+    
+// MARK: ---------- SAVE TIMER VALUE TO DATABASE ----------
+// This section handles the recording of timer values to Firebase
+    
+    private func saveTimers()
+    {
+        // Save to Firebase the timer values with FANOUT
+        // Timers
+        //      - UID
+        //          - timerID
+        //          - [values]
+        //          - timeStamp
+        //
+        // Member-Timers
+        //      - UID
+        //          - timerIDs
+        
+        let componentName1 = "Timers"
+        let componentName2 = "Member-Timers"
+        let timerID = UUID().uuidString
+        guard let UID = Auth.auth().currentUser?.uid else { return }
+        let dictionary = [
+            "name": timerNameTextField?.text as Any,
+            "hour": timerHourLabel,
+            "minute": timerMinuteLabel,
+            "second": timerSecondLabel
+        ]
+        let db1 = DatabaseSystem()
+//        db1.addUserFanoutComponentId(componentName1, componentName2, timerID, UID)
+        db1.addUserComponentCountableDict(componentName1, UID, dictionary)
     }
 }

@@ -5,8 +5,8 @@
 //  Created by Dennis Huang on 8/5/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
-// 8.5.18 - This empty class is so the XML View Layout files can use the XML tag <HomeScreen> and reference
-// the swift functions in this VC.
+// 8.5.18 - This class exist as the 'controller' for our 'views' (XML) that can be referenced using the XML tag (ie; <SettingsScreen>)
+//
 
 import UIKit
 import Firebase

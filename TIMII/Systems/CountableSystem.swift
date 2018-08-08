@@ -22,6 +22,9 @@ struct CountableSystem : Component, Countable
         //  TODO: increments Countable. - DONE - 5.17.18
         //  /Countables/<component name>:<number of records>
         //  let count = Countables.incrementComponentCount(componentDbName)
+        //  8.7.18  - DEPRECATED. Closures seems to prevent calls like this from working
+        //            so increment is done inside database call and does not use this function
+        
         
         let REFChild = REF.child("\(ComponentDbName)/")
         

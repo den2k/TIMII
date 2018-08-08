@@ -5,6 +5,7 @@
 //  Created by Daddy on 5/6/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
+// TODO: 8.7.18 - Add new Fanout function with Countable
 
 import Foundation
 import FirebaseDatabase
@@ -83,7 +84,7 @@ struct DatabaseSystem
         print("DatabaseSystem:addUserComponentId:", childUpdates)
     }
     
-    func addUserComponentUpdateCountable(_ componentDbName: String, _ user: String, _ value: Any)
+    func addUserComponentCountableDict(_ componentDbName: String, _ user: String, _ value: Any)
     {
         //  /<componentDbName>/<userid>/<componentid>:value
         //  TODO: generate component id using generated values. Does not use UUID. - DONE - 5.19.18
@@ -123,10 +124,51 @@ struct DatabaseSystem
             return TransactionResult.success(withValue: currentData)
         }
     }
-    
-    //        for (key, value) in dictionary
-    //        {
-    //            print("k:", key, "v:", value)
-    //        }
 
+    /*
+    func addUserFanoutComponentCountableDict(_ componentDbName1: String, _ componentDbName2: String, _ user: String, _ value: Any)
+    {
+        // Timers
+        //      - timerID
+        //          - UID
+        //          - [values]
+        //          - timeStamp
+        //
+        // Member-Timers
+        //      - UID
+        //          - timerIDs
+
+        let REFChild = REF.child("Countables")
+        
+        REFChild.runTransactionBlock
+            {
+                (currentData: MutableData) -> TransactionResult in
+                if var data = currentData.value as? [String: Any]
+                {
+                    var count = data["\(componentDbName1)"] as? UInt64 ?? 0
+                    
+                    // Increment Component Count in Countable
+                    count += 1
+                    data["\(componentDbName1)"] = count
+                    currentData.value = data        // Update Countable
+                    
+                    // Update count value
+                    //  /<componentDbName1>/<userid>/count:value
+                    
+                    let childUpdates = ["/\(componentDbName1)/\(user)/" : (count) ,
+                                        "/\(componentDbName2)/
+                    
+                    self.REF.updateChildValues(childUpdates)        // Add User Component Value
+                    
+                }
+                return TransactionResult.success(withValue: currentData)
+        }
+
+        let childUpdates = ["/\(componentDbName1)/\(user)/" : componentId ,
+                            "/\(componentDbName2)/\(user)/" : componentId]
+        REF.updateChildValues(childUpdates)
+        print("DatabaseSystem:addUserFanoutComponentId:", childUpdates)
+    }
+ */
+    
 }

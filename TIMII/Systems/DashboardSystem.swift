@@ -26,7 +26,7 @@ struct DashboardSystem : Component, Dashboard, Viewable   //7.7.18 - comment out
         // TODO: /Dashboards/<userid>/<dashboardcountableid>:home - DONE - 5.19.18
         
         let database = DatabaseSystem()
-        database.addUserComponentUpdateCountable(ComponentDbName, user, "home")
+        database.addUserComponentCountableDict(ComponentDbName, user, "home")
 
         // DEPRECATED : /Dashboards/<userid>/<dashboardid>:home - DONE - 5.12.18
         // Add 1 to Dashboard count record
@@ -41,7 +41,7 @@ struct DashboardSystem : Component, Dashboard, Viewable   //7.7.18 - comment out
         // TODO: /Dashboards/<userid>/<dashboardcountableid>:dashboardName - DONE - 5.19.18
 
         let database = DatabaseSystem()
-        database.addUserComponentUpdateCountable(ComponentDbName, user, dashboardName)
+        database.addUserComponentCountableDict(ComponentDbName, user, dashboardName)
 
         // DEPRECATED : /Dashboards/<userid>/<dashboardid>:dashboardName - DONE - 5.12.18
         // Add 1 to Dashboard count record

@@ -4,7 +4,7 @@
 // TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen - DONE: https://stackoverflow.com/questions/3224328/how-to-dismiss-2-modal-view-controllers-in-succession/44583711#44583711
 // TODO: 8.6.18 - Added user info to Firebase - uid, email, name, password - DONE: 8.7.18
 // TODO: 8.7.18 - Refactor keyboard specific items to separate file
-// TODO: 8.7.18 - Refactor UUID in createUser as its not best practice and long
+// TODO: 8.7.18 - Refactor UUID in createUser as its not best practice and long - DONE: 8.7.18 - Using Firebase currentUser ID
 // TODO: 8.7.18 - Add 1 to Firebase Member Countable once member is added successfully - DONE: 8.7.18
 // TODO: 8.7.18 - Add Verify Password matches error handler
 
@@ -37,15 +37,57 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         )
     }
     
+// MARK: ---------- CREATE ACCOUNT HANDLER / MEMBER CREATION ----------
+// This section handles the registration request and adding new member to Firebase
+    
+    @objc func handleCreateAccount()
+    {
+        guard let email = emailTextField?.text, let password = passwordTextField?.text else
+        {
+            print("Form is not valid. Unable to create account.")
+            return
+        }
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion:
+            {(user, error) in
+                if error != nil
+                {
+                    print(error ?? "Error creating user.")
+                    self.errorLabel?.text = error?.localizedDescription
+                    self.updateView()
+                    return
+                }
+                
+                // 8.7.18 - Saving new member information to Firebase and increment Countable
+                // /Members/<membercount>/[values]
+                // /Countables/Members/<membercount>
+                let componentName = "Members"
+                guard let uid = Auth.auth().currentUser?.uid else { return }
+                let dictionary = ["email": email, "password": password]
+                let db = DatabaseSystem()
+                db.addUserComponentCountableDict(componentName, uid, dictionary)
+                
+                // Dismiss both present CreateAccount VC and Login VC to arrive at Main
+                self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
+        })
+    }
+    
     // dismiss to LoginScreen
     @objc func loginScreen() { dismiss(animated: true, completion: nil) }
     
-    // Dismiss the keyboard after RETURN press
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    private func updateView()
     {
-        textField.resignFirstResponder()
-        return false
+        // Calling setState() on a LayoutNode after it has been created will
+        // trigger an update. The update causes all expressions in that node
+        // and its children to be re-evaluated.
+        self.layoutNode?.setState([
+            "isKeyboardVisible": isKeyboardVisible,
+            "error": errorLabel?.text as Any
+        ])
     }
+    
+// MARK: ---------- KEYBOARD FUNCTIONS ----------
+// This section controls keyboard Show or Hide functions
     
     @objc func keyboardWillShow(notification: Notification)
     {
@@ -59,46 +101,10 @@ class CreateAccountScreen: UIViewController, LayoutLoading
         updateView()
     }
     
-    private func updateView()
+    // Dismiss the keyboard after RETURN press
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
     {
-        // Calling setState() on a LayoutNode after it has been created will
-        // trigger an update. The update causes all expressions in that node
-        // and its children to be re-evaluated.
-        self.layoutNode?.setState([
-            "isKeyboardVisible": isKeyboardVisible,
-            "error": errorLabel?.text as Any
-        ])
-    }
-    
-    @objc func handleCreateAccount()
-    {
-        guard let email = emailTextField?.text, let password = passwordTextField?.text else
-        {
-            print("Form is not valid. Unable to create account.")
-            return
-        }
-        
-        Auth.auth().createUser(withEmail: email, password: password, completion:
-        {(user, error) in
-            if error != nil
-            {
-                print(error ?? "Error creating user.")
-                self.errorLabel?.text = error?.localizedDescription
-                self.updateView()
-                return
-            }
-            
-            // 8.7.18 - Saving new member information to Firebase and increment Countable
-            // /Members/<membercount>/[values]
-            // /Countables/Members/<membercount>
-            let componentName = "Members"
-            let uid = UUID().uuidString
-            let values = ["email": email, "password": password]
-            let db = DatabaseSystem()
-            db.addUserComponentUpdateCountable(componentName, uid, values)
-            
-            // Dismiss both present CreateAccount VC and Login VC to arrive at Main
-            self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
-        })
+        textField.resignFirstResponder()
+        return false
     }
 }
