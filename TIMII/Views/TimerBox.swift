@@ -10,6 +10,12 @@
 // TODO: 8.6.18 - Add save timer stats to cloud. DONE: 8.7
 // TODO: 8.6.18 - Timer is slightly off as it resumes from background counting
 // TODO: 8.7.18 - Add Timer stats that overwrites or creates a new timer using Fanout
+// TODO: 8.8.18 - Refactor timing functions into TimerSystem so it can be reused.
+// TODO: 8.8.18 - do not call write/read per updateView. only update pub/sub when starting, pausing or reseting timer
+//                so write/reads to firebase are minimized for cost reasons. 100K concurrent before sharding...
+// TODO: 8.8.18 - Research AWS / AppSync / GraphQL vs Firebase vs Cloud Firestore - DONE - 8.8.18
+// MARK: 8.8.18 - What am I doing now? What is he/she doing now? Real-time life logger. Instead of a timer app.
+//                this is a RT-lifelogger app?!
 
 
 import UIKit
@@ -34,6 +40,12 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     var pauseTimerDate = Date()     // holds the timer value in case of suspend to background
     var isTimerRunning = false      // Timer is NOT running
 
+    let nameLabel = "name"
+    let hourLabel = "hour"
+    let minuteLabel = "minute"
+    let secondLabel = "second"
+    let isTimerRunningLabel = "isTimerRunning"
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -45,10 +57,10 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         self.loadLayout(
             named: "TimerBox.xml",
             state:[
-                "name": timerNameTextField?.text as Any,
-                "minute": timerMinuteLabel,
-                "second": timerSecondLabel,
-                "isTimerRunning": isTimerRunning
+                nameLabel           : timerNameTextField?.text as Any,
+                minuteLabel         : timerMinuteLabel,
+                secondLabel         : timerSecondLabel,
+                isTimerRunningLabel : isTimerRunning
             ]
         )
     }
@@ -79,9 +91,9 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     @objc private func updateTimer()
     {
         counter += 1
-        timerHourLabel = TimeCounterSystem.timeHourString(counter)
-        timerMinuteLabel = TimeCounterSystem.timeMinuteString(counter)
-        timerSecondLabel = TimeCounterSystem.timeSecondString(counter)
+        timerHourLabel      = TimeCounterSystem.timeHourString(counter)
+        timerMinuteLabel    = TimeCounterSystem.timeMinuteString(counter)
+        timerSecondLabel    = TimeCounterSystem.timeSecondString(counter)
         updateView()
     }
     
@@ -91,10 +103,10 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         // trigger an update. The update causes all expressions in that node
         // and its children to be re-evaluated.
         self.layoutNode?.setState([
-            "name": timerNameTextField?.text as Any,
-            "minute": timerMinuteLabel,
-            "second": timerSecondLabel,
-            "isTimerRunning": isTimerRunning
+            nameLabel           : timerNameTextField?.text as Any,
+            minuteLabel         : timerMinuteLabel,
+            secondLabel         : timerSecondLabel,
+            isTimerRunningLabel : isTimerRunning
         ])
     }
     
@@ -102,9 +114,9 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     {
         timer.invalidate()
         counter = 0
-        timerHourLabel = TimeCounterSystem.timeHourString(counter)
-        timerMinuteLabel = TimeCounterSystem.timeMinuteString(counter)
-        timerSecondLabel = TimeCounterSystem.timeSecondString(counter)
+        timerHourLabel      = TimeCounterSystem.timeHourString(counter)
+        timerMinuteLabel    = TimeCounterSystem.timeMinuteString(counter)
+        timerSecondLabel    = TimeCounterSystem.timeSecondString(counter)
         updateView()
     }
     
@@ -144,6 +156,7 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     
 // MARK: ---------- SAVE TIMER VALUE TO DATABASE ----------
 // This section handles the recording of timer values to Firebase
+// TODO: Change this to save to Firestore
     
     private func saveTimers()
     {
@@ -163,10 +176,10 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         let timerID = UUID().uuidString
         guard let UID = Auth.auth().currentUser?.uid else { return }
         let dictionary = [
-            "name": timerNameTextField?.text as Any,
-            "hour": timerHourLabel,
-            "minute": timerMinuteLabel,
-            "second": timerSecondLabel
+            nameLabel   : timerNameTextField?.text as Any,
+            hourLabel   : timerHourLabel,
+            minuteLabel : timerMinuteLabel,
+            secondLabel : timerSecondLabel
         ]
         let db1 = DatabaseSystem()
 //        db1.addUserFanoutComponentId(componentName1, componentName2, timerID, UID)
