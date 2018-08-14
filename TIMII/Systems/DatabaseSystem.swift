@@ -8,7 +8,8 @@
 // TODO: 8.7.18 - Add new Fanout function with Countable
 
 import Foundation
-import FirebaseDatabase
+import Firebase
+//import FirebaseDatabase
 
 struct DatabaseSystem
 {
@@ -122,6 +123,30 @@ struct DatabaseSystem
 
             }
             return TransactionResult.success(withValue: currentData)
+        }
+    }
+    
+    func addUserComponentDictFS(_ componentDbName: String, _ dictionary: Dictionary<String,Any>)
+    {   /* This function uses Firestore and stores information.
+         
+            Timers / UID
+                timerID
+                name
+                hour
+                minute
+                second
+         */
+        
+        var FSdocRef: DocumentReference!
+        guard let UID = Auth.auth().currentUser?.uid else { return }
+        let ref = "/\(componentDbName)/\(UID)"
+        FSdocRef = Firestore.firestore().document(ref)
+        FSdocRef.setData(dictionary) { (error) in
+            if let error = error {
+                print("Oh no! \(error.localizedDescription)")
+            } else {
+                print("Data has been saved!")
+            }
         }
     }
 }

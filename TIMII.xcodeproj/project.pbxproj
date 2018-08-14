@@ -54,7 +54,7 @@
 		0FDB818820B104F100E39E04 /* OldDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB818720B104F100E39E04 /* OldDashboardViewController.swift */; };
 		0FE3DEFE208BB0A400D546BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */; };
 		0FFE08FE20F1883D000D1797 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE08FD20F1883D000D1797 /* TimerViewController.swift */; };
-		0FFE090020F18872000D1797 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE08FF20F18872000D1797 /* Task.swift */; };
+		0FFE090020F18872000D1797 /* Timii.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFE08FF20F18872000D1797 /* Timii.swift */; };
 		68DF88FBB5A5249AE0ED4D27 /* Pods_TIMII.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08313F8366613AE86B862013 /* Pods_TIMII.framework */; };
 		950ECEDB210B759F00DE2D49 /* TimerBox.xml in Resources */ = {isa = PBXBuildFile; fileRef = 950ECEDA210B759F00DE2D49 /* TimerBox.xml */; };
 		950ECEDE210BF42A00DE2D49 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950ECEDD210BF42A00DE2D49 /* LoginScreen.swift */; };
@@ -132,7 +132,7 @@
 		0FDB818720B104F100E39E04 /* OldDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldDashboardViewController.swift; sourceTree = "<group>"; };
 		0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0FFE08FD20F1883D000D1797 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
-		0FFE08FF20F18872000D1797 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0FFE08FF20F18872000D1797 /* Timii.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timii.swift; sourceTree = "<group>"; };
 		3AF127DD080902506260D304 /* Pods-TIMIITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.debug.xcconfig"; sourceTree = "<group>"; };
 		895FAF54A017BE3E109C7142 /* Pods-TIMIITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIMIITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TIMIITests/Pods-TIMIITests.release.xcconfig"; sourceTree = "<group>"; };
 		950ECEDA210B759F00DE2D49 /* TimerBox.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimerBox.xml; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 				0F2A12452095309000D0E489 /* Countable.swift */,
 				0F2A12432095108600D0E489 /* Dashboard.swift */,
 				9520A1B121141089004E7FDE /* Member.swift */,
-				0FFE08FF20F18872000D1797 /* Task.swift */,
+				0FFE08FF20F18872000D1797 /* Timii.swift */,
 				0FDB817D20B0CDDF00E39E04 /* UIStyle.swift */,
 				0F3D4F5D2097392C00B88EDE /* Viewable.swift */,
 			);
@@ -390,7 +390,6 @@
 				0FC08A3F20840CFE0083E0B3 /* Frameworks */,
 				0FC08A4020840CFE0083E0B3 /* Resources */,
 				393835A365185D628C18466E /* [CP] Embed Pods Frameworks */,
-				65EB8258B24A4CB0D6F78480 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -513,19 +512,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-TIMII/Pods-TIMII-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Layout/Layout.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -535,19 +526,11 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Layout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -558,36 +541,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TIMII/Pods-TIMII-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		65EB8258B24A4CB0D6F78480 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-TIMII/Pods-TIMII-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebasePhoneAuthUI.bundle",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseTwitterAuthUI.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebasePhoneAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseTwitterAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TIMII/Pods-TIMII-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		812850EA3D04E67F9EFEFE04 /* [CP] Embed Pods Frameworks */ = {
@@ -668,7 +621,7 @@
 				0FC08A4820840CFF0083E0B3 /* Main.swift in Sources */,
 				0F2A12442095108600D0E489 /* Dashboard.swift in Sources */,
 				9520A1B221141089004E7FDE /* Member.swift in Sources */,
-				0FFE090020F18872000D1797 /* Task.swift in Sources */,
+				0FFE090020F18872000D1797 /* Timii.swift in Sources */,
 				0F48FB4F20F1410E006C3E16 /* StartButton.swift in Sources */,
 				958CC74C21077F5600AF1D25 /* TimerBox.swift in Sources */,
 				0F9D930A20BA10060027DE1D /* TopViewController.swift in Sources */,

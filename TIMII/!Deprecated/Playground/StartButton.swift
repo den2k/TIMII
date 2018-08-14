@@ -16,7 +16,7 @@
 //    */
 //    
 //    let tt = TimerSecondCounter()
-//    var task = Task("Hi",Date(),0)              // Holds Task object
+//    var task = Timii("Hi",Date(),0)              // Holds Task object
 //    var timer = Timer()                         // Timer object
 //    var timerAccuracy = 0.1                     // Assigns timer accuracy to tenth of a second
 //    var counter: Double = 0                     // Temporary counter used by class

@@ -6,6 +6,8 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 
+/* 8.13.18 - This works but no longer using UIStyleSystem so commented this out
+ 
 import XCTest
 
 @testable import TIMII
@@ -33,3 +35,5 @@ class UIStyleSystemTests: XCTestCase
     }
         
 }
+
+ */

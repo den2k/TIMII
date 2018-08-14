@@ -10,21 +10,20 @@ import Foundation
 struct Timii
 {
     // MARK: ----------- Properties -----------
-    var taskName: String                // Holds the timer task name ie: Eating
+    var timiiName: String               // Holds the timer name ie: Eating
     var taskStartDate: Date             // Holds the timer start time/date
     var timeAccrued: TimeInterval       // Holds the calculated accrued total run time for task
     
     // MARK: ---------- Initializers ----------
-    init?(_ taskName: String,_ taskStartDate: Date,_ timeAccrued: TimeInterval)
+    init?(_ name: String,_ date: Date,_ time: TimeInterval)
     {
         // Timii Name cannot be empty
-        guard !taskName.isEmpty else { return nil }
-
-        guard Double(timeAccrued) >= 0 else { return nil }
+        guard !name.isEmpty else { return nil }
+        guard Double(time) >= 0 else { return nil }
         
         // Initialize values
-        self.taskName = taskName
-        self.taskStartDate = taskStartDate
-        self.timeAccrued = timeAccrued
+        self.timiiName = name
+        self.taskStartDate = date
+        self.timeAccrued = time
     }
 }

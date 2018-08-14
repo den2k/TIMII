@@ -15,6 +15,7 @@
         outlet="timerNameTextField"
         placeholder="enter task name"
         text="{name}"
+        touchDown="timerNameTextFieldTouchDown"
         width="100%"
         top="height / 2 + 5"
         textAlignment="center"
