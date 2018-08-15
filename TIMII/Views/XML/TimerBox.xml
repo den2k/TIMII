@@ -82,7 +82,7 @@
     <!-- START / PAUSE BUTTON -->
     <UIButton
         title="{isTimerRunning ? 'Pause':'Start'}"
-        touchUpInside="startTimer"
+        touchUpInside="{isTimerRunning ? 'pauseTimer':'startTimer'}"
         bottom="10"
         left="50% - width/2"
         width="100%"

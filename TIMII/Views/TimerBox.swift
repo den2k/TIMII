@@ -18,6 +18,7 @@
 // TODO: 8.13.18 - DONE (8.13.18) Keyboard response slow?? Added keyboard Notification Observer. Seems faster now done.
 // TODO: 8.13.18 - DONE (8.13.18) Refactored savetimers() function and moved this to DatabaseSystem.
 // TODO: 8.13.18 - Read ongoing Timii tasks so accumulate time...Or just add to value before write...
+// TODO: 8.14.18 - DONE (8.14.18) Fixed bug related to resume from background while timer is running
 
 /* MARK:
  8.8.18
@@ -70,8 +71,8 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         super.viewDidLoad()
         
         // Notification for when the Application moves to the Background or Foreground
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseApp), name: .UIApplicationDidEnterBackground, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(startApp), name: .UIApplicationWillEnterForeground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
 
         // Notification for Keyboard / Text Field
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
@@ -94,20 +95,20 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
     
     @objc func startTimer()
     {
-        if isTimerRunning == false
-        {
-            // Start timer now
-            tempTimer = Timer.scheduledTimer(timeInterval: timerAccuracy, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
-            isTimerRunning = true
-        }
-        else
-        {
-            // Pause timer now
-            tempTimer.invalidate()
-            isTimerRunning = false
-            updateView()
-            saveTimers()
-        }
+        // Start timer now
+        print("Starting timer...")
+        tempTimer = Timer.scheduledTimer(timeInterval: timerAccuracy, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+        isTimerRunning = true
+    }
+ 
+    @objc func pauseTimer()
+    {
+        // Pause timer now
+        print("Pausing timer...")
+        tempTimer.invalidate()
+        isTimerRunning = false
+        updateView()
+        saveTimers()
     }
     
     // TODO: 8.6.18 - Move this func to TimeCounterSystem.swift
@@ -149,6 +150,7 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
         // The text field must resign its first-responder status when
         // the user taps a button like RETURN to end editing in the text field.
         if isTimerRunning == false { startTimer() }
+        saveTimers()
         textField.resignFirstResponder()
         return true
     }
@@ -157,19 +159,27 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
 // MARK: ---------- START / PAUSE APP TO BACKGROUND ----------
 // This section controls suspend functions when the APP goes to the background
     
-    @objc private func startApp()
+    @objc private func willEnterForeground()
     {
-        let dateDifference = self.pauseTimerDate.timeIntervalSince(Date())
-        counter -= dateDifference * 10      // time intervals in tenth of a second. timeIntervalSince returns negative
-        startTimer()
-        print("App moved to foreground! \(Date()) \(dateDifference) counter: \(counter)")
+        if isTimerRunning == true
+        {
+            let dateDifference = self.pauseTimerDate.timeIntervalSince(Date())
+            counter -= dateDifference * 10      // time intervals in tenth of a second. timeIntervalSince returns negative
+            startTimer()
+            print("App moved to foreground! \(Date()) \(dateDifference) counter: \(counter)")
+        }
+        else
+        {
+            print("App moved to foreground without timer running.")
+        }
+        
     }
     
-    @objc private func pauseApp()
+    @objc private func didEnterBackground()
     {
         self.pauseTimerDate = Date()
         tempTimer.invalidate()
-        isTimerRunning = false
+//        isTimerRunning = false
         print("App moved to background! \(Date()) \(pauseTimerDate) counter: \(counter)")
         
         // Save Timer values to Firebase
@@ -198,9 +208,8 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
             Timers / UID
                 timerID
                 name
-                hour
-                minute
-                second
+                hour + minute + second
+                timeStamp
         */
 
         let componentRootName = "Timers"
