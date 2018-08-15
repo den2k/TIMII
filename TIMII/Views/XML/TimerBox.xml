@@ -1,9 +1,9 @@
 <!-- TimerBox - A rectangle box view for the timer -->
 <UIView
     backgroundColor="isTimerRunning ? UIColor.porcelain : UIColor.camo"
-    height="180"
+    height="200"
     width="100% - 20"
-    layer.cornerRadius="30"
+    layer.cornerRadius="15"
     layer.shadowRadius="2.0"
     layer.shadowOpacity="1"
     layer.shadowColor="#AAA"
@@ -20,7 +20,7 @@
         top="height / 2 + 5"
         textAlignment="center"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
-        font="Avenir Next 16"
+        font="Avenir Next 18"
     />
     
     <!-- Daily Total Label -->
@@ -83,11 +83,13 @@
     <UIButton
         title="{isTimerRunning ? 'Pause':'Start'}"
         touchUpInside="{isTimerRunning ? 'pauseTimer':'startTimer'}"
-        bottom="10"
+        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.ironOpaque}"
+        layer.cornerRadius="height/2"
+        bottom="{isTimerRunning ? 10 : 50% - height/2}"
         left="50% - width/2"
-        width="100%"
-        height="20%"
-        titleColor="isTimerRunning ? UIColor.black : UIColor.white"
+        width="height"
+        height="{isTimerRunning ? 50 : 55% }"
+        titleColor="isTimerRunning ? UIColor.black : UIColor.black"
     />
     
     <UIButton
@@ -99,6 +101,5 @@
         isHidden="isTimerRunning ? true : false"
     />
         
-    
 </UIView>
 
