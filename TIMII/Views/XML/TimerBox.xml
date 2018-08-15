@@ -1,7 +1,9 @@
 <!-- TimerBox - A rectangle box view for the timer -->
+<!-- 8.14.18 - DONE (8.14.18) Made Start button easier to press and visually more engaging -->
+
 <UIView
     backgroundColor="isTimerRunning ? UIColor.porcelain : UIColor.camo"
-    height="200"
+    height="240"
     width="100% - 20"
     layer.cornerRadius="15"
     layer.shadowRadius="2.0"
@@ -16,10 +18,14 @@
         placeholder="enter task name"
         text="{name}"
         touchDown="timerNameTextFieldTouchDown"
-        width="100%"
-        top="height / 2 + 5"
+        width="80%"
+        height="40"
+        left="50% - width/2"
+        layer.cornerRadius="height/2"
+        top="10"
         textAlignment="center"
-        textColor="isTimerRunning ? UIColor.black : UIColor.white"
+        textColor="isTimerRunning ? UIColor.black : UIColor.gray"
+        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.white}"
         font="Avenir Next 18"
     />
     
@@ -38,7 +44,7 @@
     <!-- Minute -->
     <UILabel
         text="{minute}"
-        top="50% - height/2 + 5"
+        top="60% - height/2"
         left="33% - width/2"
         textAlignment="center"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
@@ -46,7 +52,7 @@
     />
     <UILabel
         text="m"
-        top="50% - height/2 + 22"
+        top="previous.top + 54"
         left="previous.right - 2"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
         font="Avenir Next 16"
@@ -55,7 +61,7 @@
     <!-- : -->
     <UILabel
         text=":"
-        top="50% - height/2 - 2"
+        top="previous.top - 58"
         left="50% - width/2"
         textAlignment="center"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
@@ -65,7 +71,7 @@
     <!-- Second -->
     <UILabel
         text="{second}"
-        top="50% - height/2 + 5"
+        top="previous.top + 5"
         right="33% - width/2"
         textAlignment="center"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
@@ -73,7 +79,7 @@
     />
     <UILabel
         text="s"
-        top="50% - height/2 + 22"
+        top="previous.top + 54"
         left="previous.right - 2"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
         font="Avenir Next 16"
@@ -85,10 +91,10 @@
         touchUpInside="{isTimerRunning ? 'pauseTimer':'startTimer'}"
         backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.ironOpaque}"
         layer.cornerRadius="height/2"
-        bottom="{isTimerRunning ? 10 : 50% - height/2}"
+        bottom="{isTimerRunning ? 10 : 40% - height/2}"
         left="50% - width/2"
         width="height"
-        height="{isTimerRunning ? 50 : 55% }"
+        height="{isTimerRunning ? 50 : 52% }"
         titleColor="isTimerRunning ? UIColor.black : UIColor.black"
     />
     
@@ -100,6 +106,6 @@
         titleColor="UIColor.white"
         isHidden="isTimerRunning ? true : false"
     />
-        
+    
 </UIView>
 

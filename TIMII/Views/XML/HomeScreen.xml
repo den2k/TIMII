@@ -3,9 +3,9 @@
 
     <!-- Active Timer Bar -->
     <UIScrollView
-        top="100"
+        top="70"
         height="400"
-        backgroundColor="white"
+        backgroundColor="parent.backgroundColor"
         contentInsetAdjustmentBehavior="never">
         
         <!-- 7.27.18 - New call to TimerBoxViewController and not TimerBox.xml -->
