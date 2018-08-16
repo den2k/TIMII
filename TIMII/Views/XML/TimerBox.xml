@@ -15,16 +15,15 @@
     <!-- Timer Name -->
     <UITextField
         outlet="timerNameTextField"
-        placeholder="enter task name"
+        placeholder="enter timer name"
         text="{name}"
-        touchDown="timerNameTextFieldTouchDown"
         width="80%"
         height="40"
         left="50% - width/2"
         layer.cornerRadius="height/2"
-        top="10"
+        top="20"
         textAlignment="center"
-        textColor="isTimerRunning ? UIColor.black : UIColor.gray"
+        textColor="{isTimerRunning ? UIColor.black : UIColor.gray}"
         backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.white}"
         font="Avenir Next 18"
     />

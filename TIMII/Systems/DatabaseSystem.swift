@@ -137,6 +137,23 @@ struct DatabaseSystem
                 second
          */
         
+        // 8.14.18 - The behavior for system Date objects stored in Firestore is going to change AND YOUR APP MAY BREAK.
+        // To hide this warning and ensure your app does not break, you need to add the following code
+        // to your app before calling any other Cloud Firestore methods:
+        // With this change, timestamps stored in Cloud Firestore will be read back as Firebase
+        // Timestamp objects instead of assystem Date objects. So you will also need to update code
+        // expecting a Date to instead expect a Timestamp. For example:
+        // old:
+        // let date: Date = documentSnapshot.get("created_at") as! Date
+        // new:
+        // let timestamp: Timestamp = documentSnapshot.get("created_at") as! Timestamp
+        // let date: Date = timestamp.dateValue()
+        
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+
         var FSdocRef: DocumentReference!
         guard let UID = Auth.auth().currentUser?.uid else { return }
         let ref = "/\(componentDbName)/\(UID)"

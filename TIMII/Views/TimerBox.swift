@@ -39,12 +39,13 @@ class TimerBox: UIViewController, LayoutLoading, UITextFieldDelegate
 // be changed once set. Attempting to set the outlet using a state variable or other
 // dynamic value will result in an error.
     
-    @IBOutlet weak var timerNameTextField : UITextField!
-    @IBAction func timerNameTextFieldTouchDown()
-    {
-        print("text box")
-        guard let timerNameText = timerNameTextField.text, !timerNameText.isEmpty else { return }
-    }
+    @IBOutlet var timerNameTextField : UITextField?
+    
+//    @objc func timerNameTextFieldTouchUp()
+//    {
+//        print("text box")
+//        guard let timerNameText = timerNameTextField?.text, !timerNameText.isEmpty else { return }
+//    }
     
     var timerHour: String = "00"
     var timerMinute: String = "00"
