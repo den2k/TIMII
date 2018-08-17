@@ -17,6 +17,7 @@ target 'TIMII' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Performance'
 
   # Pods for TIMII testing use
   target 'TIMIITests' do

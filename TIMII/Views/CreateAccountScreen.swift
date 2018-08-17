@@ -2,11 +2,12 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 // TODO: 8.5.18 - need to dismiss to Main screen and not just LoginScreen - DONE: https://stackoverflow.com/questions/3224328/how-to-dismiss-2-modal-view-controllers-in-succession/44583711#44583711
-// TODO: 8.6.18 - Added user info to Firebase - uid, email, name, password - DONE: 8.7.18
+// TODO: 8.6.18 - DONE (8.7.18) Added user info to Firebase - uid, email, name, password
 // TODO: 8.7.18 - Refactor keyboard specific items to separate file
-// TODO: 8.7.18 - Refactor UUID in createUser as its not best practice and long - DONE: 8.7.18 - Using Firebase currentUser ID
-// TODO: 8.7.18 - Add 1 to Firebase Member Countable once member is added successfully - DONE: 8.7.18
+// TODO: 8.7.18 - DONE (8.7.18) Refactor UUID in createUser as its not best practice and long -> Using Firebase currentUser ID
+// TODO: 8.7.18 - DONE (8.7.18) Add 1 to Firebase Member Countable once member is added successfully
 // TODO: 8.7.18 - Add Verify Password matches error handler
+// TODO: 8.16.18 - Refactor FB code and move Auth portion to new AuthenticationSystem and use Firestore in DatabaseSystem to store Members info.
 
 import UIKit
 import Layout

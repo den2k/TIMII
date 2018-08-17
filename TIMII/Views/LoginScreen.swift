@@ -6,6 +6,7 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 // TODO: 7.30.18 - refactor keyboard related code to a separate component/system
+// TODO: 8.16.18 - Use a new AuthenticationSystem module to confirm login/logout?
 
 import UIKit
 import Firebase
