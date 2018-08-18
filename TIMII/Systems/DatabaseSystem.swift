@@ -154,16 +154,26 @@ struct DatabaseSystem
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
 
-        var FSdocRef: DocumentReference!
+        let componentRef = db.collection(componentDbName)
         guard let UID = Auth.auth().currentUser?.uid else { return }
-        let ref = "/\(componentDbName)/\(UID)"
-        FSdocRef = Firestore.firestore().document(ref)
-        FSdocRef.setData(dictionary) { (error) in
+        componentRef.document(UID).setData(dictionary) { (error) in
             if let error = error {
                 print("Oh no! \(error.localizedDescription)")
             } else {
                 print("Data has been saved!")
             }
         }
+        
+//        var FSdocRef: DocumentReference!
+////        guard let UID = Auth.auth().currentUser?.uid else { return }
+//        let ref = "/\(componentDbName)/\(UID)"
+//        FSdocRef = Firestore.firestore().document(ref)
+//        FSdocRef.setData(dictionary) { (error) in
+//            if let error = error {
+//                print("Oh no! \(error.localizedDescription)")
+//            } else {
+//                print("Data has been saved!")
+//            }
+//        }
     }
 }

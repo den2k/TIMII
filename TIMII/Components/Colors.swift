@@ -22,7 +22,7 @@ extension UIColor
     @objc static let iron       = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)  // #DADFE1
     @objc static let silver     = UIColor(red: 191.0/255.0, green: 191.0/255.0, blue: 191.0/255.0, alpha: 1.0)  // #BFBFBF
     @objc static let porcelainOpaque = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.5)
-    @objc static let ironOpaque = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.8)
+    @objc static let ironOpaque = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.9)
 
     
     // RED

@@ -10,23 +10,9 @@
     layer.shadowOpacity="1"
     layer.shadowColor="#AAA"
     layer.shadowOffset.width="3.0"
-    layer.shadowOffset.height="3.0">
+    layer.shadowOffset.height="3.0"
+    layer.masksToBounds="true">
     
-    <!-- Timer Name -->
-    <UITextField
-        outlet="timerNameTextField"
-        placeholder="enter timer name"
-        text="{name}"
-        width="80%"
-        height="40"
-        left="50% - width/2"
-        layer.cornerRadius="height/2"
-        top="20"
-        textAlignment="center"
-        textColor="{isTimerRunning ? UIColor.black : UIColor.gray}"
-        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.white}"
-        font="Avenir Next 18"
-    />
     
     <!-- Daily Total Label -->
     <!-- 8.5 - removed for now until working
@@ -43,7 +29,7 @@
     <!-- Minute -->
     <UILabel
         text="{minute}"
-        top="60% - height/2"
+        top="50% - height/2"
         left="33% - width/2"
         textAlignment="center"
         textColor="isTimerRunning ? UIColor.black : UIColor.white"
@@ -88,15 +74,31 @@
     <UIButton
         title="{isTimerRunning ? 'Pause':'Start'}"
         touchUpInside="{isTimerRunning ? 'pauseTimer':'startTimer'}"
+        top="{isTimerRunning ? 100% - height : 0}"
+        titleLabel.font="{isTimerRunning ? 'Avenir Next 18' : 'Avenir Next 40'}"
+        left="0"
+        width="100%"
+        height="{isTimerRunning ? 50 : 100%}"
         backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.ironOpaque}"
-        layer.cornerRadius="height/2"
-        bottom="{isTimerRunning ? 10 : 40% - height/2}"
-        left="50% - width/2"
-        width="height"
-        height="{isTimerRunning ? 50 : 52% }"
         titleColor="isTimerRunning ? UIColor.black : UIColor.black"
     />
-    
+ 
+     <!-- Timer Name -->
+     <UITextField
+        outlet="timerNameTextField"
+        placeholder="enter timer name"
+        text="{name}"
+        width="80%"
+        height="40"
+        left="50% - width/2"
+        layer.cornerRadius="height/2"
+        top="20"
+        textAlignment="center"
+        textColor="UIColor.black"
+        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.red}"
+        font="Avenir Next 18"
+     />
+ 
     <UIButton
         title="Reset"
         touchUpInside="resetTimer"
