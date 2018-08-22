@@ -1,14 +1,15 @@
 <!-- Main - the main container for the app -->
-<UITabBarController view.backgroundColor="white">
+<UITabBarController view.backgroundColor="">
 
     <!-- Header -->
     <UIView
         xml="HeaderContainer.xml"
         top="parent.safeAreaInsets.top"
-        height="100"
+        width="100%"
+        height="auto"
     />
 
-    <UITabBar tintColor="#54A662"/>
+    <UITabBar tintColor="camo" />
     
     <!-- Home Screen -->
     <UIViewController
@@ -17,20 +18,18 @@
         title="Home"
     />
     
+    <!-- Timer Screen -->
+     <UIViewController
+         xml="TimerScreen.xml"
+         tabBarItem.image="timer.png"
+         title="Timer"
+     />
+
     <!-- Setting Screen -->
     <UIViewController
         xml="SettingScreen.xml"
         tabBarItem.image="setting.png"
         title="Setting"
     />
-
-    <!-- Timer Screen -->
-    <!--
-    <UIViewController
-    xml="TimerScreen.xml"
-    tabBarItem.image="timer.png"
-    title="Timer"
-    />
-    -->
 
 </UITabBarController>

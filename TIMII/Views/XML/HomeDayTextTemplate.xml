@@ -1,0 +1,41 @@
+<!-- HomeDayTextTemplate.xml -->
+<!-- This shows the day -->
+<UIView
+    backgroundColor="silverSand"
+    width=""
+    height=""
+    top="0"
+    left="0">
+    
+    <param name="dayNumberText" type="String"/>
+    <param name="dayText" type="String"/>
+    <macro name="centerHeightSpacing" value="(parent.height - height)/2" />
+    
+    <UIView
+        height="auto"
+        top="centerHeightSpacing">
+        
+        <UILabel
+            text="{dayText}"
+            width="100%"
+            height="auto"
+            top=""
+            left="previous.left"
+            textAlignment="center"
+            textColor="white"
+            backgroundColor=""
+            font="Avenir Next 12"
+        />
+        <UILabel
+            text="{dayNumberText}"
+            width="100%"
+            height="auto"
+            top="previous.bottom - 5"
+            left="0"
+            textAlignment="center"
+            textColor="white"
+            backgroundColor=""
+            font="Avenir Next bold 22"
+        />
+    </UIView>
+</UIView>

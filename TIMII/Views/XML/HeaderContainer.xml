@@ -3,7 +3,6 @@
     <!-- Logo Bar -->
     <UIView xml="LogoBand.xml"
         height="30"
-        backgroundColor="#FFF"
     />
 
     <!-- Family and Friends Bar -->
