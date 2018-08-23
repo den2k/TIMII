@@ -1,7 +1,7 @@
-<!-- Home Screen -->
+<!-- Timeilne Screen -->
 <!-- TODO: 8.18.18 - DONE (8.22.18) Create Moleskine-like timeline view -->
 
-<HomeScreen view.backgroundColor="silverSand">
+<TimelineScreen view.backgroundColor="silverSand">
 
     <macro name="navBarHeight" value="50" />
     <macro name="weeklySideBarWidth" value="40" />
@@ -45,7 +45,7 @@
 
     <!-- Week Long Scroll View -->
     <UIScrollView
-        outlet="homeScrollView"
+        outlet="timelineScrollView"
         contentSize.width="100%"
         contentSize.height="150%"
         top="previous.bottom"
@@ -357,4 +357,4 @@
 
     </UIScrollView>
 
-</HomeScreen>
+</TimelineScreen>

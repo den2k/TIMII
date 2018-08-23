@@ -6,14 +6,14 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 // TODO: 8.7.18 - Add if/then check for Countables related to SetupSystem
-// TODO: 8.7.18 - Show Home Screen always even in logout/login
+// TODO: 8.7.18 - Show Timeline Screen always even in logout/login
 
 import UIKit
 import Layout
 
 class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
 {
-    private var selectedTab = 0     // Set to HomeScreen
+    private var selectedTab = 0     // Set to TimelineScreen
     
     override func viewDidLoad()
     {
@@ -26,7 +26,7 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
             perform(#selector(presentLogin), with: nil, afterDelay: 0)
         }
 
-        print("Show Main / Home screen.")
+        print("Show Main / Timeline screen.")
         self.loadLayout(
             named: "Main.xml"
         )

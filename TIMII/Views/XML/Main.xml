@@ -13,9 +13,9 @@
         tintColor="camo"
         backgroundColor="silverSand "/>
     
-    <!-- Home Screen -->
+    <!-- Timeline Screen -->
     <UIViewController
-        xml="HomeScreen.xml"
+        xml="TimelineScreen.xml"
         tabBarItem.image="home.png"
         title="Timeline"
     />
