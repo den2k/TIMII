@@ -1,6 +1,8 @@
 <!-- Main - the main container for the app -->
 <UITabBarController view.backgroundColor="">
 
+    <macro name="topHeaderContainerHeight" value="50" />
+
     <!-- Header -->
     <UIView
         xml="HeaderContainer.xml"

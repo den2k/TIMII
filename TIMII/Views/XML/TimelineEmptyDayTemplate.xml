@@ -1,6 +1,6 @@
 <UIView
     height="parent.height / 7"
-    top="previous.bottom + 1"
+    top="previous.bottom + 4"
     backgroundColor="emptyContentBackgroundColor">
     
     <!-- Inner Vertically Centered View -->
@@ -16,7 +16,7 @@
         height=""
         top="0"
         left="50% - width/2"
-        textColor="silverSand"
+        textColor="emptyContentTextColor"
         textAlignment="center"
         font="Avenir Next 30"
         />

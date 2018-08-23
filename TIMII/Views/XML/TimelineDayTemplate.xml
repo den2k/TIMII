@@ -2,11 +2,11 @@
 
 <!-- This shows the day -->
 <UIView
-    backgroundColor="white"
     width=""
     height=""
     top="0"
-    left="0">
+    left="0"
+    backgroundColor="dailyContentBackgroundColor">
     
     <param name="dayNumberText" type="String"/>
     <param name="dayText" type="String"/>
@@ -23,7 +23,7 @@
             top=""
             left="previous.left"
             textAlignment="center"
-            textColor="silverSand"
+            textColor="dateTextColor"
             backgroundColor=""
             font="Avenir Next 12"
         />
@@ -34,7 +34,7 @@
             top="previous.bottom - 5"
             left="0"
             textAlignment="center"
-            textColor="silverSand"
+            textColor="dateTextColor"
             backgroundColor=""
             font="Avenir Next bold 22"
         />

@@ -2,7 +2,7 @@
 <UIView>
     <!-- Logo Bar -->
     <UIView xml="LogoBand.xml"
-        height="30"
+        height="auto"
     />
 
     <!-- Family and Friends Bar -->

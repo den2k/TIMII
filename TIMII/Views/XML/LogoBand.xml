@@ -3,7 +3,7 @@
     <UILabel
         text="TIMII"
         width="100%"
-        height="30"
+        height="topHeaderContainerHeight"
         top="50% - height / 2"
         left=""
         textAlignment="center"
