@@ -1,0 +1,25 @@
+<UIView
+    height="parent.height / 7"
+    top="previous.bottom + 1"
+    backgroundColor="emptyContentBackgroundColor">
+    
+    <!-- Inner Vertically Centered View -->
+    <UIView
+        width="100%"
+        height="auto"
+        top="(parent.height - height)/2"
+        backgroundColor="">
+        
+        <UILabel
+        text="+"
+        width=""
+        height=""
+        top="0"
+        left="50% - width/2"
+        textColor="silverSand"
+        textAlignment="center"
+        font="Avenir Next 30"
+        />
+        
+    </UIView>
+</UIView>

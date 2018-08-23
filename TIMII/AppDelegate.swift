@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable Swift Layout Library's new layout mode
         LayoutNode.useLegacyLayoutMode = false
         
+        // Hide iPhone status bar
+        UIApplication.shared.isStatusBarHidden = true
+        
         // Programmic method to display View Controllers
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()

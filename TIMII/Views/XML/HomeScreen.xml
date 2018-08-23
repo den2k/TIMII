@@ -1,13 +1,14 @@
 <!-- Home Screen -->
-<!-- TODO: 8.18.18 - Create Moleskine-like timeline view -->
+<!-- TODO: 8.18.18 - DONE (8.22.18) Create Moleskine-like timeline view -->
 
 <HomeScreen view.backgroundColor="silverSand">
 
     <macro name="navBarHeight" value="50" />
     <macro name="weeklySideBarWidth" value="40" />
-    <macro name="weeklySideBarHeight" value="100% - 30 - 7" />
-    <macro name="dailyContentBackgroundColor" value="camo" />
-    <macro name="todayContentBackgroundColor" value="black" />
+    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - 30 - 7" />
+    <macro name="dailyContentBackgroundColor" value="red" />
+    <macro name="emptyContentBackgroundColor" value="white" />
+    <macro name="todayContentBackgroundColor" value="cinnabar" />
 
     <!-- Month Top Bar -->
     <UIView
@@ -19,7 +20,7 @@
         
         <!-- Month Label -->
         <UILabel
-            text="SEPT"
+            text="WEEK"
             width="100%"
             height="auto"
             top="4"
@@ -27,18 +28,18 @@
             textAlignment="center"
             textColor="white"
             backgroundColor="parent.backgroundColor"
-            font="Avenir Next bold 10"
+            font="Avenir Next 9"
         />
         <UILabel
-            text="2018"
+            text="23"
             width="100%"
             height="auto"
-            top="previous.bottom"
+            top="previous.bottom - 3"
             left="previous.left"
             textAlignment="center"
             textColor="white"
             backgroundColor="parent.backgroundColor"
-            font="Avenir Next 9"
+            font="Avenir Next bold 12"
         />
     </UIView>
 
@@ -49,7 +50,7 @@
         contentSize.height="150%"
         top="previous.bottom"
         left="0"
-        backgroundColor="parent.backgroundColor"
+        backgroundColor="white"
         contentInsetAdjustmentBehavior="never"
         isPagingEnabled="true"
         showsHorizontalScrollIndicator="false">
@@ -60,63 +61,58 @@
             height="weeklySideBarHeight"
             top="0"
             left="0"
-            backgroundColor="parent.backgroundColor">
+            backgroundColor="white">
             
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="11"
                 dayText="WED"
                 height="parent.height / 7"
+                backgroundColor="lynch"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="12"
                 dayText="THU"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="13"
                 dayText="FRI"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="14"
                 dayText="SAT"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="15"
                 dayText="SUN"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="16"
                 dayText="MON"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
             <UIView
-                template="HomeDayTextTemplate.xml"
+                template="TimelineDayTemplate.xml"
                 dayNumberText="17"
                 dayText="TUE"
                 height="parent.height / 7"
                 top="previous.bottom + 1"
             />
-            <UIView
-                template="HomeDayTextTemplate.xml"
-                dayNumberText="18"
-                dayText="WED"
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-            />
+
         </UIView>
 
         <!-- Weekly Content View -->
@@ -141,10 +137,21 @@
                     backgroundColor="">
                 
                     <UILabel
-                        text="12:00 PM"
-                        width="14%"
+                        text="First journal entry. This is a lot of fun. Went to pizza parler with friends."
+                        width="90%"
                         height="20"
-                        top=""
+                        top="0"
+                        left="10"
+                        textColor="white"
+                        textAlignment="left"
+                        font="Avenir Next 12"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="12:03 PM"
+                        width="14%"
+                        height="10"
+                        top="previous.bottom + 4"
                         left="0"
                         textColor="white"
                         textAlignment="right"
@@ -154,18 +161,18 @@
                     <UILabel
                         text="Lunch with team"
                         width="72%"
-                        height="20"
+                        height="10"
                         top="previous.top"
                         left="previous.right + 8"
                         textColor="white"
                         textAlignment="left"
-                        font="Avenir Next 16"
+                        font="Avenir Next 9"
                         backgroundColor=""
                     />
                     <UILabel
                         text="[0:48]"
                         width="40"
-                        height="20"
+                        height="10"
                         top="previous.top"
                         right="0"
                         textColor="white"
@@ -174,9 +181,9 @@
                         backgroundColor=""
                     />
                     <UILabel
-                        text="1:00 PM"
+                        text="1:12 PM"
                         width="14%"
-                        height="20"
+                        height="10"
                         top="previous.bottom"
                         left="0"
                         textColor="white"
@@ -186,17 +193,17 @@
                     <UILabel
                     text="Marching band practice"
                         width="72%"
-                        height="20"
+                        height="10"
                         top="previous.top"
                         left="previous.right + 8"
                         textColor="white"
                         textAlignment="left"
-                        font="Avenir Next 16"
+                        font="Avenir Next 9"
                     />
                     <UILabel
                         text="[4:03]"
                         width="40"
-                        height="20"
+                        height="10"
                         top="previous.top"
                         right="0"
                         textColor="white"
@@ -206,42 +213,146 @@
                     />
                 </UIView>
             </UIView>
-            
+
+            <UIView template="TimelineEmptyDayTemplate.xml" />
+
+            <UIView template="TimelineEmptyDayTemplate.xml" />
+                
             <UIView
                 height="parent.height / 7"
                 top="previous.bottom + 1"
                 backgroundColor="dailyContentBackgroundColor">
+                
+                <!-- Inner Vertically Centered View -->
+                <UIView
+                    width="100%"
+                    height="auto"
+                    top="(parent.height - height)/2"
+                    backgroundColor="">
+                    
+                    <UILabel
+                        text="10:33 AM"
+                        width="14%"
+                        height="10"
+                        top=""
+                        left="0"
+                        textColor="white"
+                        textAlignment="right"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="Meeting"
+                        width="72%"
+                        height="10"
+                        top="previous.top"
+                        left="previous.right + 8"
+                        textColor="white"
+                        textAlignment="left"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="[0:31]"
+                        width="40"
+                        height="10"
+                        top="previous.top"
+                        right="0"
+                        textColor="white"
+                        textAlignment="center"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="2:17 PM"
+                        width="14%"
+                        height="10"
+                        top="previous.bottom"
+                        left="0"
+                        textColor="white"
+                        textAlignment="right"
+                        font="Avenir Next 9"
+                    />
+                    <UILabel
+                        text="Math homework"
+                        width="72%"
+                        height="10"
+                        top="previous.top"
+                        left="previous.right + 8"
+                        textColor="white"
+                        textAlignment="left"
+                        font="Avenir Next 9"
+                    />
+                    <UILabel
+                        text="[1:09]"
+                        width="40"
+                        height="10"
+                        top="previous.top"
+                        right="0"
+                        textColor="white"
+                        textAlignment="center"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                </UIView>
+
             </UIView>
+
+            <UIView template="TimelineEmptyDayTemplate.xml" />
+
             <UIView
                 height="parent.height / 7"
                 top="previous.bottom + 1"
                 backgroundColor="dailyContentBackgroundColor">
+
+                <!-- Inner Vertically Centered View -->
+                <UIView
+                    width="100%"
+                    height="auto"
+                    top="(parent.height - height)/2"
+                    backgroundColor="">
+                    
+                    <UILabel
+                        text="7:13 AM"
+                        width="14%"
+                        height="10"
+                        top=""
+                        left="0"
+                        textColor="white"
+                        textAlignment="right"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="Run with daddy"
+                        width="72%"
+                        height="10"
+                        top="previous.top"
+                        left="previous.right + 8"
+                        textColor="white"
+                        textAlignment="left"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+                    <UILabel
+                        text="[0:17]"
+                        width="40"
+                        height="10"
+                        top="previous.top"
+                        right="0"
+                        textColor="white"
+                        textAlignment="center"
+                        font="Avenir Next 9"
+                        backgroundColor=""
+                    />
+
+                </UIView>
+
             </UIView>
-            <UIView
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-                backgroundColor="dailyContentBackgroundColor">
-            </UIView>
-            <UIView
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-                backgroundColor="dailyContentBackgroundColor">
-            </UIView>
-            <UIView
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-                backgroundColor="dailyContentBackgroundColor">
-            </UIView>
-            <UIView
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-                backgroundColor="dailyContentBackgroundColor">
-            </UIView>
-            <UIView
-                height="parent.height / 7"
-                top="previous.bottom + 1"
-                backgroundColor="dailyContentBackgroundColor">
-            </UIView>
+
+            <UIView template="TimelineEmptyDayTemplate.xml" />
+
+
         </UIView>
 
     </UIScrollView>

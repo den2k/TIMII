@@ -9,13 +9,15 @@
         height="auto"
     />
 
-    <UITabBar tintColor="camo" />
+    <UITabBar
+        tintColor="camo"
+        backgroundColor="silverSand "/>
     
     <!-- Home Screen -->
     <UIViewController
         xml="HomeScreen.xml"
         tabBarItem.image="home.png"
-        title="Home"
+        title="Timeline"
     />
     
     <!-- Timer Screen -->
@@ -29,7 +31,7 @@
     <UIViewController
         xml="SettingScreen.xml"
         tabBarItem.image="setting.png"
-        title="Setting"
+        title="Profile"
     />
 
 </UITabBarController>

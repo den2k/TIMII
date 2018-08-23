@@ -1,7 +1,8 @@
-<!-- HomeDayTextTemplate.xml -->
+<!-- TimelineDayTemplate.xml -->
+
 <!-- This shows the day -->
 <UIView
-    backgroundColor="silverSand"
+    backgroundColor="white"
     width=""
     height=""
     top="0"
@@ -22,7 +23,7 @@
             top=""
             left="previous.left"
             textAlignment="center"
-            textColor="white"
+            textColor="silverSand"
             backgroundColor=""
             font="Avenir Next 12"
         />
@@ -33,7 +34,7 @@
             top="previous.bottom - 5"
             left="0"
             textAlignment="center"
-            textColor="white"
+            textColor="silverSand"
             backgroundColor=""
             font="Avenir Next bold 22"
         />
