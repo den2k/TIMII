@@ -1,6 +1,6 @@
 <UIView
     height="parent.height / 7"
-    top="previous.bottom + 4"
+    top="previous.bottom + borderLength"
     backgroundColor="emptyContentBackgroundColor">
     
     <!-- Inner Vertically Centered View -->

@@ -1,12 +1,13 @@
 <!-- Logo Band -->
 <UIView>
     <UILabel
-        text="TIMII"
+        text="SEPT 2018"
         width="100%"
         height="topHeaderContainerHeight"
         top="50% - height / 2"
         left=""
         textAlignment="center"
-        textColor="white"
+        textColor="black"
+        font="Avenir Next bold 15"
     />
 </UIView>

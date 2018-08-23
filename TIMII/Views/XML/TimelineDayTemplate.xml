@@ -25,13 +25,13 @@
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor=""
-            font="Avenir Next 12"
+            font="14"
         />
         <UILabel
             text="{dayNumberText}"
             width="100%"
             height="auto"
-            top="previous.bottom - 5"
+            top="previous.bottom - 3"
             left="0"
             textAlignment="center"
             textColor="dateTextColor"

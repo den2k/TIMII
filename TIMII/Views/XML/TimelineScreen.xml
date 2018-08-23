@@ -1,18 +1,26 @@
 <!-- Timeilne Screen -->
 <!-- TODO: 8.18.18 - DONE (8.22.18) Create Moleskine-like timeline view -->
 
-<TimelineScreen view.backgroundColor="silver">
+<TimelineScreen
+    view.backgroundColor="">
 
     <macro name="navBarHeight" value="50" />
     <macro name="weeklySideBarWidth" value="40" />
-    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - topHeaderContainerHeight - 14" />
-    <macro name="todayContentBackgroundColor" value="salem" />
-    <macro name="dailyContentBackgroundColor" value="porcelain" />
-    <macro name="emptyContentBackgroundColor" value="porcelain" />
+    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - topHeaderContainerHeight - borderLength * 7" />
+    <macro name="todayContentBackgroundColor" value="white" />
+    <macro name="dailyContentBackgroundColor" value="porcelainOpaque" />
+    <macro name="emptyContentBackgroundColor" value="porcelainOpaque" />
     <macro name="dateTextColor" value="black" />
     <macro name="dailyContentTextColor" value="black" />
     <macro name="emptyContentTextColor" value="black" />
+    <macro name="borderLength" value="8" />
 
+    <UIImageView
+        image="bk-1.jpg"
+        width="100%"
+        height="100%"
+        contentMode="scaleAspectFit"
+    />
 
     <!-- Month Top Bar -->
     <UIView
@@ -28,7 +36,7 @@
             width="100%"
             height="auto"
             top="50% - height / 2 - 6"
-            left="4"
+            left="borderLength"
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor="parent.backgroundColor"
@@ -64,7 +72,7 @@
             width="weeklySideBarWidth"
             height="weeklySideBarHeight"
             top="0"
-            left="4"
+            left="borderLength"
             backgroundColor="">
             
             <UIView
@@ -79,52 +87,52 @@
                 dayNumberText="12"
                 dayText="THU"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
             <UIView
                 template="TimelineDayTemplate.xml"
                 dayNumberText="13"
                 dayText="FRI"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
             <UIView
                 template="TimelineDayTemplate.xml"
                 dayNumberText="14"
                 dayText="SAT"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
             <UIView
                 template="TimelineDayTemplate.xml"
                 dayNumberText="15"
                 dayText="SUN"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
             <UIView
                 template="TimelineDayTemplate.xml"
                 dayNumberText="16"
                 dayText="MON"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
             <UIView
                 template="TimelineDayTemplate.xml"
                 dayNumberText="17"
                 dayText="TUE"
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
             />
 
         </UIView>
 
         <!-- Weekly Content View -->
         <UIView
-            width="100% - weeklySideBarWidth - 14"
+            width="100% - weeklySideBarWidth - borderLength * 3"
             height="weeklySideBarHeight"
             top="previous.top"
-            left="weeklySideBarWidth + 8"
+            left="weeklySideBarWidth + borderLength * 2"
             backgroundColor="">
             
             <!-- Daily Content View -->
@@ -149,7 +157,7 @@
                         left="10"
                         textColor="dailyContentTextColor"
                         textAlignment="left"
-                        font="Avenir Next 12"
+                        font="Avenir Next bold 12"
                         backgroundColor=""
                     />
                     
@@ -273,7 +281,7 @@
                 
             <UIView
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
                 backgroundColor="dailyContentBackgroundColor">
                 
                 <!-- Inner Vertically Centered View -->
@@ -355,7 +363,7 @@
 
             <UIView
                 height="parent.height / 7"
-                top="previous.bottom + 4"
+                top="previous.bottom + borderLength"
                 backgroundColor="dailyContentBackgroundColor">
 
                 <!-- Inner Vertically Centered View -->
