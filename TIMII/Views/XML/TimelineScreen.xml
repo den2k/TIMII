@@ -1,5 +1,7 @@
 <!-- Timeilne Screen -->
 <!-- TODO: 8.18.18 - DONE (8.22.18) Create Moleskine-like timeline view -->
+<!-- TODO: 8.23.18 - Space too small on 7 days screen to show all info. So add 1 tap to expand the day view. -->
+<!-- TODO: 8.23.18 - Given the space constraints the narrow 7 day view can be toggled to show either Journal or Calendar items -->
 
 <TimelineScreen
     view.backgroundColor="">
@@ -22,7 +24,7 @@
         contentMode="scaleAspectFit"
     />
 
-    <!-- Month Top Bar -->
+    <!-- Week Top Bar -->
     <UIView
         width="40"
         height="topHeaderContainerHeight"
@@ -30,7 +32,7 @@
         left="0"
         backgroundColor="parent.backgroundColor">
         
-        <!-- Month Label -->
+        <!-- Week Label -->
         <UILabel
             text="WEEK"
             width="100%"
@@ -64,8 +66,8 @@
         left="0"
         backgroundColor="parent.backgroundColor"
         contentInsetAdjustmentBehavior="never"
-        isPagingEnabled="true"
-        showsHorizontalScrollIndicator="false">
+        isPagingEnabled=""
+        showsHorizontalScrollIndicator="">
 
         <!-- Weekly Side Bar -->
         <UIView
@@ -141,32 +143,10 @@
                 top="previous.bottom"
                 backgroundColor="todayContentBackgroundColor">
                 
-                <!-- Journal Entry -->
-                <UIView
-                    width="100%"
-                    height="50%"
-                    top="0"
-                    backgroundColor="">
-                
-                    <!-- Inner Vertically Centered View -->
-                    <UILabel
-                        text="First journal entry. This is a lot of fun. Went to pizza parler with friends."
-                        width="85%"
-                        height="20"
-                        top="(parent.height - height)/2"
-                        left="10"
-                        textColor="dailyContentTextColor"
-                        textAlignment="left"
-                        font="Avenir Next bold 12"
-                        backgroundColor=""
-                    />
-                    
-                </UIView>
-
                 <!-- Timed Tasks -->
                 <UIView
                     width="100%"
-                    height="50%"
+                    height="100%"
                     top="previous.bottom"
                     backgroundColor="">
 
@@ -178,97 +158,66 @@
                     
                         <UILabel
                             text="12:03 PM"
-                            width="14%"
-                            height="10"
+                            width="15%"
+                            height="auto"
                             top="0"
-                            left="0"
+                            left="10"
                             textColor="dailyContentTextColor"
                             textAlignment="right"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                             backgroundColor=""
                         />
                         <UILabel
                             text="Lunch with team"
-                            width="72%"
-                            height="10"
+                            width="75%"
+                            height="auto"
                             top="previous.top"
                             left="previous.right + 8"
                             textColor="dailyContentTextColor"
                             textAlignment="left"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                             backgroundColor=""
                         />
                         <UILabel
                             text="[0:48]"
-                            width="40"
-                            height="10"
+                            width="10%"
+                            height="auto"
                             top="previous.top"
-                            right="0"
+                            right="10"
                             textColor="dailyContentTextColor"
                             textAlignment="center"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                             backgroundColor=""
                         />
                         <UILabel
                             text="1:12 PM"
-                            width="14%"
-                            height="10"
+                            width="15%"
+                            height="auto"
                             top="previous.bottom"
-                            left="0"
+                            left="10"
                             textColor="dailyContentTextColor"
                             textAlignment="right"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                         />
                         <UILabel
                         text="Marching band practice"
-                            width="72%"
-                            height="10"
+                            width="75%"
+                            height="auto"
                             top="previous.top"
                             left="previous.right + 8"
                             textColor="dailyContentTextColor"
                             textAlignment="left"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                         />
                         <UILabel
                             text="[4:03]"
-                            width="40"
-                            height="10"
+                            width="10%"
+                            height="auto"
                             top="previous.top"
-                            right="0"
+                            right="10"
                             textColor="dailyContentTextColor"
                             textAlignment="center"
-                            font="Avenir Next 9"
-                            backgroundColor=""
-                        />
-                        <UILabel
-                            text="1:12 PM"
-                            width="14%"
-                            height="10"
-                            top="previous.bottom"
-                            left="0"
-                            textColor="dailyContentTextColor"
-                            textAlignment="right"
-                            font="Avenir Next 9"
-                        />
-                        <UILabel
-                            text="Marching band practice"
-                            width="72%"
-                            height="10"
-                            top="previous.top"
-                            left="previous.right + 8"
-                            textColor="dailyContentTextColor"
-                            textAlignment="left"
-                            font="Avenir Next 9"
-                        />
-                        <UILabel
-                            text="[4:03]"
-                            width="40"
-                            height="10"
-                            top="previous.top"
-                            right="0"
-                            textColor="dailyContentTextColor"
-                            textAlignment="center"
-                            font="Avenir Next 9"
+                            font="Avenir Next 11"
                             backgroundColor=""
                         />
                     </UIView>
@@ -293,66 +242,66 @@
                     
                     <UILabel
                         text="10:33 AM"
-                        width="14%"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top=""
-                        left="0"
+                        left="10"
                         textColor="dailyContentTextColor"
                         textAlignment="right"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                     <UILabel
                         text="Meeting"
-                        width="72%"
-                        height="10"
+                        width="75%"
+                        height="auto"
                         top="previous.top"
                         left="previous.right + 8"
                         textColor="dailyContentTextColor"
                         textAlignment="left"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                     <UILabel
                         text="[0:31]"
-                        width="40"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top="previous.top"
-                        right="0"
+                        right="10"
                         textColor="dailyContentTextColor"
                         textAlignment="center"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                     <UILabel
                         text="2:17 PM"
-                        width="14%"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top="previous.bottom"
-                        left="0"
+                        left="10"
                         textColor="dailyContentTextColor"
                         textAlignment="right"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                     />
                     <UILabel
                         text="Math homework"
-                        width="72%"
-                        height="10"
+                        width="75%"
+                        height="auto"
                         top="previous.top"
                         left="previous.right + 8"
                         textColor="dailyContentTextColor"
                         textAlignment="left"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                     />
                     <UILabel
                         text="[1:09]"
-                        width="40"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top="previous.top"
-                        right="0"
+                        right="10"
                         textColor="dailyContentTextColor"
                         textAlignment="center"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                 </UIView>
@@ -375,35 +324,35 @@
                     
                     <UILabel
                         text="7:13 AM"
-                        width="14%"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top=""
-                        left="0"
+                        left="10"
                         textColor="dailyContentTextColor"
                         textAlignment="right"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                     <UILabel
                         text="Run with daddy"
-                        width="72%"
-                        height="10"
+                        width="75%"
+                        height="auto"
                         top="previous.top"
                         left="previous.right + 8"
                         textColor="dailyContentTextColor"
                         textAlignment="left"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
                     <UILabel
                         text="[0:17]"
-                        width="40"
-                        height="10"
+                        width="15%"
+                        height="auto"
                         top="previous.top"
-                        right="0"
+                        right="10"
                         textColor="dailyContentTextColor"
                         textAlignment="center"
-                        font="Avenir Next 9"
+                        font="Avenir Next 11"
                         backgroundColor=""
                     />
 

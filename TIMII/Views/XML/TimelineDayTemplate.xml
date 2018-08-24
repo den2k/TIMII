@@ -25,7 +25,7 @@
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor=""
-            font="14"
+            font="13"
         />
         <UILabel
             text="{dayNumberText}"
@@ -36,7 +36,7 @@
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor=""
-            font="Avenir Next bold 22"
+            font="Avenir Next bold 21"
         />
     </UIView>
 </UIView>

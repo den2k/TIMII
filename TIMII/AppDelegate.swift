@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // Use Firebase library to configure APIs
@@ -24,14 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable Swift Layout Library's new layout mode
         LayoutNode.useLegacyLayoutMode = false
         
-        // Hide iPhone status bar
-        UIApplication.shared.isStatusBarHidden = true
+        // Hide iPhone status bar. This works but not on X.
+//        UIApplication.shared.isStatusBarHidden = true
         
         // Programmic method to display View Controllers
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = Main()
-//        window?.rootViewController = UINavigationController(rootViewController: Main())
 
         return true
     }

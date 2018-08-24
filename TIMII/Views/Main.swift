@@ -4,9 +4,11 @@
 //
 //  Created by Daddy on 4/15/18.
 //  Copyright © 2018 Autonomii. All rights reserved.
-//
-// TODO: 8.7.18 - Add if/then check for Countables related to SetupSystem
-// TODO: 8.7.18 - Show Timeline Screen always even in logout/login
+/*
+TODO: 8.7.18 - Add if/then check for Countables related to SetupSystem
+TODO: 8.7.18 - Show Timeline Screen always even in logout/login
+TODO: 8.23.18 - prefersStatusBarHidden for iPhone X does not work. setneedstatusbar, hiding navbar also related to this 'fix' This code was added to deal with X but its not working.
+*/
 
 import UIKit
 import Layout
@@ -18,7 +20,9 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
- 
+        setNeedsStatusBarAppearanceUpdate()
+        self.navigationController?.navigationBar.isHidden = true;
+        
         let login = LogInOutSystem()
         let signedIn = login.isLoggedIn()
         if !signedIn
@@ -54,5 +58,10 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     {
         guard let index = tabBarController.viewControllers?.index(of: viewController) else { return }
         selectedTab = index
+    }
+    
+    // Hide status bar in iPhone
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 }

@@ -11,14 +11,14 @@
         backgroundColor="">
         
         <UILabel
-        text="+"
-        width=""
-        height=""
-        top="0"
-        left="50% - width/2"
-        textColor="emptyContentTextColor"
-        textAlignment="center"
-        font="Avenir Next 30"
+            text=""
+            width=""
+            height=""
+            top="0"
+            left="50% - width/2"
+            textColor="emptyContentTextColor"
+            textAlignment="center"
+            font="Avenir Next 30"
         />
         
     </UIView>
