@@ -45,9 +45,7 @@
 		0FBE767320A88D25003225F0 /* SetupSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBE767220A88D25003225F0 /* SetupSystem.swift */; };
 		0FC08A4620840CFF0083E0B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC08A4520840CFE0083E0B3 /* AppDelegate.swift */; };
 		0FC08A4820840CFF0083E0B3 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC08A4720840CFF0083E0B3 /* Main.swift */; };
-		0FC08A4B20840CFF0083E0B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC08A4920840CFF0083E0B3 /* Main.storyboard */; };
 		0FC08A4D20840D020083E0B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FC08A4C20840D020083E0B3 /* Assets.xcassets */; };
-		0FC08A5020840D020083E0B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC08A4E20840D020083E0B3 /* LaunchScreen.storyboard */; };
 		0FDB817E20B0CDDF00E39E04 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB817D20B0CDDF00E39E04 /* UIStyle.swift */; };
 		0FDB818020B0CE2300E39E04 /* UIStyleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB817F20B0CE2300E39E04 /* UIStyleSystem.swift */; };
 		0FDB818220B0D4F000E39E04 /* UIStyleSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB818120B0D4F000E39E04 /* UIStyleSystemTests.swift */; };
@@ -125,9 +123,7 @@
 		0FC08A4220840CFE0083E0B3 /* TIMII.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIMII.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC08A4520840CFE0083E0B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FC08A4720840CFF0083E0B3 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
-		0FC08A4A20840CFF0083E0B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0FC08A4C20840D020083E0B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0FC08A4F20840D020083E0B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FC08A5120840D020083E0B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FDB817D20B0CDDF00E39E04 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		0FDB817F20B0CE2300E39E04 /* UIStyleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleSystem.swift; sourceTree = "<group>"; };
@@ -177,15 +173,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F2C3EFF209E589700A417F1 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				0FC08A4920840CFF0083E0B3 /* Main.storyboard */,
-				0FC08A4E20840D020083E0B3 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
-			sourceTree = "<group>";
-		};
 		0F2C3F06209F476400A417F1 /* Systems */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,7 +304,6 @@
 				0F777B8920ABE182008F7944 /* Views */,
 				0FC08A4520840CFE0083E0B3 /* AppDelegate.swift */,
 				0FC08A4C20840D020083E0B3 /* Assets.xcassets */,
-				0F2C3EFF209E589700A417F1 /* Storyboards */,
 				0FC08A5120840D020083E0B3 /* Info.plist */,
 				0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */,
 				0FBE766F20A7CC6F003225F0 /* !Deprecated */,
@@ -475,7 +461,6 @@
 				0F9D931920BAFF850027DE1D /* Boxes.xml in Resources */,
 				0FAC81F120C4BEC600D69AB7 /* HeaderContainer.xml in Resources */,
 				0FAC81F320C4C00700D69AB7 /* TimerPage.xml in Resources */,
-				0FC08A5020840D020083E0B3 /* LaunchScreen.storyboard in Resources */,
 				0F9D931020BA19E90027DE1D /* FamilyFriendsBand.xml in Resources */,
 				952E91E22128836900629679 /* TimelineDayTemplate.xml in Resources */,
 				0F9EAE8B20C2429900E2C5F3 /* TimerBox-old.xml in Resources */,
@@ -490,7 +475,6 @@
 				0F9D930E20BA167E0027DE1D /* LogoBand.xml in Resources */,
 				0FE3DEFE208BB0A400D546BC /* GoogleService-Info.plist in Resources */,
 				0F4C9F8620C3A4EC000B760F /* TimelineScreen.xml in Resources */,
-				0FC08A4B20840CFF0083E0B3 /* Main.storyboard in Resources */,
 				950ECEE0210BFCCD00DE2D49 /* LoginScreen.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,25 +641,6 @@
 			targetProxy = 0F2C3F1A209FB01500A417F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0FC08A4920840CFF0083E0B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FC08A4A20840CFF0083E0B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0FC08A4E20840D020083E0B3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FC08A4F20840D020083E0B3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0F2C3F1D209FB01500A417F1 /* Debug */ = {
