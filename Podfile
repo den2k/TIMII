@@ -29,6 +29,6 @@ target 'TIMII' do
   # pod 'SnapKit', '~> 4.0.0'
   
   # Pod for Swift Layout Framework
-  pod 'Layout', '~> 0.6'
+  pod 'Layout', '~> 0.6.30'
 
 end

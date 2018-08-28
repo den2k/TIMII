@@ -143,7 +143,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Performance
   - Firebase/Storage
-  - Layout (~> 0.6)
+  - Layout (~> 0.6.30)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -196,6 +196,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
 
-PODFILE CHECKSUM: 3edd5599f231c7dc277fe153f93f1ecc07aac435
+PODFILE CHECKSUM: 9f4a503953aba2400563184685eaa3bcba8c2739
 
 COCOAPODS: 1.5.3

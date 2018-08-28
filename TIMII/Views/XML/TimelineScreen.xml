@@ -1,9 +1,10 @@
-<!-- Timeilne Screen -->
+<!-- Timeline Screen -->
 <!-- TODO: 8.18.18 - DONE (8.22.18) Create Moleskine-like timeline view -->
-<!-- TODO: 8.23.18 - Space too small on 7 days screen to show all info. So add 1 tap to expand the day view. -->
+<!-- TODO: 8.23.18 - WIP - Space too small on 7 days screen to show all info. So add 1 tap to expand the day view. -->
 <!-- TODO: 8.23.18 - Given the space constraints the narrow 7 day view can be toggled to show either Journal or Calendar items -->
 
 <TimelineScreen
+    outlet="layoutNode"
     view.backgroundColor="">
 
     <macro name="navBarHeight" value="50" />
@@ -59,7 +60,6 @@
 
     <!-- Week Long Scroll View -->
     <UIScrollView
-        outlet="timelineScrollView"
         contentSize.width="100%"
         contentSize.height="150%"
         top="previous.bottom"
@@ -81,7 +81,7 @@
                 template="TimelineDayTemplate.xml"
                 dayNumberText="11"
                 dayText="WED"
-                height="parent.height / 7"
+                height="{isDayExpanded ? parent.height/2 : parent.height/7}"
                 backgroundColor="todayContentBackgroundColor"
             />
             <UIView
@@ -139,7 +139,8 @@
             
             <!-- Daily Content View -->
             <UIView
-                height="parent.height / 7"
+                width=""
+                height="{isDayExpanded ? parent.height/2 : parent.height/7}"
                 top="previous.bottom"
                 backgroundColor="todayContentBackgroundColor">
                 
@@ -221,6 +222,17 @@
                             backgroundColor=""
                         />
                     </UIView>
+                    
+                    <UIButton
+                        title="hi"
+                        touchUpInside="expandView"
+                        width="100%"
+                        height="100%"
+                        top=""
+                        left=""
+                        backgroundColor=""
+                    />
+                    
                 </UIView>
             </UIView>
 
