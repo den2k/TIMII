@@ -224,13 +224,24 @@
                     </UIView>
                     
                     <UIButton
-                        title="hi"
+                        title=""
                         touchUpInside="expandView"
                         width="100%"
                         height="100%"
                         top=""
                         left=""
                         backgroundColor=""
+                    />
+                    
+                    <UIButton
+                        isHidden="{isDayExpanded ? false : true}"
+                        title="Edit"
+                        touchUpInside="editView"
+                        width="auto + 40"
+                        height="auto"
+                        bottom="10"
+                        left="50% - width/2"
+                        backgroundColor="blue"
                     />
                     
                 </UIView>
