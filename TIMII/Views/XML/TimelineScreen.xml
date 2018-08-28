@@ -4,7 +4,7 @@
 <!-- TODO: 8.23.18 - Given the space constraints the narrow 7 day view can be toggled to show either Journal or Calendar items -->
 
 <TimelineScreen
-    outlet="layoutNode"
+    outlet="timelineScreenNode"
     view.backgroundColor="">
 
     <macro name="navBarHeight" value="50" />

@@ -26,9 +26,9 @@ class TimelineScreen: UIViewController, UIScrollViewDelegate, LayoutLoading
     
     var isDayExpanded: Bool = false
     
-    @IBOutlet var layoutNode: LayoutNode? {
+    @IBOutlet var timelineScreenNode: LayoutNode? {
         didSet {
-            layoutNode?.setState([
+            timelineScreenNode?.setState([
                 "isDayExpanded": isDayExpanded
             ])
         }
@@ -60,7 +60,7 @@ class TimelineScreen: UIViewController, UIScrollViewDelegate, LayoutLoading
         // Calling setState() on a LayoutNode after it has been created will
         // trigger an update. The update causes all expressions in that node
         // and its children to be re-evaluated.
-        self.layoutNode?.setState([
+        self.timelineScreenNode?.setState([
             "isDayExpanded" : isDayExpanded
         ])
     }
