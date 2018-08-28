@@ -144,17 +144,18 @@
                 top="previous.bottom"
                 backgroundColor="todayContentBackgroundColor">
                 
-                <!-- Timed Tasks -->
+                <!-- Inner Container ? Do I need this ? -->
                 <UIView
                     width="100%"
                     height="100%"
-                    top="previous.bottom"
+                    top="previous.top"
                     backgroundColor="">
 
+                    <!-- Calendar / Journal Content Container -->
                     <UIView
                         width="100%"
                         height="auto"
-                        top="(parent.height - height)/2"
+                        top="{isDayExpanded ? previous.top + 25 : (parent.height - height)/2}"
                         left="">
                     
                         <UILabel
