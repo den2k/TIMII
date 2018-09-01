@@ -10,7 +10,7 @@
 
 import Foundation
 
-struct ComponentSystem : Component
+struct ComponentSystem : ComponentProtocol
 {
     // MARK: -- Protocol --
     let ComponentDbName: String     = "Components"

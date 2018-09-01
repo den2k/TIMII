@@ -1,5 +1,5 @@
 //
-//  Dashboard.swift
+//  DashboardProtocol.swift
 //  TIMII
 //
 //  Created by Daddy on 4/28/18.
@@ -17,4 +17,7 @@
 
 import Foundation
 
-protocol Dashboard { }
+protocol DashboardProtocol
+{
+    
+}

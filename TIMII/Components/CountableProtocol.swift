@@ -1,5 +1,5 @@
 //
-//  Countable.swift
+//  CountableProtocol.swift
 //  TIMII
 //
 //  Created by Daddy on 4/28/18.
@@ -12,7 +12,7 @@
 
 import Foundation
 
-protocol Countable
+protocol CountableProtocol
 {
     func increment(_ countableComponentDbName : String)
 }

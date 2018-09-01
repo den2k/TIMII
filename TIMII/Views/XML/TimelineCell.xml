@@ -1,0 +1,15 @@
+<UITableViewCell
+    
+    reuseIdentifier="timelineCell"
+    detailTextLabel.highlightedTextColor="black"
+    detailTextLabel.text="{day} {year}"
+    detailTextLabel.textColor="black"
+    height="auto + 20"
+    selectedBackgroundView.backgroundColor="white"
+    backgroundColor="porcelainOpaque"
+    style="subtitle"
+    textLabel.highlightedTextColor="black"
+    textLabel.text="{month}">
+    
+</UITableViewCell>
+

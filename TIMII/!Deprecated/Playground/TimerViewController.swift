@@ -26,7 +26,7 @@
 //     This value is either passed by `TaskTableViewController` in `prepare(for:sender:)`
 //     or constructed as part of adding a new meal.
 //     */
-//    var task: Timii?
+//    var task: TimiiComponent?
 //    
 //    
 //    // MARK: ---------- Timer Related ----------

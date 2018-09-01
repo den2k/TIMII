@@ -1,0 +1,51 @@
+<TimelineTableScreen view.backgroundColor="">
+    
+    <!-- Background Image -->
+    <UIImageView
+        image="bk-1.jpg"
+        width="100%"
+        height="100%"
+        contentMode="scaleAspectFit"
+    />
+    
+    <UITableView
+        outlet="timelineTableView"
+        backgroundColor="transparent"
+        contentInset.bottom="safeAreaInsets.bottom"
+        contentInset.top="safeAreaInsets.top"
+        contentInsetAdjustmentBehavior="never"
+        contentOffset.y="-safeAreaInsets.top"
+        estimatedSectionHeaderHeight="50"
+        scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
+        scrollIndicatorInsets.top="safeAreaInsets.top"
+        style="plain">
+        
+        <!-- Table header -->
+        <UIView
+            height="auto + 10"
+            isHidden="true">
+            
+            <UILabel
+                isHidden="true"
+                text="~ A custom table header view ~"
+                textAlignment="center"
+                textColor="white"
+                top="10"
+                width="100%"
+            />
+            
+        </UIView>
+        
+        <!-- Section header template -->
+        <UITableViewHeaderFooterView
+            isHidden="true"
+            reuseIdentifier="timelineHeader"
+            backgroundView.backgroundColor="rgba(255, 255, 255, 0.75)"
+            height="auto + 10"
+            textLabel.text="Section header defined as a template in Table.xml"
+        />
+        
+        
+    </UITableView>
+    
+</TimelineTableScreen>

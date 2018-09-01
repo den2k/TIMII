@@ -13,17 +13,16 @@ extension UIColor
 {
     // http://www.flatuicolorpicker.com/
     // GRAY
-    @objc static let gallery    = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)  // #EEEEEE
-    @objc static let cararra    = UIColor(red: 242.0/255.0, green: 241.0/255.0, blue: 239.0/255.0, alpha: 1.0)  // #F2F1EF
-    @objc static let whiteSmoke = UIColor(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1.0)  // #ECECEC
-    @objc static let porcelain  = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)  // #ECF0F1
-    @objc static let silverSand = UIColor(red: 189.0/255.0, green: 195.0/255.0, blue: 199.0/255.0, alpha: 1.0)  // #BDC3C7
-    @objc static let lynch      = UIColor(red: 108.0/255.0, green: 122.0/255.0, blue: 137.0/255.0, alpha: 1.0)  // #6C7A89
-    @objc static let iron       = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)  // #DADFE1
-    @objc static let silver     = UIColor(red: 191.0/255.0, green: 191.0/255.0, blue: 191.0/255.0, alpha: 1.0)  // #BFBFBF
+    @objc static let gallery         = UIColor(red: 238.0/255.0, green: 238.0/255.0, blue: 238.0/255.0, alpha: 1.0)  // #EEEEEE
+    @objc static let cararra         = UIColor(red: 242.0/255.0, green: 241.0/255.0, blue: 239.0/255.0, alpha: 1.0)  // #F2F1EF
+    @objc static let whiteSmoke      = UIColor(red: 236.0/255.0, green: 236.0/255.0, blue: 236.0/255.0, alpha: 1.0)  // #ECECEC
+    @objc static let porcelain       = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 1.0)  // #ECF0F1
+    @objc static let silverSand      = UIColor(red: 189.0/255.0, green: 195.0/255.0, blue: 199.0/255.0, alpha: 1.0)  // #BDC3C7
+    @objc static let lynch           = UIColor(red: 108.0/255.0, green: 122.0/255.0, blue: 137.0/255.0, alpha: 1.0)  // #6C7A89
+    @objc static let iron            = UIColor(red: 218.0/255.0, green: 223.0/255.0, blue: 225.0/255.0, alpha: 1.0)  // #DADFE1
+    @objc static let silver          = UIColor(red: 191.0/255.0, green: 191.0/255.0, blue: 191.0/255.0, alpha: 1.0)  // #BFBFBF
     @objc static let porcelainOpaque = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.5)
-    @objc static let ironOpaque = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.9)
-
+    @objc static let ironOpaque      = UIColor(red: 236.0/255.0, green: 240.0/255.0, blue: 241.0/255.0, alpha: 0.9)
     
     // RED
     @objc static let cinnabar   = UIColor(red: 240.0/255.0, green: 52.0/255.0, blue: 52.0/255.0, alpha: 1.0)    // #F03434
@@ -55,4 +54,5 @@ extension UIColor
     @objc static let veryDarkGrey = UIColor(red: 13.0/255.0, green: 13.0/255.0, blue: 13.0/255.0, alpha: 1.0)
     @objc static let lightGrey    = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0)
     @objc static let white        = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0)
+    @objc static let transparent  = UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0)
 }

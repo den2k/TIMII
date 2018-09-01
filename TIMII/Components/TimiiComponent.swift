@@ -1,5 +1,5 @@
 //
-//  Timii.swift
+//  TimiiComponent.swift
 //  TIMII
 //
 //  Created by Daddy on 7/21/18.
@@ -7,8 +7,11 @@
 //
 import Foundation
  
-struct Timii
+struct TimiiComponent : ComponentProtocol
 {
+    var ComponentDbName: String = "Timiis"
+    var ComponentName: String = "timii"
+    
     // MARK: ----------- Properties -----------
     var timiiName: String               // Holds the timer name ie: Eating
     var taskStartDate: Date             // Holds the timer start time/date

@@ -6,7 +6,7 @@
  TODO: 8.25.18 - DONE (8.27.18) Expand day view when tapped.
  TODO: 8.23.18 - prefersStatusBarHidden for iPhone X does not work. This code was added to deal with X but its not working.
  TODO: 8.28.18 - Show dates in view.
- TODO: 8.28.18 - Add Journal editing capability into this view ontap
+ TODO: 8.28.18 - Add Journal editing capability into this view on tap
  
 8.25.18
 Note: There is currently no safe way to explicitly bind a delegate to the layoutNode's owner class. Attempting

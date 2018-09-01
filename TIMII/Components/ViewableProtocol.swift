@@ -1,5 +1,5 @@
 //
-//  Viewable.swift
+//  ViewableProtocol.swift
 //  TIMII
 //
 //  Created by Daddy on 4/30/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Viewable
+protocol ViewableProtocol
 {
     var isViewable: Bool { get }
 }

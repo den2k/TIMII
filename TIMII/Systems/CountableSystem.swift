@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseDatabase
 
-struct CountableSystem : Component, Countable
+struct CountableSystem : ComponentProtocol, CountableProtocol
 {
     // MARK: -- Component Properties --
     let ComponentDbName: String     = "Countables"

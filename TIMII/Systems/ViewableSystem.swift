@@ -17,7 +17,7 @@
 
 import Foundation
 
-struct ViewableSystem : Component, Viewable
+struct ViewableSystem : ComponentProtocol, ViewableProtocol
 {
     // MARK: -- Generic Properties --
     let ComponentDbName: String     = "Viewables"

@@ -16,7 +16,7 @@
 
 //import Foundation
 //
-//struct EntitySystem : Component
+//struct EntitySystem : ComponentProtocol
 //{
 //    var ComponentDbName: String     = "Entities"
 //    var ComponentName: String       = "entity"

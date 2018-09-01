@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct DashboardSystem : Component, Dashboard, Viewable   //7.7.18 - comment out, UIStyle
+struct DashboardSystem : ComponentProtocol, DashboardProtocol, ViewableProtocol   //7.7.18 - comment out, UIStyle
 {
     // MARK: -- Properties --
     var ComponentDbName: String     = "Dashboards"

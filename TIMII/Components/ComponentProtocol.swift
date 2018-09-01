@@ -1,5 +1,5 @@
 //
-//  Component.swift
+//  ComponentProtocol.swift
 //  TIMII
 //
 //  Created by Daddy on 5/5/18.
@@ -14,7 +14,7 @@
 
 import Foundation
 
-protocol Component
+protocol ComponentProtocol
 {
     var ComponentDbName: String { get }         // the root node name used in Firebase
     var ComponentName: String { get }           // component name for convinence

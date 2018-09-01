@@ -8,8 +8,11 @@
 
 import UIKit
 
-class Member: NSObject
+class Member: NSObject, ComponentProtocol
 {
+    var ComponentDbName: String = "Members"
+    var ComponentName: String = "member"
+    
     var uid: String?
     var name: String?
     var email: String?
