@@ -1,20 +1,17 @@
 <!-- TimelineDayTemplate.xml -->
 
-<!-- This shows the day -->
+<!-- This shows the date on the left side bar -->
+
 <UIView
     width=""
-    height=""
-    top="0"
-    left="0"
-    backgroundColor="dailyContentBackgroundColor">
+    height="auto"
+    top="(parent.height - height)/2"
+    left=""
+    backgroundColor="">
     
     <param name="dayNumberText" type="String"/>
     <param name="dayText" type="String"/>
-    <macro name="centerHeightSpacing" value="(parent.height - height)/2" />
-    
-    <UIView
-        height="auto"
-        top="centerHeightSpacing">
+    <macro name="dateTextColor" value="black" />
         
         <UILabel
             text="{dayText}"
@@ -25,18 +22,18 @@
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor=""
-            font="13"
+            font="Avenir Next 13"
         />
         <UILabel
             text="{dayNumberText}"
             width="100%"
             height="auto"
-            top="previous.bottom - 3"
-            left="0"
+            top="previous.bottom"
+            left=""
             textAlignment="center"
             textColor="dateTextColor"
             backgroundColor=""
             font="Avenir Next bold 21"
         />
-    </UIView>
+
 </UIView>

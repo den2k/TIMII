@@ -1,15 +1,28 @@
 <UITableViewCell
-    
     reuseIdentifier="timelineCell"
-    detailTextLabel.highlightedTextColor="black"
-    detailTextLabel.text="{day} {year}"
-    detailTextLabel.textColor="black"
-    height="auto + 20"
+    width=""
+    height="auto + 30"
     selectedBackgroundView.backgroundColor="white"
-    backgroundColor="porcelainOpaque"
-    style="subtitle"
-    textLabel.highlightedTextColor="black"
-    textLabel.text="{month}">
+    backgroundColor="clear"
+    style=""
+    layer.borderColor="clear"
+    layer.borderWidth=""
+    >
+    
+    <UIView
+        template="TimelineDayTemplate.xml"
+        dayNumberText="{dayNumberText}"
+        dayText="{dayText}"
+        width="12%"
+        height="auto"
+        backgroundColor="clear"
+    />
+    
+    <UIView
+        template="TimelineDayContentTemplate.xml"
+        width="88%"
+        height="auto"
+        backgroundColor="clear"
+    />
     
 </UITableViewCell>
-

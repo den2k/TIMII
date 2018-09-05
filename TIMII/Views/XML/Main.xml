@@ -4,13 +4,15 @@
     <macro name="topHeaderContainerHeight" value="50" />
 
     <!-- Header -->
+    <!--
     <UIView
         xml="HeaderContainer.xml"
         top="parent.safeAreaInsets.top"
         width="100%"
         height="auto"
     />
-
+     -->
+    
     <UITabBar
         tintColor="black"
         isTranslucent="true"

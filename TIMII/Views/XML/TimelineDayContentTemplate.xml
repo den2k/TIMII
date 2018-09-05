@@ -1,0 +1,33 @@
+<!-- TimelineDayContentTemplate.xml -->
+
+<!-- This shows the member's per day content -->
+<UIView
+    left="previous.right"
+    width="100%"
+    height="auto"
+    backgroundColor="">
+    
+    <macro name="dateTextColor" value="black" />
+    
+    <UIView
+        width="100%"
+        height="auto"
+        top="0"
+        left="0"
+        backgroundColor="">
+        
+        <UILabel
+            text="TimelineDayContent Template"
+            width="100%"
+            height=""
+            top=""
+            left="previous.left"
+            textAlignment="left"
+            textColor="dateTextColor"
+            backgroundColor=""
+            font="Avenir Next 14"
+        />
+
+    </UIView>
+</UIView>
+

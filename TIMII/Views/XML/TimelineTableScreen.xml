@@ -1,4 +1,15 @@
-<TimelineTableScreen view.backgroundColor="">
+<TimelineTableScreen
+    view.backgroundColor="clear">
+    
+    <macro name="navBarHeight" value="50" />
+    <macro name="weeklySideBarWidth" value="40" />
+    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - topHeaderContainerHeight - borderLength * 7" />
+    <macro name="todayContentBackgroundColor" value="white" />
+    <macro name="dailyContentBackgroundColor" value="porcelainOpaque" />
+    <macro name="emptyContentBackgroundColor" value="porcelainOpaque" />
+    <macro name="dailyContentTextColor" value="black" />
+    <macro name="emptyContentTextColor" value="black" />
+    <macro name="borderLength" value="8" />
     
     <!-- Background Image -->
     <UIImageView
@@ -19,11 +30,11 @@
         scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
         scrollIndicatorInsets.top="safeAreaInsets.top"
         style="plain">
-        
+
         <!-- Table header -->
         <UIView
-            height="auto + 10"
-            isHidden="true">
+            isHidden="true"
+            height="auto + 10">
             
             <UILabel
                 isHidden="true"
@@ -44,8 +55,7 @@
             height="auto + 10"
             textLabel.text="Section header defined as a template in Table.xml"
         />
-        
-        
+
     </UITableView>
     
 </TimelineTableScreen>

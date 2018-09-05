@@ -1,5 +1,5 @@
 //
-//  DayComponent.swift
+//  DayText.swift
 //  TIMII
 //
 //  Created by Dennis Huang on 8/31/18.
@@ -8,11 +8,8 @@
 
 import Foundation
 
-struct DayComponent : ComponentProtocol
+struct DayText
 {
-    var ComponentDbName: String = "Days"
-    var ComponentName: String = "day"
-    
     var dayText = [
         "SUN",
         "MON",
@@ -22,5 +19,4 @@ struct DayComponent : ComponentProtocol
         "FRI",
         "SAT"
     ]
- 
 }

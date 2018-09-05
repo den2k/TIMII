@@ -65,8 +65,8 @@
 		95C61F35212E3950005931D4 /* TimelineEmptyDayTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */; };
 		95CBD2F2213646D5001013F6 /* TimelineTableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */; };
 		95CBD2F42136617B001013F6 /* TimelineTableScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */; };
-		95D1F983213A03D900C5F07D /* DayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1F982213A03D900C5F07D /* DayComponent.swift */; };
-		95D1F985213A3B1100C5F07D /* MonthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1F984213A3B1100C5F07D /* MonthComponent.swift */; };
+		95D1F987213A497300C5F07D /* DateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1F986213A497300C5F07D /* DateSystem.swift */; };
+		95D1F989213B628A00C5F07D /* TimelineDayContentTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95D1F988213B628A00C5F07D /* TimelineDayContentTemplate.xml */; };
 		95E8749421377D84001131DB /* TimelineCell.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95E8749321377D84001131DB /* TimelineCell.xml */; };
 		95F54AC1210CF45D007D7764 /* CreateAccountScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */; };
 		95F54AC3210D07F5007D7764 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */; };
@@ -151,8 +151,8 @@
 		95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineEmptyDayTemplate.xml; sourceTree = "<group>"; };
 		95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableScreen.swift; sourceTree = "<group>"; };
 		95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineTableScreen.xml; sourceTree = "<group>"; };
-		95D1F982213A03D900C5F07D /* DayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayComponent.swift; sourceTree = "<group>"; };
-		95D1F984213A3B1100C5F07D /* MonthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthComponent.swift; sourceTree = "<group>"; };
+		95D1F986213A497300C5F07D /* DateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSystem.swift; sourceTree = "<group>"; };
+		95D1F988213B628A00C5F07D /* TimelineDayContentTemplate.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineDayContentTemplate.xml; sourceTree = "<group>"; };
 		95E8749321377D84001131DB /* TimelineCell.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineCell.xml; sourceTree = "<group>"; };
 		95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CreateAccountScreen.xml; sourceTree = "<group>"; };
 		95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
@@ -190,6 +190,7 @@
 				0F2C3F0D209F963900A417F1 /* CountableSystem.swift */,
 				0F2C3F0F209F9A8300A417F1 /* DatabaseSystem.swift */,
 				0FBE767020A7D10D003225F0 /* DashboardSystem.swift */,
+				95D1F986213A497300C5F07D /* DateSystem.swift */,
 				959C9283212A3A9100FACA01 /* LogInOutSystem.swift */,
 				0FBE767220A88D25003225F0 /* SetupSystem.swift */,
 				0FB38A7D20F11AE700277615 /* TimeCounterSystem.swift */,
@@ -236,8 +237,6 @@
 				0F2A12432095108600D0E489 /* DashboardProtocol.swift */,
 				0FDB817D20B0CDDF00E39E04 /* UIStyleProtocol.swift */,
 				0F3D4F5D2097392C00B88EDE /* ViewableProtocol.swift */,
-				95D1F982213A03D900C5F07D /* DayComponent.swift */,
-				95D1F984213A3B1100C5F07D /* MonthComponent.swift */,
 				9520A1B121141089004E7FDE /* MemberComponent.swift */,
 				0FFE08FF20F18872000D1797 /* TimiiComponent.swift */,
 				958CC74D21077FF800AF1D25 /* Colors.swift */,
@@ -339,17 +338,18 @@
 				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
 				0F4C9F8520C3A4EC000B760F /* TimelineScreen.xml */,
 				95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */,
+				95E8749321377D84001131DB /* TimelineCell.xml */,
+				952E91E12128836900629679 /* TimelineDayTemplate.xml */,
+				95D1F988213B628A00C5F07D /* TimelineDayContentTemplate.xml */,
+				95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */,
 				0F9EAE8D20C3342E00E2C5F3 /* TimerScreen.xml */,
 				95FCE6AC2117FF4A000C9029 /* SettingScreen.xml */,
 				95F54AC0210CF45D007D7764 /* CreateAccountScreen.xml */,
 				950ECEDF210BFCCD00DE2D49 /* LoginScreen.xml */,
-				95E8749321377D84001131DB /* TimelineCell.xml */,
 				0FAC81F020C4BEC600D69AB7 /* HeaderContainer.xml */,
 				0F9D930F20BA19E90027DE1D /* FamilyFriendsBand.xml */,
 				0F9D930D20BA167E0027DE1D /* LogoBand.xml */,
 				0F48FB5220F1427C006C3E16 /* StartButton.xml */,
-				952E91E12128836900629679 /* TimelineDayTemplate.xml */,
-				95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */,
 				950ECEDA210B759F00DE2D49 /* TimerBox.xml */,
 				0FAC81F220C4C00700D69AB7 /* TimerPage.xml */,
 				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
@@ -493,6 +493,7 @@
 				0FE3DEFE208BB0A400D546BC /* GoogleService-Info.plist in Resources */,
 				0F4C9F8620C3A4EC000B760F /* TimelineScreen.xml in Resources */,
 				950ECEE0210BFCCD00DE2D49 /* LoginScreen.xml in Resources */,
+				95D1F989213B628A00C5F07D /* TimelineDayContentTemplate.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +617,7 @@
 			files = (
 				0F9D931B20BAFFBD0027DE1D /* BoxesViewController.swift in Sources */,
 				0F2A12462095309000D0E489 /* CountableProtocol.swift in Sources */,
+				95D1F987213A497300C5F07D /* DateSystem.swift in Sources */,
 				0F2C3F03209EA08E00A417F1 /* ComponentProtocol.swift in Sources */,
 				0FDB818020B0CE2300E39E04 /* UIStyleSystem.swift in Sources */,
 				0FFE08FE20F1883D000D1797 /* TimerViewController.swift in Sources */,
@@ -624,7 +626,6 @@
 				0F9D931720BA265F0027DE1D /* TimerScreen.swift in Sources */,
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
-				95D1F983213A03D900C5F07D /* DayComponent.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
 				95FCE6AF21180070000C9029 /* SettingScreen.swift in Sources */,
 				0F0DAA3220A5400900DD30DD /* EntitySystem.swift in Sources */,
@@ -634,7 +635,6 @@
 				0F2C3F0E209F963900A417F1 /* CountableSystem.swift in Sources */,
 				950ECEDE210BF42A00DE2D49 /* LoginScreen.swift in Sources */,
 				0FB38A7E20F11AE700277615 /* TimeCounterSystem.swift in Sources */,
-				95D1F985213A3B1100C5F07D /* MonthComponent.swift in Sources */,
 				0FC08A4820840CFF0083E0B3 /* Main.swift in Sources */,
 				0F2A12442095108600D0E489 /* DashboardProtocol.swift in Sources */,
 				9520A1B221141089004E7FDE /* MemberComponent.swift in Sources */,
