@@ -2439,7 +2439,7 @@ public class LayoutNode: NSObject {
             #if swift(>=4.2)
                 typealias ContentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior
             #else
-                typealias ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior
+                typealias ContentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior
             #endif
             let contentInsetAdjustmentBehavior = try value(forSymbol: "contentInsetAdjustmentBehavior") as!
                 ContentInsetAdjustmentBehavior

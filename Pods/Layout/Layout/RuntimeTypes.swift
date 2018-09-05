@@ -773,7 +773,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias ContentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior
             #else
-                typealias ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior
+                typealias ContentInsetAdjustmentBehavior = UIScrollView.ContentInsetAdjustmentBehavior
             #endif
             return RuntimeType([
                 "automatic": .automatic,
@@ -798,8 +798,8 @@ public extension RuntimeType {
             ] as [String: UIScrollView.DecelerationRate])
         #else
             return RuntimeType([
-                "normal": UIScrollViewDecelerationRateNormal,
-                "fast": UIScrollViewDecelerationRateFast,
+                "normal": UIScrollView.DecelerationRate.normal,
+                "fast": UIScrollView.DecelerationRate.fast,
             ] as [String: CGFloat])
         #endif
     }()
@@ -837,7 +837,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias ReorderingCadence = UICollectionView.ReorderingCadence
             #else
-                typealias ReorderingCadence = UICollectionViewReorderingCadence
+                typealias ReorderingCadence = UICollectionView.ReorderingCadence
             #endif
             return RuntimeType([
                 "immediate": .immediate,
@@ -856,7 +856,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias SectionInsetReference = UICollectionViewFlowLayout.SectionInsetReference
             #else
-                typealias SectionInsetReference = UICollectionViewFlowLayoutSectionInsetReference
+                typealias SectionInsetReference = UICollectionViewFlowLayout.SectionInsetReference
             #endif
             return RuntimeType([
                 "fromContentInset": .fromContentInset,
@@ -965,7 +965,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias SeparatorInsetReference = UITableView.SeparatorInsetReference
             #else
-                typealias SeparatorInsetReference = UITableViewSeparatorInsetReference
+                typealias SeparatorInsetReference = UITableView.SeparatorInsetReference
             #endif
             return RuntimeType([
                 "fromCellEdges": .fromCellEdges,
@@ -1092,7 +1092,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias PermissionOptions = UICloudSharingController.PermissionOptions
             #else
-                typealias PermissionOptions = UICloudSharingPermissionOptions
+                typealias PermissionOptions = UICloudSharingController.PermissionOptions
             #endif
             return RuntimeType([
                 "allowPublic": .allowPublic,
@@ -1133,7 +1133,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias ImageURLExportPreset = UIImagePickerController.ImageURLExportPreset
             #else
-                typealias ImageURLExportPreset = UIImagePickerControllerImageURLExportPreset
+                typealias ImageURLExportPreset = UIImagePickerController.ImageURLExportPreset
             #endif
             return RuntimeType([
                 "compatible": .compatible,
@@ -1181,7 +1181,7 @@ public extension RuntimeType {
             #if swift(>=4.2)
                 typealias PrimaryEdge = UISplitViewController.PrimaryEdge
             #else
-                typealias PrimaryEdge = UISplitViewControllerPrimaryEdge
+                typealias PrimaryEdge = UISplitViewController.PrimaryEdge
             #endif
             return RuntimeType([
                 "leading": .leading,

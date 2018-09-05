@@ -8,6 +8,7 @@
     backgroundColor="">
     
     <macro name="dateTextColor" value="black" />
+    <macro name="www" value="isWeekend" />
     
     <UIView
         width="100%"
@@ -17,9 +18,9 @@
         backgroundColor="">
         
         <UILabel
-            text="TimelineDayContent Template"
+            text="Today I went to work. Need to fight."
             width="100%"
-            height=""
+            height="auto"
             top=""
             left="previous.left"
             textAlignment="left"

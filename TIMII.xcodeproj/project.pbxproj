@@ -422,11 +422,12 @@
 				TargetAttributes = {
 					0F2C3F14209FB01500A417F1 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 						TestTargetID = 0FC08A4120840CFE0083E0B3;
 					};
 					0FC08A4120840CFE0083E0B3 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -684,7 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.autonomii.TIMIITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIMII.app/TIMII";
 			};
@@ -710,7 +711,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.autonomii.TIMIITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TIMII.app/TIMII";
 			};
@@ -845,7 +846,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.autonomii.TIMII;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -865,7 +866,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.autonomii.TIMII;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

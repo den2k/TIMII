@@ -175,183 +175,183 @@ struct UIntOptionSet: OptionSet {
 #if !swift(>=4.2)
 
     extension UIContentSizeCategory {
-        static let didChangeNotification = NSNotification.Name.UIContentSizeCategoryDidChange
+        static let didChangeNotification = UIContentSizeCategory.didChangeNotification
     }
 
     extension NSAttributedString {
-        typealias Key = NSAttributedStringKey
+        typealias Key = NSAttributedString.Key
     }
 
     extension NSLayoutConstraint {
-        typealias Axis = UILayoutConstraintAxis
+        typealias Axis = NSLayoutConstraint.Axis
     }
 
     extension UIFont {
-        typealias TextStyle = UIFontTextStyle
+        typealias TextStyle = UIFont.TextStyle
     }
 
     extension UIFontDescriptor {
-        typealias SymbolicTraits = UIFontDescriptorSymbolicTraits
+        typealias SymbolicTraits = UIFontDescriptor.SymbolicTraits
     }
 
     extension UIAccessibilityTraits {
         static var tabBar: UIAccessibilityTraits {
             if #available(iOS 10, *) {
-                return UIAccessibilityTraitTabBar
+                return UIAccessibilityTraits.tabBar
             }
             preconditionFailure("UIAccessibilityTraitTabBar is not available")
         }
 
-        static let none = UIAccessibilityTraitNone
-        static let button = UIAccessibilityTraitButton
-        static let link = UIAccessibilityTraitLink
-        static let header = UIAccessibilityTraitHeader
-        static let searchField = UIAccessibilityTraitSearchField
-        static let image = UIAccessibilityTraitImage
-        static let selected = UIAccessibilityTraitSelected
-        static let playsSound = UIAccessibilityTraitPlaysSound
-        static let keyboardKey = UIAccessibilityTraitKeyboardKey
-        static let staticText = UIAccessibilityTraitStaticText
-        static let summaryElement = UIAccessibilityTraitSummaryElement
-        static let notEnabled = UIAccessibilityTraitNotEnabled
-        static let updatesFrequently = UIAccessibilityTraitUpdatesFrequently
-        static let startsMediaSession = UIAccessibilityTraitStartsMediaSession
-        static let adjustable = UIAccessibilityTraitAdjustable
-        static let allowsDirectInteraction = UIAccessibilityTraitAllowsDirectInteraction
-        static let causesPageTurn = UIAccessibilityTraitCausesPageTurn
+        static let none = UIAccessibilityTraits.none
+        static let button = UIAccessibilityTraits.button
+        static let link = UIAccessibilityTraits.link
+        static let header = UIAccessibilityTraits.header
+        static let searchField = UIAccessibilityTraits.searchField
+        static let image = UIAccessibilityTraits.image
+        static let selected = UIAccessibilityTraits.selected
+        static let playsSound = UIAccessibilityTraits.playsSound
+        static let keyboardKey = UIAccessibilityTraits.keyboardKey
+        static let staticText = UIAccessibilityTraits.staticText
+        static let summaryElement = UIAccessibilityTraits.summaryElement
+        static let notEnabled = UIAccessibilityTraits.notEnabled
+        static let updatesFrequently = UIAccessibilityTraits.updatesFrequently
+        static let startsMediaSession = UIAccessibilityTraits.startsMediaSession
+        static let adjustable = UIAccessibilityTraits.adjustable
+        static let allowsDirectInteraction = UIAccessibilityTraits.allowsDirectInteraction
+        static let causesPageTurn = UIAccessibilityTraits.causesPageTurn
     }
 
     extension UIActivity {
-        typealias ActivityType = UIActivityType
+        typealias ActivityType = UIActivity.ActivityType
     }
 
     extension UIView {
-        typealias ContentMode = UIViewContentMode
-        typealias AutoresizingMask = UIViewAutoresizing
-        typealias TintAdjustmentMode = UIViewTintAdjustmentMode
+        typealias ContentMode = UIView.ContentMode
+        typealias AutoresizingMask = UIView.AutoresizingMask
+        typealias TintAdjustmentMode = UIView.TintAdjustmentMode
 
-        static let noIntrinsicMetric = UIViewNoIntrinsicMetric
+        static let noIntrinsicMetric = UIView.noIntrinsicMetric
 
         @nonobjc func bringSubviewToFront(_ subview: UIView) {
-            bringSubview(toFront: subview)
+            bringSubviewToFront(subview)
         }
     }
 
     extension UIViewController {
         @nonobjc func addChild(_ child: UIViewController) {
-            addChildViewController(child)
+            addChild(child)
         }
 
         @nonobjc func removeFromParent() {
-            removeFromParentViewController()
+            removeFromParent()
         }
     }
 
     extension UIControl {
-        typealias State = UIControlState
-        typealias Event = UIControlEvents
-        typealias ContentVerticalAlignment = UIControlContentVerticalAlignment
-        typealias ContentHorizontalAlignment = UIControlContentHorizontalAlignment
+        typealias State = UIControl.State
+        typealias Event = UIControl.Event
+        typealias ContentVerticalAlignment = UIControl.ContentVerticalAlignment
+        typealias ContentHorizontalAlignment = UIControl.ContentHorizontalAlignment
     }
 
     extension UIBarButtonItem {
-        typealias SystemItem = UIBarButtonSystemItem
-        typealias Style = UIBarButtonItemStyle
+        typealias SystemItem = UIBarButtonItem.SystemItem
+        typealias Style = UIBarButtonItem.Style
     }
 
     extension UIButton {
-        typealias ButtonType = UIButtonType
+        typealias ButtonType = UIButton.ButtonType
     }
 
     extension UIActivityIndicatorView {
-        typealias Style = UIActivityIndicatorViewStyle
+        typealias Style = UIActivityIndicatorView.Style
     }
 
     extension UIProgressView {
-        typealias Style = UIProgressViewStyle
+        typealias Style = UIProgressView.Style
     }
 
     extension UIInputView {
-        typealias Style = UIInputViewStyle
+        typealias Style = UIInputView.Style
     }
 
     extension UIDatePicker {
-        typealias Mode = UIDatePickerMode
+        typealias Mode = UIDatePicker.Mode
     }
 
     extension UITextField {
-        typealias BorderStyle = UITextBorderStyle
-        typealias ViewMode = UITextFieldViewMode
+        typealias BorderStyle = UITextField.BorderStyle
+        typealias ViewMode = UITextField.ViewMode
     }
 
     extension UITabBar {
-        typealias ItemPositioning = UITabBarItemPositioning
+        typealias ItemPositioning = UITabBar.ItemPositioning
     }
 
     extension UITabBarItem {
-        typealias SystemItem = UITabBarSystemItem
+        typealias SystemItem = UITabBarItem.SystemItem
     }
 
     extension UITableView {
-        typealias Style = UITableViewStyle
+        typealias Style = UITableView.Style
 
-        static let automaticDimension = UITableViewAutomaticDimension
+        static let automaticDimension = UITableView.automaticDimension
     }
 
     extension UITableViewCell {
-        typealias CellStyle = UITableViewCellStyle
-        typealias AccessoryType = UITableViewCellAccessoryType
-        typealias FocusStyle = UITableViewCellFocusStyle
-        typealias SelectionStyle = UITableViewCellSelectionStyle
-        typealias SeparatorStyle = UITableViewCellSeparatorStyle
+        typealias CellStyle = UITableViewCell.CellStyle
+        typealias AccessoryType = UITableViewCell.AccessoryType
+        typealias FocusStyle = UITableViewCell.FocusStyle
+        typealias SelectionStyle = UITableViewCell.SelectionStyle
+        typealias SeparatorStyle = UITableViewCell.SeparatorStyle
     }
 
     extension UISearchBar {
-        typealias Style = UISearchBarStyle
+        typealias Style = UISearchBar.Style
     }
 
     extension UISegmentedControl {
-        typealias Segment = UISegmentedControlSegment
+        typealias Segment = UISegmentedControl.Segment
     }
 
     extension UIScrollView {
-        typealias IndicatorStyle = UIScrollViewIndicatorStyle
-        typealias IndexDisplayMode = UIScrollViewIndexDisplayMode
-        typealias KeyboardDismissMode = UIScrollViewKeyboardDismissMode
+        typealias IndicatorStyle = UIScrollView.IndicatorStyle
+        typealias IndexDisplayMode = UIScrollView.IndexDisplayMode
+        typealias KeyboardDismissMode = UIScrollView.KeyboardDismissMode
     }
 
     extension UICollectionView {
-        typealias ScrollDirection = UICollectionViewScrollDirection
+        typealias ScrollDirection = UICollectionView.ScrollDirection
     }
 
     extension UIStackView {
-        typealias Alignment = UIStackViewAlignment
-        typealias Distribution = UIStackViewDistribution
+        typealias Alignment = UIStackView.Alignment
+        typealias Distribution = UIStackView.Distribution
     }
 
     extension UIWebView {
-        typealias PaginationMode = UIWebPaginationMode
-        typealias PaginationBreakingMode = UIWebPaginationBreakingMode
+        typealias PaginationMode = UIWebView.PaginationMode
+        typealias PaginationBreakingMode = UIWebView.PaginationBreakingMode
     }
 
     extension UIAlertController {
-        typealias Style = UIAlertControllerStyle
+        typealias Style = UIAlertController.Style
     }
 
     extension UIImagePickerController {
-        typealias CameraCaptureMode = UIImagePickerControllerCameraCaptureMode
-        typealias CameraDevice = UIImagePickerControllerCameraDevice
-        typealias CameraFlashMode = UIImagePickerControllerCameraFlashMode
-        typealias SourceType = UIImagePickerControllerSourceType
-        typealias QualityType = UIImagePickerControllerQualityType
+        typealias CameraCaptureMode = UIImagePickerController.CameraCaptureMode
+        typealias CameraDevice = UIImagePickerController.CameraDevice
+        typealias CameraFlashMode = UIImagePickerController.CameraFlashMode
+        typealias SourceType = UIImagePickerController.SourceType
+        typealias QualityType = UIImagePickerController.QualityType
     }
 
     extension UISplitViewController {
-        typealias DisplayMode = UISplitViewControllerDisplayMode
+        typealias DisplayMode = UISplitViewController.DisplayMode
     }
 
     extension UIBlurEffect {
-        typealias Style = UIBlurEffectStyle
+        typealias Style = UIBlurEffect.Style
     }
 
 #endif

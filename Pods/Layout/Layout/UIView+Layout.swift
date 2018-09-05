@@ -923,7 +923,7 @@ extension UISearchBar {
 #if swift(>=4.2)
     private typealias Segment = UISegmentedControl.Segment
 #else
-    private typealias Segment = UISegmentedControlSegment
+    private typealias Segment = UISegmentedControl.Segment
 #endif
 
 private let controlSegments = RuntimeType.uiSegmentedControlSegment.values.mapValues { $0 as! Segment }

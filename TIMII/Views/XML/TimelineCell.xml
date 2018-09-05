@@ -5,8 +5,7 @@
     selectedBackgroundView.backgroundColor="white"
     backgroundColor="clear"
     style=""
-    layer.borderColor="clear"
-    layer.borderWidth=""
+    layer.borderColor=""
     >
     
     <UIView
@@ -21,8 +20,8 @@
     <UIView
         template="TimelineDayContentTemplate.xml"
         width="88%"
-        height="auto"
-        backgroundColor="clear"
+        height="100%"
+        backgroundColor="porcelainOpaque"
     />
     
 </UITableViewCell>

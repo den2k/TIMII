@@ -29,6 +29,7 @@
         estimatedSectionHeaderHeight="50"
         scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
         scrollIndicatorInsets.top="safeAreaInsets.top"
+        separatorStyle="none"
         style="plain">
 
         <!-- Table header -->
