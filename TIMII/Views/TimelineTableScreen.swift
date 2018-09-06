@@ -7,6 +7,7 @@
 //
 /*
  TODO: 8.28.18 - DONE 9.4.18 - Create new tableview to drive the timeline calendar view
+ TODO: 9.5.18 - DONE 9.5.18 - Fix date retrieval which is only an incrementer.
  */
 
 import UIKit
@@ -14,7 +15,6 @@ import Layout
 
 class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-//    var rowData: [String] = ["Who", "What", "Where", "Why"]
     var isDayExpanded: Bool = false
     var isWeekend: Bool = false
 
@@ -31,7 +31,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 20
+        return 60
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection _: Int) -> UIView? {
@@ -44,10 +44,11 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
         // Use special Layout extension method to dequeue the node rather than the view itself
         let cell = tableView.dequeueReusableCellNode(withIdentifier: "timelineCell", for: indexPath)
         
-        let currentMonth = DateSystem().getCurrentMonthText()
-        let currentYear = DateSystem().currentYear
-        let dayNumberText = DateSystem().todaysDate + indexPath.row     // 1 - 31. Needs to be fixed.
-        let dayText = DateSystem().getWeekDayText(index: indexPath.row) // SUN - SAT
+//        let currentYear = DateSystem().currentYear
+//        let currentMonthText = DateSystem().getCurrentMonthText()
+//        let dateNumber = DateSystem().getDay(index: indexPath.row)
+//        let dayNumberText = DateSystem().todaysDate + indexPath.row     // 1 - 31. Needs to be fixed.
+//        let dayText = DateSystem().getWeekDayText(index: indexPath.row) // SUN - SAT
         
         let day = DateSystem().getWeekDayIndex(index: indexPath.row)
         if day >= 5 {
@@ -59,10 +60,10 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
         // Set the node state to update the cell
         cell.setState([
             "weekNumber": "XX",
-            "month": currentMonth,
-            "year": currentYear,
-            "dayText": dayText,
-            "dayNumberText": dayNumberText,
+            "month": DateSystem().getCurrentMonthText(),
+            "year": DateSystem().currentYear,
+            "dayText": DateSystem().getWeekDayText(index: indexPath.row),  // SUN - SAT
+            "dayNumberText": DateSystem().getDay(index: indexPath.row),
             "isDayExpanded": isDayExpanded,
             "isWeekend": isWeekend,
         ])
