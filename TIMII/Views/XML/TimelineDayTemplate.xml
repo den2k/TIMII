@@ -1,5 +1,4 @@
 <!-- TimelineDayTemplate.xml -->
-
 <!-- This shows the date on the left side bar -->
 
 <UIView
@@ -9,8 +8,8 @@
     left=""
     backgroundColor="">
     
-    <param name="dayNumberText" type="String"/>
-    <param name="dayText" type="String"/>
+    <param name="dayNumberText" type="String" />
+    <param name="dayText" type="String" />
     <macro name="dateTextColor" value="black" />
         
         <UILabel

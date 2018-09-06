@@ -90,7 +90,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
 //        // Calling setState() on a LayoutNode after it has been created will
 //        // trigger an update. The update causes all expressions in that node
 //        // and its children to be re-evaluated.
-//        self.timelineScreenNode?.setState([
+//        timelineTableView?.setState([
 //            "isDayExpanded" : isDayExpanded
 //            ])
 //    }

@@ -8,14 +8,13 @@
     backgroundColor="">
     
     <macro name="dateTextColor" value="black" />
-    <macro name="www" value="isWeekend" />
     
     <UIView
-        width="100%"
-        height="auto"
-        top="0"
-        left="0"
-        backgroundColor="">
+        width="95%"
+        height="89%"
+        top="50% - height/2"
+        left="50% - width/2"
+        backgroundColor="porcelainOpaque">
         
         <UILabel
             text="Today I went to work. Need to fight."

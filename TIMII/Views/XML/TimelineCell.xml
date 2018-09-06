@@ -21,7 +21,7 @@
         template="TimelineDayContentTemplate.xml"
         width="88%"
         height="100%"
-        backgroundColor="porcelainOpaque"
+        backgroundColor="clear"
     />
     
 </UITableViewCell>
