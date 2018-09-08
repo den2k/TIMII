@@ -21,12 +21,12 @@
     
     <UITableView
         outlet="timelineTableView"
-        backgroundColor="transparent"
+        backgroundColor="clear"
         contentInset.bottom="safeAreaInsets.bottom"
         contentInset.top="safeAreaInsets.top"
         contentInsetAdjustmentBehavior="never"
         contentOffset.y="-safeAreaInsets.top"
-        estimatedSectionHeaderHeight="50"
+        estimatedSectionHeaderHeight="40"
         scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
         scrollIndicatorInsets.top="safeAreaInsets.top"
         separatorStyle="none"
@@ -34,14 +34,13 @@
 
         <!-- Table header -->
         <UIView
-            isHidden="true"
-            height="auto + 10">
+            isHidden="false"
+            height="auto">
             
             <UILabel
-                isHidden="true"
-                text="~ A custom table header view ~"
+                text="TIMII"
                 textAlignment="center"
-                textColor="white"
+                textColor="black"
                 top="10"
                 width="100%"
             />
@@ -53,8 +52,8 @@
             isHidden="true"
             reuseIdentifier="timelineHeader"
             backgroundView.backgroundColor="rgba(255, 255, 255, 0.75)"
-            height="auto + 10"
-            textLabel.text="Section header defined as a template in Table.xml"
+            height="auto + 5"
+            textLabel.text="SEPTEMBER 2018"
         />
 
     </UITableView>

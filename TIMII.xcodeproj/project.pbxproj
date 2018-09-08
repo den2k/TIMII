@@ -63,6 +63,9 @@
 		958CC74E21077FF800AF1D25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74D21077FF800AF1D25 /* Colors.swift */; };
 		959C9284212A3A9100FACA01 /* LogInOutSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C9283212A3A9100FACA01 /* LogInOutSystem.swift */; };
 		95C61F35212E3950005931D4 /* TimelineEmptyDayTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */; };
+		95CA65E1214221D8001454C6 /* ExpandableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */; };
+		95CA65E32142271C001454C6 /* DayContainerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E22142271C001454C6 /* DayContainerComponent.swift */; };
+		95CA65E521422BE4001454C6 /* JournalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E421422BE4001454C6 /* JournalProtocol.swift */; };
 		95CBD2F2213646D5001013F6 /* TimelineTableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */; };
 		95CBD2F42136617B001013F6 /* TimelineTableScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */; };
 		95D1F987213A497300C5F07D /* DateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1F986213A497300C5F07D /* DateSystem.swift */; };
@@ -149,6 +152,9 @@
 		958CC74D21077FF800AF1D25 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		959C9283212A3A9100FACA01 /* LogInOutSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInOutSystem.swift; sourceTree = "<group>"; };
 		95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineEmptyDayTemplate.xml; sourceTree = "<group>"; };
+		95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableProtocol.swift; sourceTree = "<group>"; };
+		95CA65E22142271C001454C6 /* DayContainerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayContainerComponent.swift; sourceTree = "<group>"; };
+		95CA65E421422BE4001454C6 /* JournalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProtocol.swift; sourceTree = "<group>"; };
 		95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableScreen.swift; sourceTree = "<group>"; };
 		95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineTableScreen.xml; sourceTree = "<group>"; };
 		95D1F986213A497300C5F07D /* DateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSystem.swift; sourceTree = "<group>"; };
@@ -235,6 +241,9 @@
 				0F2C3F02209EA08E00A417F1 /* ComponentProtocol.swift */,
 				0F2A12452095309000D0E489 /* CountableProtocol.swift */,
 				0F2A12432095108600D0E489 /* DashboardProtocol.swift */,
+				95CA65E22142271C001454C6 /* DayContainerComponent.swift */,
+				95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */,
+				95CA65E421422BE4001454C6 /* JournalProtocol.swift */,
 				0FDB817D20B0CDDF00E39E04 /* UIStyleProtocol.swift */,
 				0F3D4F5D2097392C00B88EDE /* ViewableProtocol.swift */,
 				9520A1B121141089004E7FDE /* MemberComponent.swift */,
@@ -624,12 +633,14 @@
 				0FFE08FE20F1883D000D1797 /* TimerViewController.swift in Sources */,
 				959C9284212A3A9100FACA01 /* LogInOutSystem.swift in Sources */,
 				95F54AC3210D07F5007D7764 /* CreateAccountScreen.swift in Sources */,
+				95CA65E521422BE4001454C6 /* JournalProtocol.swift in Sources */,
 				0F9D931720BA265F0027DE1D /* TimerScreen.swift in Sources */,
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,
 				0F4AD8FB20A726AB00E1CD0E /* ViewableSystem.swift in Sources */,
 				95FCE6AF21180070000C9029 /* SettingScreen.swift in Sources */,
 				0F0DAA3220A5400900DD30DD /* EntitySystem.swift in Sources */,
+				95CA65E32142271C001454C6 /* DayContainerComponent.swift in Sources */,
 				958CC74E21077FF800AF1D25 /* Colors.swift in Sources */,
 				0FDB817E20B0CDDF00E39E04 /* UIStyleProtocol.swift in Sources */,
 				0FBE767320A88D25003225F0 /* SetupSystem.swift in Sources */,
@@ -637,6 +648,7 @@
 				950ECEDE210BF42A00DE2D49 /* LoginScreen.swift in Sources */,
 				0FB38A7E20F11AE700277615 /* TimeCounterSystem.swift in Sources */,
 				0FC08A4820840CFF0083E0B3 /* Main.swift in Sources */,
+				95CA65E1214221D8001454C6 /* ExpandableProtocol.swift in Sources */,
 				0F2A12442095108600D0E489 /* DashboardProtocol.swift in Sources */,
 				9520A1B221141089004E7FDE /* MemberComponent.swift in Sources */,
 				0FFE090020F18872000D1797 /* TimiiComponent.swift in Sources */,

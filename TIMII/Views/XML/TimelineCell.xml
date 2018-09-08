@@ -1,22 +1,59 @@
 <UITableViewCell
     reuseIdentifier="timelineCell"
     width=""
-    height="auto + 30"
+    height="auto"
     selectedBackgroundView.backgroundColor="white"
     backgroundColor="clear"
     style=""
     layer.borderColor=""
     >
     
+    <!-- TimelineDayTemplate.xml - 9.7.18 Parameter passing of Bool didn't work so pulled back here?! -->
+    <!-- Day Section -->
     <UIView
-        template="TimelineDayTemplate.xml"
-        dayNumberText="{dayNumberText}"
-        dayText="{dayText}"
         width="12%"
-        height="auto"
-        backgroundColor="clear"
-    />
+        height="auto + 15"
+        backgroundColor="">
+        
+        <macro name="dateTextColor" value="{isWeekend ? valencia : black}" />
+        
+        <!-- This UIView is used to control the vertical centering of the 2 UILabel components -->
+        <UIView
+            width=""
+            height="auto"
+            top="50% - height/2"
+            left=""
+            backgroundColor="">
+        
+            <UILabel
+                text="{dayText}"
+                width="100%"
+                height="auto"
+                top=""
+                left="previous.left"
+                textAlignment="center"
+                textColor="dateTextColor"
+                backgroundColor=""
+                font="Avenir Next 13"
+                />
+                
+            <UILabel
+                text="{dayNumberText}"
+                width="100%"
+                height="auto"
+                top="previous.bottom"
+                left=""
+                textAlignment="center"
+                textColor="dateTextColor"
+                backgroundColor=""
+                font="Avenir Next bold 21"
+                />
+        
+        </UIView>
+
+    </UIView>
     
+    <!-- Day Content Section -->
     <UIView
         template="TimelineDayContentTemplate.xml"
         width="88%"

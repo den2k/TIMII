@@ -12,27 +12,27 @@
     <param name="dayText" type="String" />
     <macro name="dateTextColor" value="black" />
         
-        <UILabel
-            text="{dayText}"
-            width="100%"
-            height="auto"
-            top=""
-            left="previous.left"
-            textAlignment="center"
-            textColor="dateTextColor"
-            backgroundColor=""
-            font="Avenir Next 13"
-        />
-        <UILabel
-            text="{dayNumberText}"
-            width="100%"
-            height="auto"
-            top="previous.bottom"
-            left=""
-            textAlignment="center"
-            textColor="dateTextColor"
-            backgroundColor=""
-            font="Avenir Next bold 21"
-        />
+    <UILabel
+        text="{dayText}"
+        width="100%"
+        height="auto"
+        top=""
+        left="previous.left"
+        textAlignment="center"
+        textColor="dateTextColor"
+        backgroundColor=""
+        font="Avenir Next 13"
+    />
+    <UILabel
+        text="{dayNumberText}"
+        width="100%"
+        height="auto"
+        top="previous.bottom"
+        left=""
+        textAlignment="center"
+        textColor="dateTextColor"
+        backgroundColor=""
+        font="Avenir Next bold 21"
+    />
 
 </UIView>

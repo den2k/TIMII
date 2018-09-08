@@ -67,15 +67,15 @@ struct DateSystem
     
     func getWeekDayText(index: Int) -> String
     {
-        let today = Calendar.current.component(.weekday, from: Date())    // SUN - SAT : 1 - 7
-        let i = (today + index - 1) % 7
+        let today = Calendar.current.component(.weekday, from: Date())      // SUN - SAT : 1 - 7
+        let i = (today + index - 1) % 7                                     // SUN - SAT : 0 - 6 to match array index
         return dayText[i]
     }
     
     func getWeekDayIndex(index: Int) -> Int
     {
-        let today = Calendar.current.component(.weekday, from: Date())    // SUN - SAT : 1 - 7
-        let i = (today + index - 1) % 7
+        let today = Calendar.current.component(.weekday, from: Date())      // SUN - SAT : 1 - 7
+        let i = (today + index - 1) % 7                                     // SUN - SAT : 0 - 6 to match array index
         return i
     }
 
