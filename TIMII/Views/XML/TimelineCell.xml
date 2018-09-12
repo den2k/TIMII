@@ -2,10 +2,13 @@
     reuseIdentifier="timelineCell"
     width=""
     height="auto"
-    selectedBackgroundView.backgroundColor="white"
     backgroundColor="clear"
     style=""
     layer.borderColor=""
+    layer.borderWidth=""
+    selectedBackgroundView.backgroundColor="white"
+    selectedBackgroundView.layer.borderWidth=""
+    selectedBackgroundView.layer.borderColor=""
     >
     
     <!-- TimelineDayTemplate.xml - 9.7.18 Parameter passing of Bool didn't work so pulled back here?! -->
@@ -56,9 +59,12 @@
     <!-- Day Content Section -->
     <UIView
         template="TimelineDayContentTemplate.xml"
+        j="{journal}"
+        isDayExpanded="{isDayExpanded}"
+        sizeOfExpandedCell="{sizeOfExpandedCell}"
         width="88%"
-        height="100%"
-        backgroundColor="clear"
-    />
+        height="{isDayExpanded ? sizeOfExpandedCell : 100%}"
+        backgroundColor="">
+    </UIView>
     
 </UITableViewCell>

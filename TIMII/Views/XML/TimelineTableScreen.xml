@@ -1,5 +1,5 @@
 <TimelineTableScreen
-    view.backgroundColor="clear">
+    view.backgroundColor="white">
     
     <macro name="navBarHeight" value="50" />
     <macro name="weeklySideBarWidth" value="40" />
@@ -12,12 +12,14 @@
     <macro name="borderLength" value="8" />
     
     <!-- Background Image -->
+    <!--
     <UIImageView
         image="bk-1.jpg"
         width="100%"
         height="100%"
         contentMode="scaleAspectFit"
     />
+     -->
     
     <UITableView
         outlet="timelineTableView"
@@ -30,7 +32,8 @@
         scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
         scrollIndicatorInsets.top="safeAreaInsets.top"
         separatorStyle="none"
-        style="plain">
+        style="plain"
+        backgroundView="">
 
         <!-- Table header -->
         <UIView
