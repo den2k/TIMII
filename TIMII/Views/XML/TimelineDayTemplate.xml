@@ -2,21 +2,21 @@
 <!-- This shows the date on the left side bar -->
 
 <UIView
-    width=""
-    height="auto"
-    top="(parent.height - height)/2"
+    width="100%"
+    height="{isDayExpanded ? sizeOfExpandedCell : auto}"
+    top=""
     left=""
-    backgroundColor="">
+    backgroundColor="red">
     
     <param name="dayNumberText" type="String" />
     <param name="dayText" type="String" />
     <macro name="dateTextColor" value="black" />
-        
+    
     <UILabel
         text="{dayText}"
         width="100%"
         height="auto"
-        top=""
+        top="parent.height/2 - (height + next.height)/2"
         left="previous.left"
         textAlignment="center"
         textColor="dateTextColor"

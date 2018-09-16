@@ -88,7 +88,33 @@ struct DateSystem
     {
         return monthText[currentMonthIndex]
     }
+    
+    func isWeekend(dayOfWeekIndex: Int) -> Bool
+    {
+        if dayOfWeekIndex == 0 || dayOfWeekIndex == 6 {
+            print("Weekend = Alright! \(dayOfWeekIndex)")
+            return true
+        } else {
+            print("Weekday = Booo! \(dayOfWeekIndex)")
+            return false
+        }
+    }
 
+    // Returns all 7 days starting for the current day.  So if today is TUE, it returns TUE, WED, THU... MON
+    func getWeekDayTextArray(index: Int) -> [String]
+    {
+        let today = Calendar.current.component(.weekday, from: Date())      // SUN - SAT : 1 - 7
+        var dayTextArray: [String] = []
+        var offSet: Int
+        
+        for x in 0...6
+        {
+            offSet = (today + index + x - 1 ) % 7
+//            print(dayText[offSet])
+            dayTextArray.append(dayText[offSet])
+        }
+        return dayTextArray
+    }
 }
 
 

@@ -20,9 +20,7 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-//        setNeedsStatusBarAppearanceUpdate()
-//        self.navigationController?.navigationBar.isHidden = true;
-        
+
         let login = LogInOutSystem()
         let signedIn = login.isLoggedIn()
         if !signedIn
@@ -60,8 +58,4 @@ class Main: UIViewController, LayoutLoading, UITabBarControllerDelegate
         selectedTab = index
     }
     
-//    // Hide status bar in iPhone
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
 }
