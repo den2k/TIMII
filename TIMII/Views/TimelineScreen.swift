@@ -24,6 +24,13 @@ to refer to them using their fully-qualified name in your XML.
  being presented by the view, making it much harder to increment/decrement the date.
  Looking at the date stamp on adding dates to this view, it was 2 weeks ago....8.28.
  
+ 9.16.18 - I fixed a few small items but still tough.... I need to create a daycontainer entity that is called X number of times
+ from this timeline.  I have lots of global variables that just doesn't work given the individual
+ state conditions of each day (expanded? isweekend? journal entry? etc.)  The dayText(n) is a hack
+ and temporary. The TimelineScreen view controller is a scrollable view that holds as many
+ daycontainer entitys as needed and displays it in a row table format.... I'm wondering if I should just
+ not recreate the wheel and leverage collectionViewController or tableViewController..... instead
+ of creating my own...
  
 */
 
@@ -50,7 +57,7 @@ class TimelineScreen: UIViewController, UIScrollViewDelegate, LayoutLoading
                 "dayText4": DateSystem().getWeekDayText(index: offsetDate+4),
                 "dayText5": DateSystem().getWeekDayText(index: offsetDate+5),
                 "dayText6": DateSystem().getWeekDayText(index: offsetDate+6),
-                "dayNumberText": DateSystem().getDay(index: offsetDate),
+                "dayNumberText": DateSystem().getOffsetDayNumber(index: offsetDate),
                 "isWeekend": DateSystem().isWeekend(dayOfWeekIndex: offsetDate),
 //                "journal": self.days[offsetDate].journalText,
             ])

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 /*
- 9.4.18 TODO: DONE 9.5.18 - Create getDay() so the displayed date is not just +1 from indexPath
+ 9.4.18 TODO: DONE 9.5.18 - Create getOffsetDayNumber() so the displayed date is not just +1 from indexPath
  */
 
 import UIKit
@@ -49,14 +49,14 @@ struct DateSystem
         return numOfDaysInMonth[monthIndex]
     }
 
-    func getDay(index: Int) -> Int
+    func getOffsetDayNumber(index: Int) -> Int
     {
         // calculate the date number as the user scrolls through the calendar
         let offsetDate = Date().addingTimeInterval(Double(index) * 24.0 * 3600.0)
         
         // extract the date number from the offsetDate variable
-        let day = Calendar.current.component(.day, from: offsetDate)
-        return day
+        let offsetDayNumber = Calendar.current.component(.day, from: offsetDate)
+        return offsetDayNumber
     }
     
     func getCurrentWeekDayText() -> String

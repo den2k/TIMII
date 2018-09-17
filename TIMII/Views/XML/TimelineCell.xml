@@ -1,8 +1,8 @@
 <UITableViewCell
     reuseIdentifier="timelineCell"
-    width=""
-    height="auto"
-    backgroundColor="clear"
+    width="100%"
+    height=""
+    backgroundColor="clear // sets all table cell color background"
     style=""
     layer.borderColor=""
     layer.borderWidth=""
@@ -11,28 +11,37 @@
     selectedBackgroundView.layer.borderColor=""
     >
     
+<!--    <macro name="weeklySideBarWidth" value="100" />-->
+<!--    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - borderLength * 7" />-->
+    <macro name="dayBackgroundColor" value="porcelainOpaque" />
+    <macro name="dayContentTextColor" value="black" />
+    <macro name="borderLength" value="8" />
+    
+
+<!--    <macro name="border" value="8" />-->
+    <macro name="dateWidth" value="45" />
+    <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
+
     <!-- TimelineDayTemplate.xml - 9.7.18 Parameter passing of Bool didn't work so pulled back here?! -->
     <!-- Day Section -->
     <UIView
-        width="12%"
-        height="auto + 15"
-        backgroundColor="">
-        
-        <macro name="dateTextColor" value="{isWeekend ? valencia : black}" />
+        width="dateWidth"
+        height="100%"
+        backgroundColor="clear">
         
         <!-- This UIView is used to control the vertical centering of the 2 UILabel components -->
         <UIView
-            width=""
-            height="auto"
-            top="50% - height/2"
-            left=""
-            backgroundColor="">
+            width="100%"
+            height="100% - borderLength         // shrinks the view for border outlines to show up"
+            top="50% - height/2                 // this centers the view that holds the 2 UILabel views"
+            left="borderLength"
+            backgroundColor="dayBackgroundColor // the date background color">
         
             <UILabel
                 text="{dayText}"
                 width="100%"
                 height="auto"
-                top=""
+                top="50% - (height + next.height)/2"
                 left="previous.left"
                 textAlignment="center"
                 textColor="dateTextColor"
@@ -58,13 +67,24 @@
     
     <!-- Day Content Section -->
     <UIView
-        template="TimelineDayContentTemplate.xml"
-        j="{journal}"
-        isDayExpanded="{isDayExpanded}"
-        sizeOfExpandedCell="{sizeOfExpandedCell}"
-        width="88%"
-        height="{isDayExpanded ? sizeOfExpandedCell : 100%}"
-        backgroundColor="">
+        width="100% - dateWidth - borderLength * 3"
+        height="100% - borderLength             // shrinks the view for border outlines to show up"
+        top="50% - height/2"
+        left="previous.right + borderLength * 2"
+        backgroundColor="dayBackgroundColor">
+        
+        <UILabel
+            text="{journal}"
+            width="parent.width"
+            height="auto"
+            top="50% - height/2"
+            left="previous.left"
+            textAlignment="left"
+            textColor="dayContentTextColor"
+            backgroundColor="//red"
+            font="Avenir Next 14"
+        />
+        
     </UIView>
     
 </UITableViewCell>

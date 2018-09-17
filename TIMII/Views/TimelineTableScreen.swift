@@ -19,7 +19,7 @@
  what I'm giving up by not using tableviews but...
  
  9.15.18 - Still working on TimelineScreen instead of using the standard tableViewController
- 
+ 9.16.18 - TableView is all messed up because it shares views with TimelineScreen.
  
  
  TODO: 8.28.18 - DONE 9.4.18 - Create new tableview to drive the timeline calendar view
@@ -30,7 +30,10 @@
  TODO: 9.6.18 - DONE 9.11.18 - Use didSelectRowAt to create DayContainer component that is expandable
  TODO: 9.6.18 - DONE 9.11.18 - Expand row when tapped.
  TODO: 9.12.18 - Auto-close expanded view when another row is tapped.
- TODO: 9.11.18 - Fix strange expand animation.
+ TODO: 9.11.18 - Fix strange expand animation.  The problem is the shrinking of unselected rows that is
+ still in expanded mode. isExpanded is set for that row but once a different row is selected
+ the animation shrinks that row, but the background color still shows expanded.
+ 
  TODO: 9.8.18 - Read table info to self.days[] array (cloud)
  */
 
@@ -45,7 +48,8 @@ class TimelineTableScreen: UITableViewController
     let sizeOfExpandedCell: Int = 200
     
     // Holder of DayContainer Components
-    var days = [DayContainerComponent]()
+//    var days = [DayComponent]()
+    var days: [DayComponent] = []
     
     @IBOutlet var timelineTableView: UITableView?
     {
@@ -72,26 +76,6 @@ class TimelineTableScreen: UITableViewController
         }
     }
         
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        
-        // Solve ERROR - 9.15.18 not solved.
-        // Warning once only: Detected a case where constraints ambiguously suggest a height of zero
-        // for a tableview cell's content view. We're considering the collapse unintentional and using standard height instead.
-        self.tableView.rowHeight = 50
-    }
-    
-    override func viewWillAppear(_ animated: Bool)
-    {
-        super.viewWillAppear(animated)
-        
-        // Add a background view to the table view
-        let backgroundImage = UIImage(named: "bk-1.jpg")
-        let imageView = UIImageView(image: backgroundImage)
-        self.tableView.backgroundView = imageView
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return numOfDays
@@ -107,35 +91,45 @@ class TimelineTableScreen: UITableViewController
         // Use special Layout extension method to dequeue the node rather than the view itself
         let cellNode = tableView.dequeueReusableCellNode(withIdentifier: "timelineCell", for: indexPath)
         
-        // Initiazing days with empty values. Need to get cloud values once I get there.
-        self.days.append(DayContainerComponent.init())
+        // Initializing days with empty values. Need to get cloud values once I get there.
+        
+        self.days.append(DayComponent.init(day: Date(timeIntervalSinceNow: Double(indexPath.row) * 24.0 * 3600.0)))
         let dayOfWeekIndex = DateSystem().getWeekDayIndex(index: indexPath.row)
         if dayOfWeekIndex == 0 || dayOfWeekIndex == 6 {
-//            print("Weekend = Alright! \(dayOfWeekIndex)")
             isWeekend = true
         } else {
-//            print("Weekday = Booo! \(dayOfWeekIndex)")
             isWeekend = false
         }
         
         // isDayExpanded is now a global variable but needs to be indexPath.row specific
-//        if isDayExpanded {
-//            print(DateSystem().getWeekDayText(index: indexPath.row), " content box is expanded!")
-//        } else {
-//            print(DateSystem().getWeekDayText(index: indexPath.row), " content box is closed!")
-//        }
         
         // Set the node state to update the cell
+        // 9.16.18 commented out to display days[] component values instead
+//        cellNode.setState([
+//            "month": DateSystem().getCurrentMonthText(),
+//            "year": DateSystem().currentYear,
+//            "dayText": DateSystem().getWeekDayText(index: indexPath.row),  // SUN - SAT
+//            "dayNumberText": DateSystem().getOffsetDayNumber(index: indexPath.row),
+//            "isDayExpanded": false,
+//            "isWeekend": isWeekend,
+//            "sizeOfExpandedCell": sizeOfExpandedCell,
+//            "journal": self.days[indexPath.row].journalText,
+//        ])
+        
+        // 9.16.18 using days[] instead of above.
         cellNode.setState([
             "month": DateSystem().getCurrentMonthText(),
             "year": DateSystem().currentYear,
-            "dayText": DateSystem().getWeekDayText(index: indexPath.row),  // SUN - SAT
-            "dayNumberText": DateSystem().getDay(index: indexPath.row),
-            "isDayExpanded": false,
+            "dayText": days[indexPath.row].getDayText(index: indexPath.row),                // SUN - SAT
+            "dayNumberText": days[indexPath.row].getDayNumberText(index: indexPath.row),    // 1 - 31
+            "isDayExpanded": days[indexPath.row].isExpanded,
             "isWeekend": isWeekend,
             "sizeOfExpandedCell": sizeOfExpandedCell,
             "journal": self.days[indexPath.row].journalText,
-        ])
+            ])
+        
+
+        print("3 cellForRowAt:", indexPath.row, days[indexPath.row].isExpanded)
         
         // Cast the node view to a table cell and return it
         return cellNode.view as! UITableViewCell
@@ -149,34 +143,30 @@ class TimelineTableScreen: UITableViewController
         print("didSelectRowAt:", indexPath.row)
 
         if indexPath as NSIndexPath == self.selectedIndexPath {
-            print("isDayExpanded selected same row: ", isDayExpanded)
-            self.selectedIndexPath = nil
+            days[indexPath.row].isExpanded = false
+            self.selectedIndexPath = nil        // this calls the selectedIndexPath...tied to heightForRowAt
             cellNode?.setState([
-                "isDayExpanded": false,
-                "sizeOfExpandedCell": "50",
+                "isDayExpanded": days[indexPath.row].isExpanded,
                 ])
         } else {
-            print("isDayExpanded selected different row: ", isDayExpanded)
+            days[indexPath.row].isExpanded = true
             self.selectedIndexPath = indexPath as NSIndexPath
             cellNode?.setState([
-                "isDayExpanded": true,
-                "sizeOfExpandedCell": sizeOfExpandedCell,
+                "isDayExpanded": days[indexPath.row].isExpanded,
                 ])
         }
         
-        // Initializing days with empty values. Need to get cloud values once I get there.
-        // 9.11.18 - Does still need to be done?
-//        self.days.append(DayContainerComponent.init())
-        
         // Scroll to put selected row at top of scroll window
-        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+//        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
     
     internal var selectedIndexPath: NSIndexPath?
     {
         didSet
         {
-            //these magical lines tell the tableview something's up, and it checks cell heights and animates changes
+            print("1 reanimating..")
+            // reanimates the tableView but only for inserting, deleting and selecting
+            // otherwise use reloadrows/reloaddataa
             self.tableView.beginUpdates()
             self.tableView.endUpdates()
         }
@@ -186,17 +176,48 @@ class TimelineTableScreen: UITableViewController
     {
         if indexPath as NSIndexPath == self.selectedIndexPath
         {
+            print("2 heightForRowAt - set sizing...", sizeOfExpandedCell)
             let size = sizeOfExpandedCell
             return CGFloat(size)
         } else {
+            print("2 heightForRowAt - automatic sizing...")
             return UITableView.automaticDimension
         }
     }
 
-    // 9.15.18 - Set height of cell and estimated height too to remove ambiguously height warning.
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return UITableView.automaticDimension
+    // Adding this helps optimize height calculations so non-visable cells use an estimate. But this seems
+    // to be applied to Layout generated table views.
+    // https://stackoverflow.com/questions/19374699/is-there-a-way-to-update-the-height-of-a-single-uitableviewcell-without-recalcu
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 120
     }
     
+    
+    // 9.15.18 - Set height of cell and estimated height too to remove ambiguously height warning??
+//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        return UITableView.automaticDimension
+//    }
+    
+    //    override func viewDidLoad()
+    //    {
+    //        super.viewDidLoad()
+    //
+    //        // Solve ERROR - 9.15.18 not solved.
+    //        // Warning once only: Detected a case where constraints ambiguously suggest a height of zero
+    //        // for a tableview cell's content view. We're considering the collapse unintentional and using standard height instead.
+    //        self.tableView.rowHeight = 50
+    //    }
+    //
+    //    override func viewWillAppear(_ animated: Bool)
+    //    {
+    //        super.viewWillAppear(animated)
+    //
+    //        // Add a background view to the table view
+    //        let backgroundImage = UIImage(named: "bk-1.jpg")
+    //        let imageView = UIImageView(image: backgroundImage)
+    //        self.tableView.backgroundView = imageView
+    //    }
+    
+
 }
