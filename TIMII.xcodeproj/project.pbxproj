@@ -261,8 +261,8 @@
 			children = (
 				950ECEDC210B86A300DE2D49 /* XML */,
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
-				0F9EAE9A20C35C3E00E2C5F3 /* TimelineScreen.swift */,
 				95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */,
+				0F9EAE9A20C35C3E00E2C5F3 /* TimelineScreen.swift */,
 				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
 				95FCE6AE21180070000C9029 /* SettingScreen.swift */,
 				95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */,

@@ -14,16 +14,16 @@
     style=""
     layer.borderColor=""
     layer.borderWidth=""
-    selectedBackgroundView.backgroundColor="white       // only stays white when held and should stay white. Due to reloaddata probably."
-    selectedBackgroundView.layer.borderWidth="borderLength"
-    selectedBackgroundView.layer.borderColor="clear   // must match tableview bkcolor"
+    selectedBackgroundView.backgroundColor="white"
+    selectedBackgroundView.layer.borderWidth="borderLength/2"
+    selectedBackgroundView.layer.borderColor="gray   // must match tableview bkcolor"
     >
     
-    <macro name="defaultCellHeight" value="120" />
+    <macro name="defaultCellHeight" value="110" />
     <macro name="expandedCellHeight" value="300" />
     <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
 
-    <macro name="dayBackgroundColor" value="porcelainOpaque" />
+    <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
     <macro name="dayContentTextColor" value="black" />
     <macro name="borderLength" value="8" />
     <macro name="dateWidth" value="45" />

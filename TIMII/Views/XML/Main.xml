@@ -10,13 +10,13 @@
     />
     
     <UIViewController
-        xml="TimelineScreen.xml"
+        xml="TimelineTableScreen.xml"
         tabBarItem.image="home.png"
         title="Timeline"
     />
     
      <UIViewController
-         xml="TimelineTableScreen.xml"
+         xml="TimelineScreen.xml"
          tabBarItem.image="timer.png"
          title="Timer"
      />
