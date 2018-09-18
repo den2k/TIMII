@@ -1,22 +1,22 @@
 <!-- TimelineCell.xml -->
 
 <!--
- TODO: 9.17.18  Fix an expanded day component butting into the cell above it. This is not visible so click and
-                hold the click to see the mistakened expanded view.
+ TODO: 9.17.18  [DONE 9.17.18] Fix an expanded day component butting into the cell above it. This is not visible so click and
+                hold the click to see the mistaken expanded view.
  -->
 
 <UITableViewCell
     reuseIdentifier="timelineCell"
     width="100%"
     height="cellHeight      // expandable height based on isDayExpanded"
-    top=""
+    top="// this doesn't do anything"
     backgroundColor="clear  // sets all table cell color background"
     style=""
     layer.borderColor=""
     layer.borderWidth=""
-    selectedBackgroundView.backgroundColor="green"
+    selectedBackgroundView.backgroundColor="white       // only stays white when held and should stay white. Due to reloaddata probably."
     selectedBackgroundView.layer.borderWidth="borderLength"
-    selectedBackgroundView.layer.borderColor="red   // must match tableview bkcolor"
+    selectedBackgroundView.layer.borderColor="clear   // must match tableview bkcolor"
     >
     
     <macro name="defaultCellHeight" value="120" />
@@ -27,14 +27,13 @@
     <macro name="dayContentTextColor" value="black" />
     <macro name="borderLength" value="8" />
     <macro name="dateWidth" value="45" />
-    <macro name="expandedColor" value="blue" />
     <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
 
     <!-- Day Section -->
     <UIView
         width="dateWidth"
         height="cellHeight - borderLength"
-        top="safeAreaInsets.top"
+        top="borderLength/2"
         backgroundColor="clear">
         
         <!-- This UIView is used to control the vertical centering of the 2 UILabel components -->
@@ -77,7 +76,7 @@
     <UIView
         width="100% - dateWidth - borderLength * 3"
         height="cellHeight - borderLength             // shrinks the view for border outlines to show up"
-        top="safeAreaInsets.top"
+        top="borderLength/2"
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         

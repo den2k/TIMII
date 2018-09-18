@@ -1,17 +1,17 @@
 <TimelineTableScreen
-    view.backgroundColor="red // this defines the background of the entire tableView">
+    view.backgroundColor="gray // this defines the background of the entire tableView">
     
     <UITableView
         outlet="timelineTableView"
         backgroundColor="// use view.backgroundColor to set color. not here."
         contentInset.bottom="safeAreaInsets.bottom"
-        contentInset.top="parent.safeAreaInsets.top"
+        contentInset.top="safeAreaInsets.top"
         contentInsetAdjustmentBehavior="never"
         contentOffset.y="-safeAreaInsets.top    // this creates the offset for the iPhone notch. Doesn't work when tabbing in"
         estimatedSectionHeaderHeight=""
         scrollIndicatorInsets.bottom="safeAreaInsets.bottom"
         scrollIndicatorInsets.top="safeAreaInsets.top"
-        separatorStyle="none    // removes the separator line between cells"
+        separatorStyle="true    // removes the separator line between cells"
         style="//plain"
         >
 
