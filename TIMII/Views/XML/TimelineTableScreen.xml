@@ -1,5 +1,5 @@
 <TimelineTableScreen
-    view.backgroundColor="camo // this defines the background of the entire tableView">
+    view.backgroundColor="red // this defines the background of the entire tableView">
     
     <UITableView
         outlet="timelineTableView"

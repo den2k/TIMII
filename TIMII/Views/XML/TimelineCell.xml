@@ -1,41 +1,49 @@
+<!-- TimelineCell.xml -->
+
+<!--
+ TODO: 9.17.18  Fix an expanded day component butting into the cell above it. This is not visible so click and
+                hold the click to see the mistakened expanded view.
+ -->
+
 <UITableViewCell
     reuseIdentifier="timelineCell"
     width="100%"
-    height=""
-    backgroundColor="clear // sets all table cell color background"
+    height="cellHeight      // expandable height based on isDayExpanded"
+    top=""
+    backgroundColor="clear  // sets all table cell color background"
     style=""
     layer.borderColor=""
     layer.borderWidth=""
-    selectedBackgroundView.backgroundColor="white"
-    selectedBackgroundView.layer.borderWidth=""
-    selectedBackgroundView.layer.borderColor=""
+    selectedBackgroundView.backgroundColor="green"
+    selectedBackgroundView.layer.borderWidth="borderLength"
+    selectedBackgroundView.layer.borderColor="red   // must match tableview bkcolor"
     >
     
-<!--    <macro name="weeklySideBarWidth" value="100" />-->
-<!--    <macro name="weeklySideBarHeight" value="100% - parent.safeAreaInsets.top - parent.safeAreaInsets.bottom - borderLength * 7" />-->
+    <macro name="defaultCellHeight" value="120" />
+    <macro name="expandedCellHeight" value="300" />
+    <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
+
     <macro name="dayBackgroundColor" value="porcelainOpaque" />
     <macro name="dayContentTextColor" value="black" />
     <macro name="borderLength" value="8" />
-    
-
-<!--    <macro name="border" value="8" />-->
     <macro name="dateWidth" value="45" />
+    <macro name="expandedColor" value="blue" />
     <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
 
-    <!-- TimelineDayTemplate.xml - 9.7.18 Parameter passing of Bool didn't work so pulled back here?! -->
     <!-- Day Section -->
     <UIView
         width="dateWidth"
-        height="100%"
+        height="cellHeight - borderLength"
+        top="safeAreaInsets.top"
         backgroundColor="clear">
         
         <!-- This UIView is used to control the vertical centering of the 2 UILabel components -->
         <UIView
             width="100%"
-            height="100% - borderLength         // shrinks the view for border outlines to show up"
+            height="cellHeight - borderLength   // shrinks the view for border outlines to show up"
             top="50% - height/2                 // this centers the view that holds the 2 UILabel views"
             left="borderLength"
-            backgroundColor="dayBackgroundColor // the date background color">
+            backgroundColor="dayBackgroundColor">
         
             <UILabel
                 text="{dayText}"
@@ -68,8 +76,8 @@
     <!-- Day Content Section -->
     <UIView
         width="100% - dateWidth - borderLength * 3"
-        height="100% - borderLength             // shrinks the view for border outlines to show up"
-        top="50% - height/2"
+        height="cellHeight - borderLength             // shrinks the view for border outlines to show up"
+        top="safeAreaInsets.top"
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         
@@ -83,6 +91,10 @@
             textColor="dayContentTextColor"
             backgroundColor="//red"
             font="Avenir Next 14"
+        />
+        
+        <UILabel
+            text="Expanded: {cellHeight}"
         />
         
     </UIView>
