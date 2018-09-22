@@ -16,7 +16,7 @@
     />
     
      <UIViewController
-         xml="TimelineScreen.xml"
+         xml="TimerScreen.xml"
          tabBarItem.image="timer.png"
          title="Timer"
      />

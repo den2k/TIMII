@@ -20,7 +20,7 @@ class DayComponent: ComponentProtocol, ExpandableProtocol, JournalProtocol, Time
     
     internal var createdTimeStamp: Date
     var isExpanded: Bool
-    var journalText: String
+    var journalText: UITextView?
 
     var thisDay: Date
 
@@ -29,7 +29,7 @@ class DayComponent: ComponentProtocol, ExpandableProtocol, JournalProtocol, Time
         self.thisDay = day
         createdTimeStamp = Date()
         isExpanded = false
-        journalText = "Type something. Now!"
+        journalText?.text = "Type something. Now!"
     }
     
     func getDayText(index: Int) -> String

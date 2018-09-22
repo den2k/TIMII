@@ -10,5 +10,5 @@ import UIKit
 
 protocol JournalProtocol
 {
-    var journalText: String { get set }
+    var journalText: UITextView? { get set }
 }

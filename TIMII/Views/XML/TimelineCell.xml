@@ -1,8 +1,8 @@
 <!-- TimelineCell.xml -->
 
 <!--
- TODO: 9.17.18  [DONE 9.17.18] Fix an expanded day component butting into the cell above it. This is not visible so click and
-                hold the click to see the mistaken expanded view.
+ TODO: 9.17.18  [DONE 9.17.18] Fix an expanded day component butting into the cell above it. This is not visible so click and hold the click to see the mistaken expanded view.
+ TODO: 9.19.18 - Add journaling function to the app.
  -->
 
 <UITableViewCell
@@ -16,11 +16,11 @@
     layer.borderWidth=""
     selectedBackgroundView.backgroundColor="white"
     selectedBackgroundView.layer.borderWidth="borderLength/2"
-    selectedBackgroundView.layer.borderColor="gray   // must match tableview bkcolor"
+    selectedBackgroundView.layer.borderColor="clear   // must match tableview bkcolor"
     >
     
     <macro name="defaultCellHeight" value="110" />
-    <macro name="expandedCellHeight" value="300" />
+    <macro name="expandedCellHeight" value="400" />
     <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
 
     <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
@@ -80,19 +80,35 @@
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         
-        <UILabel
+        <!-- journal -->
+        <UITextView
+            outlet="//journalTextView"
             text="{journal}"
-            width="parent.width"
-            height="auto"
-            top="50% - height/2"
-            left="previous.left"
+            top="8"
+            left="8"
+            width="100% - 16"
+            height="cellHeight - 55"
             textAlignment="left"
             textColor="dayContentTextColor"
-            backgroundColor="//red"
-            font="Avenir Next 14"
+            backgroundColor="{isDayExpanded ? red : clear}"
+            font="Avenir Next Italic 14"
+        />
+        
+        <!-- Journal Entry Save Button -->
+        <UIButton
+            isHidden="{isDayExpanded ? false : true}"
+            touchUpInside="journalEntry"
+            title="Save"
+            backgroundColor="mintGreen"
+            top="previous.bottom + 8"
+            right="8"
+            width="100"
+            height="26"
+            layer.cornerRadius="13"
         />
         
         <UILabel
+            isHidden="true"
             text="Expanded: {cellHeight}"
         />
         
