@@ -6,9 +6,6 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 
-//import UIKit
-//
-//class TimelineCell : UITableViewCell,
-//{
-//
-//}
+import UIKit
+
+class TimelineCell : UITableViewCell { }

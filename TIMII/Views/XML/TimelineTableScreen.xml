@@ -1,9 +1,5 @@
 <!-- TimelineTableScreen.xml -->
 
-<!--
- 9.20.18 - Because the outlet reference in an externalized cell XML file seems buggy in for uitableviewcells, I'm now trying to pull all of the code from TimelineCell.xml into the tableviewcontroller.xml file. Wish me luck. Tried it and it still does not work.
- -->
-
  <TimelineTableScreen
     view.backgroundColor="gray // this defines the background of the entire tableView">
     

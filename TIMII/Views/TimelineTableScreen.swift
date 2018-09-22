@@ -7,36 +7,6 @@
 //
 /*
  
- --- JOURNAL ---
- 
- 9.12.18 - Should I start over and just use layout? vs tableviewcontrollers?
- Doesn't seem like I'm getting any benefits from the added complexity.
- Layout rows underneath rows seems to be a better approach  .....
- The added tableview selectors and the mixing of view variables now
- in the controller side of the code kills the separation of form from function.
- At least I didn't kill off the timeline layout i did so I can quickly test
- that way to incorporate journaling, etc.
- 
- let's make timelinescreen dynamic and see if that works better. Not sure
- what I'm giving up by not using tableviews but...
- 
- 9.15.18 - Still working on TimelineScreen instead of using the standard tableViewController
- 
- 9.16.18 - TableView is all messed up because it shares views with TimelineScreen.
- 
- 9.17.18 - Finally got the expand tablecell to work!!!! I had to issue a reload
- data on the entire table which is expansive but may be ok.... I also had to
- save the state of a Day Component being expanded or not
- in its own component instance. Only then could I use the expanded flag
- inside the XML views to intelligently open and close a view.....!!!!!!
- Note that the tableview doesn't reload in real-time using the following commands.
-
-    self.tableView.beginUpdates()     // doesn't do a complete reload of the table so not real-time
-    self.tableView.endUpdates()       // doesn't do a complete reload of the table so not real-time
-
- it must be
-    self.tableView.reloadData()
- 
  --- TODO ---
  
  TODO: 8.28.18 [DONE 9.4.18] - Create new tableview to drive the timeline calendar view
@@ -52,7 +22,7 @@
 
  TODO: 9.12.18 - Auto-close expanded view when another row is tapped.
  TODO: 9.8.18 - Read table info to self.days[] array (cloud)
- TODO: 9.19.18 - Add journal function to daycontainer
+ TODO: 9.19.18 - Add journal function to daycontainer.
 
  */
 
@@ -65,7 +35,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     var isWeekend: Bool = false
     var days: [DayComponent] = []
     
-    @objc @IBOutlet var journalTextView: UITextView?
+//    @objc var journalTextView: LayoutNode?
     
     // Using registerLayout allows the cell XML definition to be a separate file that is not inside
     // the table view controller.
@@ -83,7 +53,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     
     // Need to bind the outlet to the View Controller so I need to create a reference to the
     // layout node and use viewDidload....?
-    @objc var layoutNode: LayoutNode?
+//    @objc var layoutNode: LayoutNode?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numOfDays
@@ -109,21 +79,6 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             isWeekend = false
         }
         
-        self.layoutNode = LayoutNode(
-            view: UITableViewCell.self,
-            children: [
-                LayoutNode(
-                    view: UIView.self,
-                    children: [
-                        LayoutNode(
-                            view: UITextView.self,
-                            outlet: #keyPath(journalTextView)
-                        )
-                    ]
-                )
-            ]
-        )
-    
         cellNode.setState([
             "index": indexPath.row,
             "month": DateSystem().getCurrentMonthText(),
@@ -132,11 +87,11 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             "dayNumberText": days[indexPath.row].getDayNumberText(index: indexPath.row),    // 1 - 31
             "isDayExpanded": days[indexPath.row].isExpanded,
             "isWeekend": isWeekend,
-            "journal": journalTextView?.text as Any,
+            "journal": "For now this doesn't work.",
             ])
         
         print(indexPath.row, ":cellForRowAt:", days[indexPath.row].isExpanded)
-        print("journal:", journalTextView?.text as Any)
+//        print("journal:", journalTextView?.text as Any)
         
         // Cast the node view to a table cell and return it
         return cellNode.view as! UITableViewCell
@@ -152,8 +107,8 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     @objc func journalEntry()
     {
         print("Journal Saved!")
-        guard let j = journalTextView?.text else { return }
-        print("journal:", j)
+//        guard let j = journalTextView?.text else { return }
+//        print("journal:", j)
     }
     
 //    @objc func expandDay(index: Int)
