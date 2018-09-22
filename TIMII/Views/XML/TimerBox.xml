@@ -74,13 +74,14 @@
     <UIButton
         title="{isTimerRunning ? 'Pause':'Start'}"
         touchUpInside="{isTimerRunning ? 'pauseTimer':'startTimer'}"
-        top="{isTimerRunning ? 100% - height : 0}"
+        top="//{isTimerRunning ? 100% - height : 0}"
+        bottom="10"
         titleLabel.font="{isTimerRunning ? 'Avenir Next 18' : 'Avenir Next 40'}"
         left="0"
         width="100%"
-        height="{isTimerRunning ? 50 : 100%}"
-        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.ironOpaque}"
-        titleColor="isTimerRunning ? UIColor.black : UIColor.black"
+        height="50 //{isTimerRunning ? 50 : 100%}"
+        backgroundColor="//{isTimerRunning ? parent.backgroundColor : UIColor.ironOpaque}"
+        titleColor="isTimerRunning ? black : white"
     />
  
      <!-- Timer Name -->
@@ -95,7 +96,7 @@
         top="20"
         textAlignment="center"
         textColor="UIColor.black"
-        backgroundColor="{isTimerRunning ? parent.backgroundColor : UIColor.red}"
+        backgroundColor="{isTimerRunning ? parent.backgroundColor : white}"
         font="Avenir Next 18"
      />
  

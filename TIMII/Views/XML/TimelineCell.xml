@@ -96,9 +96,16 @@
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         
+        <!-- Timer Box View -->
+        <TimerBox
+            view.isHidden="{isDayExpanded ? false : true}"
+            left="10" top="10">
+        </TimerBox>
+        
         <!-- journal -->
         <UITextView
             outlet="//journalTextView"
+            isHidden="true//{isDayExpanded ? false : true}"
             text="{journal}"
             top="8"
             left="8"
@@ -106,13 +113,13 @@
             height="cellHeight - 55"
             textAlignment="left"
             textColor="dayContentTextColor"
-            backgroundColor="{isDayExpanded ? red : clear}"
+            backgroundColor="{isDayExpanded ? mintGreen : clear}"
             font="Avenir Next Italic 14"
         />
         
         <!-- Journal Entry Save Button -->
         <UIButton
-            isHidden="{isDayExpanded ? false : true}"
+            isHidden="true//{isDayExpanded ? false : true}"
             touchUpInside="journalEntry"
             title="Save"
             backgroundColor="mintGreen"
