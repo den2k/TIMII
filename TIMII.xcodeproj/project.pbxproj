@@ -265,11 +265,11 @@
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
 				95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */,
 				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
-				0F9EAE9A20C35C3E00E2C5F3 /* TimelineScreen.swift */,
 				95FCE6AE21180070000C9029 /* SettingScreen.swift */,
+				958CC74B21077F5600AF1D25 /* TimerBox.swift */,
 				95F54AC2210D07F5007D7764 /* CreateAccountScreen.swift */,
 				950ECEDD210BF42A00DE2D49 /* LoginScreen.swift */,
-				958CC74B21077F5600AF1D25 /* TimerBox.swift */,
+				0F9EAE9A20C35C3E00E2C5F3 /* TimelineScreen.swift */,
 				951EED0F2153F1A600BC69F4 /* TimelineCell.swift */,
 			);
 			path = Views;

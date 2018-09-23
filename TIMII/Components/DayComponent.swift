@@ -15,13 +15,14 @@ import UIKit
 
 class DayComponent: ComponentProtocol, ExpandableProtocol, JournalProtocol, TimeStampProtocol
 {
+    // Protocol Variables
     let ComponentName: String = "day"
     let ComponentDbName: String = "DayContainers"
-    
     internal var createdTimeStamp: Date
     var isExpanded: Bool
     var journalText: UITextView?
 
+    var showTimer: Bool
     var thisDay: Date
 
     init(day: Date)
@@ -30,6 +31,7 @@ class DayComponent: ComponentProtocol, ExpandableProtocol, JournalProtocol, Time
         createdTimeStamp = Date()
         isExpanded = false
         journalText?.text = "Type something. Now!"
+        showTimer = false
     }
     
     func getDayText(index: Int) -> String

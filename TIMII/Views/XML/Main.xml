@@ -1,7 +1,7 @@
 <!-- Main - the main container for the app -->
 <!-- It is just a tab view so different View Controllers can be presented -->
 
-<UITabBarController view.backgroundColor="clear">
+<UITabBarController>
 
     <UITabBar
         tintColor="black"

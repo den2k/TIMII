@@ -22,23 +22,25 @@
 
  TODO: 9.12.18 - Auto-close expanded view when another row is tapped.
  TODO: 9.8.18 - Read table info to self.days[] array (cloud)
- TODO: 9.19.18 - Add journal function to daycontainer.
+ TODO: 9.19.18 - Add journal function to daycontainer. Still not working
+ TODO: 9.21.18 [DONE 9.21.18] Add timer to TableCell
+ TODO: 9.22.18 - Show timer only when Timer icon is pressed....
+ TODO: 9.23.18 - Rebuild DayComponent using the tutorial Table View with multiple cell types.
 
  */
 
 import UIKit
 import Layout
 
-class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate
+class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate, LayoutLoading
 {
     let numOfDays: Int = 30
     var isWeekend: Bool = false
     var days: [DayComponent] = []
-    
-//    @objc var journalTextView: LayoutNode?
+    var cellIndex: Int = 0
     
     // Using registerLayout allows the cell XML definition to be a separate file that is not inside
-    // the table view controller.
+    // the table view controller file.
     @IBOutlet var timelineTableView: UITableView?
     {
         didSet
@@ -50,7 +52,10 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             )
         }
     }
+
+    @IBOutlet var journalTextView: LayoutNode?
     
+
     // Need to bind the outlet to the View Controller so I need to create a reference to the
     // layout node and use viewDidload....?
 //    @objc var layoutNode: LayoutNode?
@@ -69,29 +74,27 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     {
         // Use special Layout extension method to dequeue the node rather than the view itself
         let cellNode = tableView.dequeueReusableCellNode(withIdentifier: "timelineCell", for: indexPath)
+        cellIndex = indexPath.row
         
-        self.days.append(DayComponent.init(day: Date(timeIntervalSinceNow: Double(indexPath.row) * 24.0 * 3600.0)))     // timeInterval workings in milliseconds hence the calculations to represent 1 day
+        self.days.append(DayComponent.init(day: Date(timeIntervalSinceNow: Double(cellIndex) * 24.0 * 3600.0)))     // timeInterval workings in milliseconds hence the calculations to represent 1 day
 
         let dayOfWeekIndex = DateSystem().getWeekDayIndex(index: indexPath.row)
-        if dayOfWeekIndex == 0 || dayOfWeekIndex == 6 {
-            isWeekend = true
-        } else {
-            isWeekend = false
-        }
+        
+        if dayOfWeekIndex == 0 || dayOfWeekIndex == 6 { isWeekend = true }
+        else { isWeekend = false }
         
         cellNode.setState([
-            "index": indexPath.row,
             "month": DateSystem().getCurrentMonthText(),
             "year": DateSystem().currentYear,
-            "dayText": days[indexPath.row].getDayText(index: indexPath.row),                // SUN - SAT
-            "dayNumberText": days[indexPath.row].getDayNumberText(index: indexPath.row),    // 1 - 31
-            "isDayExpanded": days[indexPath.row].isExpanded,
+            "dayText": days[cellIndex].getDayText(index: cellIndex),                // SUN - SAT
+            "dayNumberText": days[cellIndex].getDayNumberText(index: cellIndex),    // 1 - 31
+            "isDayExpanded": days[cellIndex].isExpanded,
             "isWeekend": isWeekend,
-            "journal": "For now this doesn't work.",
+            "showTimer": false,                                // shows or hides timer in cell
+            "journal": days[cellIndex].journalText?.text as Any,
             ])
         
-        print(indexPath.row, ":cellForRowAt:", days[indexPath.row].isExpanded)
-//        print("journal:", journalTextView?.text as Any)
+        print(indexPath.row, ": cellForRowAt: ", days[indexPath.row].isExpanded)
         
         // Cast the node view to a table cell and return it
         return cellNode.view as! UITableViewCell
@@ -100,19 +103,22 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         days[indexPath.row].isExpanded = !days[indexPath.row].isExpanded
-        print(indexPath.row, ":isExpanded:",days[indexPath.row].isExpanded)
+        print(indexPath.row, ": isExpanded: ",days[indexPath.row].isExpanded)
         tableView.reloadData()
     }
     
     @objc func journalEntry()
     {
         print("Journal Saved!")
-//        guard let j = journalTextView?.text else { return }
-//        print("journal:", j)
+//        print(cellIndex,": journal: ", days[cellIndex].journalText?.text as Any)
     }
     
-//    @objc func expandDay(index: Int)
-//    {
-//        days[index].isExpanded = !days[index].isExpanded
-//    }
+    @objc func timerButton()
+    {
+        print("Pressed timer button.")
+//        days[cellIndex].showTimer = !days[cellIndex].showTimer
+//        self.layoutNode?.setState(["showTimer": true])
+//        print(cellIndex, ": Show Timer: ", days[cellIndex].showTimer)
+    }
+    
 }

@@ -1,39 +1,44 @@
 <!-- Timer Row - this is a row view for the timer -->
 <UIView
-    backgroundColor="#FCFCFC"
+    backgroundColor="// #FCFCFC"
     height="50"
     width="100%">
-    
-    <!-- Task Name Label -->
-    <UILabel
-        width="60%"
-        left="15"
-        top="50% - height/2"
-        textAlignment="left"
-        textColor="#404040"
-        font="Avenir Next 18"
-        text="Eating"
-    />
-    
-    <!-- Start Button -->
-    <!--
-    <UIViewController
-        xml="StartButton.xml"
-        width="25%"
-        left="60% - width/2"
-    />
-     -->
-    
-    <!-- Daily Total Label -->
-    <UILabel
-        width="50%"
-        top="50% - height/2"
-        right="10"
-        textAlignment="right"
-        textColor="#404040"
-        font="Avenir Next 10"
-        text="Today:1h1m"
+
+    <!-- Content Type Icon -->
+    <UIImageView
+        backgroundColor=""
+        bottom=""
+        contentMode=""
+        height="16"
+        image="timer.png"
+        isHidden="// isDayExpanded ? false : true"
+        left="8"
+        tintColor=""
+        top="50% - height / 2"
+        width="16"
     />
     
 
+    <!-- Task Name Label -->
+    <UILabel
+        font="Avenir Next 14"
+        left="previous.right + 8"
+        text="Woke up"
+        textAlignment="left"
+        textColor="#404040"
+        top="previous.top"
+        width="auto"
+    />
+    
+
+    <!-- Task Time Interval -->
+    <UILabel
+        font="Avenir Next 14"
+        right="8"
+        text="5:31a"
+        textAlignment="left"
+        textColor="#404040"
+        top="previous.top"
+        width="auto"
+    />
 </UIView>

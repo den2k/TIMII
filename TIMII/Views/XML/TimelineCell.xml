@@ -8,9 +8,9 @@
 <UITableViewCell
     reuseIdentifier="timelineCell"
     width="100%"
-    height="cellHeight      // expandable height based on isDayExpanded"
+    height="cellHeight                  // expandable height based on isDayExpanded"
     top="// this doesn't do anything"
-    backgroundColor="clear  // sets all table cell color background"
+    backgroundColor="camo             // sets all table cell color background"
     style=""
     layer.borderColor=""
     layer.borderWidth=""
@@ -19,14 +19,16 @@
     selectedBackgroundView.layer.borderColor="clear   // must match tableview bkcolor"
     >
     
+    <!-- Dimension Related -->
     <macro name="defaultCellHeight" value="110" />
-    <macro name="expandedCellHeight" value="400" />
+    <macro name="expandedCellHeight" value="450" />
     <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
-
-    <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
-    <macro name="dayContentTextColor" value="black" />
     <macro name="borderLength" value="8" />
     <macro name="dateWidth" value="45" />
+
+    <!-- Color Related -->
+    <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
+    <macro name="dayContentTextColor" value="black" />
     <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
 
     <!-- Date Information Section -->
@@ -49,7 +51,7 @@
                 text="{dayText}"
                 width="100%"
                 height="auto"
-                top="20"
+                top="(height + next.height) / 2"
                 left="previous.left"
                 textAlignment="center"
                 textColor="dateTextColor"
@@ -70,9 +72,21 @@
                 font="Avenir Next bold 21"
                 />
                 
+            <!-- Timer Button -->
+            <UIButton
+                isHidden="{isDayExpanded ? false : true}"
+                touchUpInside="timerButton"
+                backgroundImage="timer.png"
+                bottom="10"
+                left="50% - width / 2"
+                width="24"
+                height="24"
+                />
+                
             <!-- Menu Pulldown -->
             <UIImageView
                 image="menu.png"
+                isHidden="true // {isDayExpanded ? false : true}"
                 top=""
                 bottom="10"
                 width="16"
@@ -96,30 +110,36 @@
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         
+        <!-- Temporary content rows -->
+        <UIView
+        template="TimerRow.xml"
+        />
+        
         <!-- Timer Box View -->
         <TimerBox
-            view.isHidden="{isDayExpanded ? false : true}"
-            left="10" top="10">
+            view.isHidden="true // {showTimer ? false : true}"
+            left="10"
+            top="previous.bottom + 8">
         </TimerBox>
         
-        <!-- journal -->
+        <!-- Journal Entry -->
         <UITextView
             outlet="//journalTextView"
-            isHidden="true//{isDayExpanded ? false : true}"
+            isHidden="{isDayExpanded ? false : true}"
             text="{journal}"
-            top="8"
+            top="previous.bottom + 8"
             left="8"
             width="100% - 16"
-            height="cellHeight - 55"
+            bottom="16 + next.height"
             textAlignment="left"
             textColor="dayContentTextColor"
-            backgroundColor="{isDayExpanded ? mintGreen : clear}"
+            backgroundColor="{isDayExpanded ? porcelain : clear}"
             font="Avenir Next Italic 14"
         />
         
         <!-- Journal Entry Save Button -->
         <UIButton
-            isHidden="true//{isDayExpanded ? false : true}"
+            isHidden="{isDayExpanded ? false : true}"
             touchUpInside="journalEntry"
             title="Save"
             backgroundColor="mintGreen"
@@ -128,11 +148,6 @@
             width="100"
             height="26"
             layer.cornerRadius="13"
-        />
-        
-        <UILabel
-            isHidden="true"
-            text="Expanded: {cellHeight}"
         />
         
     </UIView>
