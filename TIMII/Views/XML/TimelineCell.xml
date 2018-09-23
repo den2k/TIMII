@@ -20,7 +20,7 @@
     >
     
     <!-- Dimension Related -->
-    <macro name="defaultCellHeight" value="110" />
+    <macro name="defaultCellHeight" value="100" />
     <macro name="expandedCellHeight" value="450" />
     <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
     <macro name="borderLength" value="8" />
@@ -28,7 +28,7 @@
 
     <!-- Color Related -->
     <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
-    <macro name="dayContentTextColor" value="black" />
+    <macro name="dayContentTextColor" value="white" />
     <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
 
     <!-- Date Information Section -->
