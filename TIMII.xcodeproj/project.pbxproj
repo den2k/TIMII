@@ -60,13 +60,14 @@
 		951EED102153F1A600BC69F4 /* TimelineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EED0F2153F1A600BC69F4 /* TimelineCell.swift */; };
 		9520A1B221141089004E7FDE /* MemberComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9520A1B121141089004E7FDE /* MemberComponent.swift */; };
 		952E91E22128836900629679 /* TimelineDayTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 952E91E12128836900629679 /* TimelineDayTemplate.xml */; };
+		9530602B21585E5300270F8B /* DayComponent2TestData.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 9530602A21585E5300270F8B /* DayComponent2TestData.JSON */; };
 		958CC74C21077F5600AF1D25 /* TimerBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74B21077F5600AF1D25 /* TimerBox.swift */; };
 		958CC74E21077FF800AF1D25 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958CC74D21077FF800AF1D25 /* Colors.swift */; };
 		959C9284212A3A9100FACA01 /* LogInOutSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C9283212A3A9100FACA01 /* LogInOutSystem.swift */; };
 		95C61F35212E3950005931D4 /* TimelineEmptyDayTemplate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */; };
 		95CA65E1214221D8001454C6 /* ExpandableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */; };
 		95CA65E32142271C001454C6 /* DayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E22142271C001454C6 /* DayComponent.swift */; };
-		95CA65E521422BE4001454C6 /* JournalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E421422BE4001454C6 /* JournalProtocol.swift */; };
+		95CA65E521422BE4001454C6 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA65E421422BE4001454C6 /* Journal.swift */; };
 		95CBD2F2213646D5001013F6 /* TimelineTableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */; };
 		95CBD2F42136617B001013F6 /* TimelineTableScreen.xml in Resources */ = {isa = PBXBuildFile; fileRef = 95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */; };
 		95D1F987213A497300C5F07D /* DateSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D1F986213A497300C5F07D /* DateSystem.swift */; };
@@ -151,13 +152,14 @@
 		9520A1B121141089004E7FDE /* MemberComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberComponent.swift; sourceTree = "<group>"; };
 		9520A1B32114BA9F004E7FDE /* TIMII.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TIMII.entitlements; sourceTree = "<group>"; };
 		952E91E12128836900629679 /* TimelineDayTemplate.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineDayTemplate.xml; sourceTree = "<group>"; };
+		9530602A21585E5300270F8B /* DayComponent2TestData.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DayComponent2TestData.JSON; sourceTree = "<group>"; };
 		958CC74B21077F5600AF1D25 /* TimerBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBox.swift; sourceTree = "<group>"; };
 		958CC74D21077FF800AF1D25 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		959C9283212A3A9100FACA01 /* LogInOutSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInOutSystem.swift; sourceTree = "<group>"; };
 		95C61F34212E3950005931D4 /* TimelineEmptyDayTemplate.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineEmptyDayTemplate.xml; sourceTree = "<group>"; };
 		95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableProtocol.swift; sourceTree = "<group>"; };
 		95CA65E22142271C001454C6 /* DayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayComponent.swift; sourceTree = "<group>"; };
-		95CA65E421422BE4001454C6 /* JournalProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalProtocol.swift; sourceTree = "<group>"; };
+		95CA65E421422BE4001454C6 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableScreen.swift; sourceTree = "<group>"; };
 		95CBD2F32136617B001013F6 /* TimelineTableScreen.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TimelineTableScreen.xml; sourceTree = "<group>"; };
 		95D1F986213A497300C5F07D /* DateSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSystem.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				0F2C3F24209FC9B400A417F1 /* ViewableTests.swift */,
+				9530602A21585E5300270F8B /* DayComponent2TestData.JSON */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -242,15 +245,8 @@
 		0F74F9902084591C00CF1CD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0F2C3F02209EA08E00A417F1 /* ComponentProtocol.swift */,
-				0F2A12452095309000D0E489 /* CountableProtocol.swift */,
-				0F2A12432095108600D0E489 /* DashboardProtocol.swift */,
-				95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */,
-				95CA65E421422BE4001454C6 /* JournalProtocol.swift */,
-				95EA6101214F04190050414E /* TimeStampProtocol.swift */,
-				0FDB817D20B0CDDF00E39E04 /* UIStyleProtocol.swift */,
-				0F3D4F5D2097392C00B88EDE /* ViewableProtocol.swift */,
 				95CA65E22142271C001454C6 /* DayComponent.swift */,
+				95CA65E421422BE4001454C6 /* Journal.swift */,
 				9520A1B121141089004E7FDE /* MemberComponent.swift */,
 				0FFE08FF20F18872000D1797 /* TimiiComponent.swift */,
 				958CC74D21077FF800AF1D25 /* Colors.swift */,
@@ -261,7 +257,6 @@
 		0F777B8920ABE182008F7944 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				950ECEDC210B86A300DE2D49 /* XML */,
 				0FC08A4720840CFF0083E0B3 /* Main.swift */,
 				95CBD2F1213646D5001013F6 /* TimelineTableScreen.swift */,
 				0F9D931620BA265F0027DE1D /* TimerScreen.swift */,
@@ -325,14 +320,16 @@
 		0FC08A4420840CFE0083E0B3 /* TIMII */ = {
 			isa = PBXGroup;
 			children = (
-				9520A1B32114BA9F004E7FDE /* TIMII.entitlements */,
+				953060272158591F00270F8B /* Protocols */,
 				0F74F9902084591C00CF1CD9 /* Components */,
 				0F2C3F06209F476400A417F1 /* Systems */,
 				0F777B8920ABE182008F7944 /* Views */,
+				950ECEDC210B86A300DE2D49 /* ViewsXML */,
 				0FC08A4520840CFE0083E0B3 /* AppDelegate.swift */,
-				0FC08A4C20840D020083E0B3 /* Assets.xcassets */,
 				0FC08A5120840D020083E0B3 /* Info.plist */,
 				0FE3DEFD208BB0A400D546BC /* GoogleService-Info.plist */,
+				9520A1B32114BA9F004E7FDE /* TIMII.entitlements */,
+				0FC08A4C20840D020083E0B3 /* Assets.xcassets */,
 				0FBE766F20A7CC6F003225F0 /* !Deprecated */,
 			);
 			path = TIMII;
@@ -347,7 +344,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		950ECEDC210B86A300DE2D49 /* XML */ = {
+		950ECEDC210B86A300DE2D49 /* ViewsXML */ = {
 			isa = PBXGroup;
 			children = (
 				0FAC81EE20C4AB2800D69AB7 /* Main.xml */,
@@ -369,7 +366,21 @@
 				950ECEDA210B759F00DE2D49 /* TimerBox.xml */,
 				0FBD036B20E8158B00FAEC7B /* TimerRow.xml */,
 			);
-			path = XML;
+			path = ViewsXML;
+			sourceTree = "<group>";
+		};
+		953060272158591F00270F8B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0F2C3F02209EA08E00A417F1 /* ComponentProtocol.swift */,
+				0F2A12452095309000D0E489 /* CountableProtocol.swift */,
+				0F2A12432095108600D0E489 /* DashboardProtocol.swift */,
+				95CA65E0214221D8001454C6 /* ExpandableProtocol.swift */,
+				95EA6101214F04190050414E /* TimeStampProtocol.swift */,
+				0FDB817D20B0CDDF00E39E04 /* UIStyleProtocol.swift */,
+				0F3D4F5D2097392C00B88EDE /* ViewableProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		DE13BA447CE6BFE4D937335C /* Pods */ = {
@@ -478,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9530602B21585E5300270F8B /* DayComponent2TestData.JSON in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +651,7 @@
 				0FFE08FE20F1883D000D1797 /* TimerViewController.swift in Sources */,
 				959C9284212A3A9100FACA01 /* LogInOutSystem.swift in Sources */,
 				95F54AC3210D07F5007D7764 /* CreateAccountScreen.swift in Sources */,
-				95CA65E521422BE4001454C6 /* JournalProtocol.swift in Sources */,
+				95CA65E521422BE4001454C6 /* Journal.swift in Sources */,
 				0F9D931720BA265F0027DE1D /* TimerScreen.swift in Sources */,
 				0FBE767120A7D10D003225F0 /* DashboardSystem.swift in Sources */,
 				0F2C3F10209F9A8300A417F1 /* DatabaseSystem.swift in Sources */,

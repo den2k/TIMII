@@ -6,32 +6,30 @@
 //  Copyright © 2018 Autonomii. All rights reserved.
 //
 /*
- TODO: 9.16.18 - Create Day component object that holds info on a day
+ TODO: 9.16.18 [DONE] - Create Day component object that holds info on a day
  TODO: 9.11.18 - Create editable journal section for user
- 
+ TODO: 9.25.18 [DONE: 9.25.18] - Updated DayComponent class with updated Journal definition.
  */
  
 import UIKit
 
-class DayComponent: ComponentProtocol, ExpandableProtocol, JournalProtocol, TimeStampProtocol
+class DayComponent: ComponentProtocol, ExpandableProtocol
 {
     // Protocol Variables
     let ComponentName: String = "day"
     let ComponentDbName: String = "DayContainers"
-    internal var createdTimeStamp: Date
     var isExpanded: Bool
-    var journalText: UITextView?
-
+    
+    var journalPost: Journal
     var showTimer: Bool
     var thisDay: Date
 
     init(day: Date)
     {
+        self.isExpanded = false
+        self.journalPost = Journal( createdTimeStamp: Date(), post: "Type something. Now!")
+        self.showTimer = false
         self.thisDay = day
-        createdTimeStamp = Date()
-        isExpanded = false
-        journalText?.text = "Type something. Now!"
-        showTimer = false
     }
     
     func getDayText(index: Int) -> String

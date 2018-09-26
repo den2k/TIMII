@@ -9,6 +9,7 @@
 
 import Foundation
 
-protocol TimeStampProtocol {
+protocol TimeStampProtocol
+{
     var createdTimeStamp: Date { get set }
 }

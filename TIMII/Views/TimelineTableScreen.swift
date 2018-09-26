@@ -53,7 +53,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
 
-    @IBOutlet var journalTextView: LayoutNode?
+//    @IBOutlet var journalTextView: LayoutNode?
     
 
     // Need to bind the outlet to the View Controller so I need to create a reference to the
@@ -90,11 +90,14 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             "dayNumberText": days[cellIndex].getDayNumberText(index: cellIndex),    // 1 - 31
             "isDayExpanded": days[cellIndex].isExpanded,
             "isWeekend": isWeekend,
-            "showTimer": false,                                // shows or hides timer in cell
-            "journal": days[cellIndex].journalText?.text as Any,
+            "showTimer": days[cellIndex].showTimer,                    // shows or hides timer in cell
+            "journal": days[cellIndex].journalPost.post,
             ])
         
-        print(indexPath.row, ": cellForRowAt: ", days[indexPath.row].isExpanded)
+        print(cellIndex, ": cellForRowAt: ", days[cellIndex].isExpanded)
+        
+        // testing journal initialization
+        print(cellIndex, ": journal: ", days[cellIndex].journalPost.post)
         
         // Cast the node view to a table cell and return it
         return cellNode.view as! UITableViewCell
@@ -110,7 +113,7 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     @objc func journalEntry()
     {
         print("Journal Saved!")
-//        print(cellIndex,": journal: ", days[cellIndex].journalText?.text as Any)
+//        print(cellIndex,": journal: ", days[cellIndex].journalPost as Any)
     }
     
     @objc func timerButton()

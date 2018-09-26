@@ -59,7 +59,7 @@ class TimelineScreen: UIViewController, UIScrollViewDelegate, LayoutLoading
                 "dayText6": DateSystem().getWeekDayText(index: offsetDate+6),
                 "dayNumberText": DateSystem().getOffsetDayNumber(index: offsetDate),
                 "isWeekend": DateSystem().isWeekend(dayOfWeekIndex: offsetDate),
-//                "journal": self.days[offsetDate].journalText,
+//                "journalPost": self.days[offsetDate].journalText,
             ])
         }
     }

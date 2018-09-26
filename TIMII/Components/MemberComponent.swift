@@ -14,7 +14,7 @@ class Member: NSObject, ComponentProtocol
     var ComponentName: String = "member"
     
     var uid: String?
-    var name: String?
+    var fullName: String?
     var email: String?
     var password: String?
     var profileImageURL: String?
