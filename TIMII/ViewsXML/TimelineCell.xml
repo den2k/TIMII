@@ -5,7 +5,7 @@
  TODO: 9.19.18 - Add journaling function to the app.
  -->
 
-<UITableViewCell
+<TimelineCell
     reuseIdentifier="timelineCell"
     width="100%"
     height="cellHeight                  // expandable height based on isDayExpanded"
@@ -124,7 +124,7 @@
         
         <!-- Journal Entry -->
         <UITextView
-            outlet="//journalTextView"
+            outlet="journalTextView"
             isHidden="{isDayExpanded ? false : true}"
             text="{journal}"
             top="previous.bottom + 8"
@@ -132,7 +132,7 @@
             width="100% - 16"
             bottom="16 + next.height"
             textAlignment="left"
-            textColor="dayContentTextColor"
+            textColor="black"
             backgroundColor="{isDayExpanded ? porcelain : clear}"
             font="Avenir Next Italic 14"
         />
@@ -152,4 +152,4 @@
         
     </UIView>
     
-</UITableViewCell>
+</TimelineCell>

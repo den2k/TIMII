@@ -27,7 +27,7 @@ class DayComponent: ComponentProtocol, ExpandableProtocol
     init(day: Date)
     {
         self.isExpanded = false
-        self.journalPost = Journal( createdTimeStamp: Date(), post: "Type something. Now!")
+        self.journalPost = Journal( createdTimeStamp: Date(), post: "")
         self.showTimer = false
         self.thisDay = day
     }

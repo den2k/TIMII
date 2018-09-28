@@ -8,4 +8,6 @@
 
 import UIKit
 
-class TimelineCell : UITableViewCell { }
+class TimelineCell : UITableViewCell {
+    @objc var journalTextView: UITextView?
+}

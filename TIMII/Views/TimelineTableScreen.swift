@@ -38,6 +38,10 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     var isWeekend: Bool = false
     var days: [DayComponent] = []
     var cellIndex: Int = 0
+    var selectedRowIndex: Int = 0
+//    var selectedDate: Date = Date()
+    
+    var journalTextView: UITextView?
     
     // Using registerLayout allows the cell XML definition to be a separate file that is not inside
     // the table view controller file.
@@ -52,13 +56,6 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             )
         }
     }
-
-//    @IBOutlet var journalTextView: LayoutNode?
-    
-
-    // Need to bind the outlet to the View Controller so I need to create a reference to the
-    // layout node and use viewDidload....?
-//    @objc var layoutNode: LayoutNode?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numOfDays
@@ -94,10 +91,14 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
             "journal": days[cellIndex].journalPost.post,
             ])
         
-        print(cellIndex, ": cellForRowAt: ", days[cellIndex].isExpanded)
+//        print(cellIndex, ": date: ", days[cellIndex].thisDay)
+//        print(cellIndex, ": cellForRowAt: ", days[cellIndex].isExpanded)
+//        print(cellIndex, ": Journal: ", days[cellIndex].journalPost.post)
         
-        // testing journal initialization
-        print(cellIndex, ": journal: ", days[cellIndex].journalPost.post)
+        let cell = cellNode.view as! TimelineCell             // get the outlet contained in the class TimelineCell
+        self.journalTextView = cell.journalTextView
+        print(cellIndex, ": Journal: ", self.journalTextView!.text)
+//        days[cellIndex].journalPost.post = cell.journalTextView?.text ?? "non"
         
         // Cast the node view to a table cell and return it
         return cellNode.view as! UITableViewCell
@@ -105,15 +106,24 @@ class TimelineTableScreen: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
+        // get selectedDate
+//        print(days[indexPath.row].thisDay)
+//        selectedDate = days[indexPath.row].thisDay
+        selectedRowIndex = indexPath.row
         days[indexPath.row].isExpanded = !days[indexPath.row].isExpanded
         print(indexPath.row, ": isExpanded: ",days[indexPath.row].isExpanded)
-        tableView.reloadData()
+        tableView.reloadData()          // this makes expanding and !expanding a row work.
     }
     
     @objc func journalEntry()
     {
+//        guard let journal = self.journalTextView?.text else { return }
+        // replace selectedRowIndex with selectedDate index so it properuse the get selectedDate and enter the journalPost using selectedDate
+        // Why does an entry in row 1 go into 11 21....
+        // Why does an entry in row 0 go into 10 20....
+        days[selectedRowIndex].journalPost.post = self.journalTextView?.text ?? "nothing..."
         print("Journal Saved!")
-//        print(cellIndex,": journal: ", days[cellIndex].journalPost as Any)
+        print(selectedRowIndex,": journalEntry: ", days[selectedRowIndex].journalPost.post)
     }
     
     @objc func timerButton()
