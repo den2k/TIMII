@@ -10,7 +10,7 @@
     width="100%"
     height="cellHeight                  // expandable height based on isDayExpanded"
     top="// this doesn't do anything"
-    backgroundColor="camo             // sets all table cell color background"
+    backgroundColor="lynch             // sets all table cell color background"
     style=""
     layer.borderColor=""
     layer.borderWidth=""
@@ -20,15 +20,15 @@
     >
     
     <!-- Dimension Related -->
-    <macro name="defaultCellHeight" value="100" />
-    <macro name="expandedCellHeight" value="450" />
+    <macro name="defaultCellHeight" value="80" />
+    <macro name="expandedCellHeight" value="300" />
     <macro name="cellHeight" value="{isDayExpanded ? expandedCellHeight : defaultCellHeight}" />
     <macro name="borderLength" value="8" />
     <macro name="dateWidth" value="45" />
 
     <!-- Color Related -->
     <macro name="dayBackgroundColor" value="{isDayExpanded ? white : porcelainOpaque}" />
-    <macro name="dayContentTextColor" value="white" />
+    <macro name="dayContentTextColor" value="porcelain" />
     <macro name="dateTextColor" value="{isWeekend ? valencia : dayContentTextColor}" />
 
     <!-- Date Information Section -->
@@ -36,6 +36,7 @@
         width="dateWidth"
         height="cellHeight - borderLength"
         top="borderLength/2"
+        left="0"
         backgroundColor="clear">
         
         <!-- This UIView is used to control the vertical centering of the components inside this view -->
@@ -44,18 +45,18 @@
             height="cellHeight - borderLength   // shrinks the view for border outlines to show up"
             top="50% - height/2                 // this centers the view that holds the views below"
             left="borderLength"
-            backgroundColor="dayBackgroundColor">
+            backgroundColor="red">
         
             <!-- Displays the weekday -->
             <UILabel
                 text="{dayText}"
                 width="100%"
                 height="auto"
-                top="(height + next.height) / 2"
+                top="(height + next.height) / 2 - 10"
                 left="previous.left"
                 textAlignment="center"
                 textColor="dateTextColor"
-                backgroundColor=""
+                backgroundColor="//green"
                 font="Avenir Next 13"
                 />
                 
@@ -110,14 +111,16 @@
         left="previous.right + borderLength * 2"
         backgroundColor="dayBackgroundColor">
         
-        <!-- Temporary content rows -->
+        <!-- Temporary working content rows -->
+        <!--
         <UIView
         template="TimerRow.xml"
         />
+         -->
         
         <!-- Timer Box View -->
         <TimerBox
-            view.isHidden="true // {showTimer ? false : true}"
+            view.isHidden="{showTimer ? false : true}"
             left="10"
             top="previous.bottom + 8">
         </TimerBox>

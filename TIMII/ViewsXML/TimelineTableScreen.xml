@@ -1,7 +1,7 @@
 <!-- TimelineTableScreen.xml -->
 <TimelineTableScreen view.backgroundColor="// this doesn't set the background for X. Use the one below.">
     <UITableView
-        backgroundColor="camo                 // this sets the header to a color."
+        backgroundColor="lynch                 // this sets the header to a color."
         contentInset.bottom="safeAreaInsets.bottom"
         contentInset.top="safeAreaInsets.top"
         contentInsetAdjustmentBehavior="never"
@@ -15,16 +15,16 @@
 
         <!-- Table header -->
         <UIView
-            backgroundColor="           // table header background color. Doesn't not color TB view."
-            height="70                 // Header block below notch">
+            backgroundColor="// table header background color. Doesn't not color TB view."
+            height="140 // Header block below notch">
 
             <UILabel
+                bottom="-4"
                 font="Avenir Next bold 40"
                 left="8"
                 text="Timeline"
                 textAlignment="left"
                 textColor="white"
-                bottom="-4"
                 width="100%"
             />
         </UIView>
